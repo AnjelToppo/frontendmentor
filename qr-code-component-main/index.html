@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | QR code component</title>
+
+    <style>
+        * {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        :root {
+            /* COLOR */
+            --white: #FFFFFF;
+            --slate-900: #1F314F;
+            --slate-500: #68778D;
+            --slate-300: #D5E1EF;
+
+            /* SPACE */
+            --space-500: 4rem;
+            --space-300: 2.4rem;
+            --space-200: 1.6rem;
+
+            /* CARD */
+            --card-w: 32rem;
+            --card-h: 49.9rem;
+        }
+
+        /* UTILITY CLASS */
+        /* ############### */
+        .flex {
+            display: flex;
+        }
+
+        .fd-column {
+            flex-direction: column;
+        }
+
+        .gap-sm {
+            gap: var(--space-200);
+        }
+
+        .gap-md {
+            gap: var(--space-300);
+        }
+
+        .ta-center {
+            text-align: center;
+        }
+
+        .fs-md {
+            font-size: 2.2rem;
+        }
+
+        .fs-sm {
+            font-size: 1.5rem;
+        }
+
+        .lh-md {
+            line-height: 140%;
+        }
+
+        .lh-sm {
+            line-height: 120%;
+        }
+
+        .ls-md {
+            letter-spacing: 0.2px;
+        }
+
+        .ls-sm {
+            letter-spacing: 0;
+        }
+
+        .fw-regular {
+            font-weight: normal;
+        }
+
+        .fw-bold {
+            font-weight: bold;
+        }
+
+        .br-md {
+            border-radius: 2rem;
+        }
+
+        .br-sm {
+            border-radius: 1rem;
+        }
+
+        /* ############### */
+
+        body {
+            background-color: var(--slate-300);
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: var(--space-200) var(--space-200) var(--space-500) var(--space-200);
+            width: var(--card-w);
+            height: var(--card-h);
+            margin: 10vh auto;
+        }
+
+        .card--details {
+            padding-inline: var(--space-200);
+        }
+
+        .main-heading {
+            color: var(--slate-900);
+        }
+
+        .card--info {
+            color: var(--slate-500);
+        }
+
+
+    </style>
+</head>
+<body>
+
+<section>
+    <div class="card flex fd-column br-md gap-md">
+        <img class="card--image br-sm" src="./images/image-qr-code.png" alt="qr-code">
+        <div class="flex fd-column gap-sm card--details ta-center">
+            <h1 class="main-heading fs-md lh-sm ls-sm fw-bold">Improve your front-end skills by building projects</h1>
+            <p class="card--info fs-sm lh-md ls-md fw-regular">Scan the QR code to visit Frontend Mentor and take your
+                coding skills to the next level</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
