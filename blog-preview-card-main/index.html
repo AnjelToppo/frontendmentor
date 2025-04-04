@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Blog preview card</title>
+
+    <style>
+        @font-face {
+            font-family: 'Figtree';
+            src: url('../assets/fonts/Figtree-VariableFont_wght.ttf') format("truetype"), url("../assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype"); /* WOFF2 */
+        }
+
+        :root {
+            /* COLOR */
+            --yellow: #F4D04E;
+            --gray-950: #111111;
+            --gray-500: #6B6B6B;
+            --white: #FFFFFF;
+
+            /* SPACE */
+            --space-300: 2.4rem;
+            --space-150: 1.2rem;
+            --space-100: 0.8rem;
+            --space-50: 0.4rem;
+
+            /* CARD */
+            --card-height: 52.2rem;
+            --card-width: 38.4rem;
+            --card-shadow: 8px 8px 0 #111111;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Figtree', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .ai-center {
+            align-items: center;
+        }
+
+        .ai-start {
+            align-items: flex-start;
+        }
+
+        .jc-center {
+            justify-content: center;
+        }
+
+        .fd-column {
+            flex-direction: column;
+        }
+
+        .text-preset-1 {
+            font-size: clamp(2rem, 3vw, 2.4rem);
+        }
+
+        .text-preset-2 {
+            font-size: clamp(1.4rem, 3vw, 1.6rem);
+        }
+
+        .text-preset-3 {
+            font-size: clamp(1.2rem, 3vw ,1.4rem);
+        }
+
+        .lh-150-percent {
+            line-height: 150%;
+        }
+
+        .ls-0 {
+            letter-spacing: 0;
+        }
+
+        .fw-500 {
+            font-weight: 500;
+        }
+
+        .fw-800 {
+            font-weight: 800;
+        }
+
+        .br-4 {
+            border-radius: 0.4rem;
+        }
+
+        .br-10 {
+            border-radius: 1rem;
+        }
+
+        .br-20 {
+            border-radius: 2rem;
+        }
+
+        main {
+            background-color: var(--yellow);
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: var(--white);
+            color: var(--gray-950);
+            min-height: var(--card-height);
+            max-width: var(--card-width);
+            padding: var(--space-300);
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--gray-950);
+            gap: var(--space-300);
+            font-style: normal;
+            margin-left: var(--space-150);
+            margin-right: calc(var(--space-150) + 8px);
+        }
+
+        .card--hero-image {
+            width: 100%;
+        }
+
+        .topic {
+            gap: var(--space-150);
+        }
+
+        .tag {
+            padding: var(--space-50) var(--space-150);
+            background-color: var(--yellow);
+        }
+
+        .topic--main-heading:hover {
+            color: var(--yellow);
+            cursor: pointer;
+        }
+
+        .topic--brief {
+            color: var(--gray-500);
+        }
+
+        .author {
+            gap: var(--space-150);
+        }
+
+        .author--image {
+            height: 3.2rem;
+            width: 3.2rem;
+        }
+    </style>
+</head>
+<body>
+<main class="flex ai-center jc-center">
+    <article class="card flex fd-column ai-start br-20">
+        <img src="./assets/images/illustration-article.svg" alt="" class="card--hero-image br-10">
+        <div class="topic flex fd-column ai-start">
+            <span class="tag br-4 text-preset-3 lh-150-percent ls-0 fw-800">Learning</span>
+
+            <p class="text-preset-3 lh-150-percent ls-0 fw-500"><time datetime="2023-12-21">Published 21 Dec 2023</time></p>
+
+            <h1 class="topic--main-heading text-preset-1 lh-150-percent ls-0 fw-800">HTML & CSS foundations</h1>
+
+            <p class="topic--brief text-preset-2 lh-150-percent ls-0 fw-500">These languages are the backbone of every website,
+                defining structure, content, and presentation.</p>
+        </div>
+        <footer class="author flex ai-center">
+            <img class="author--image" src="./assets/images/image-avatar.webp" alt="Greg Hooper">
+            <span class="author--name text-preset-3 lh-150-percent ls-0  fw-800">Greg Hooper</span>
+        </footer>
+    </article>
+</main>
+</body>
+</html>
