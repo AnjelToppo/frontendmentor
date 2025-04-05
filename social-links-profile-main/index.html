@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Social links profile</title>
+
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            src: url('./assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        :root {
+            /* COLORS */
+            --grey-900: #141414;
+            --grey-800: #1F1F1F;
+            --grey-700: #333;
+            --green: #C4F82A;
+            --white: #FFF;
+
+            /* SPACE */
+            --space-500: 4rem;
+            --space-300: 2.4rem;
+            --space-200: 1.6rem;
+            --space-150: 1.2rem;
+            --space-100: 0.8rem;
+            --space-50: 0.4rem;
+
+            /*CARD */
+            /*--card-height: 61.1rem;*/
+            --card-width: 38.4rem;
+
+            /* AVATAR */
+            --avatar-height: 8.8rem;
+            --avatar-width: 8.8rem;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        main {
+            min-height: 100vh;
+            padding: var(--space-500) var(--space-300);
+            background-color: var(--grey-900);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .fd-column {
+            flex-direction: column;
+        }
+
+        .ai-center {
+            align-items: center;
+        }
+
+        .jc-center {
+            justify-content: center;
+        }
+
+        .lh-150 {
+            line-height: 150%;
+        }
+
+        .ls-0 {
+            letter-spacing: 0;
+        }
+
+        .fs-sm {
+            font-size: 1.4rem;
+        }
+
+        .fs-md {
+            font-size: 2.4rem;
+        }
+
+        .br-12 {
+            border-radius: 1.2rem;
+        }
+
+        .br-8 {
+            border-radius: 0.8rem;
+        }
+
+        .br-circle {
+            border-radius: 99.9rem;
+        }
+
+        .width-100per {
+            width: 100%;
+        }
+
+        .ta-center {
+            text-align: center;
+        }
+
+        .text-white {
+            color: var(--white);
+        }
+
+        .card {
+            background-color: var(--grey-800);
+            padding: var(--space-500);
+            gap: var(--space-300);
+            font-style: normal;
+            width: var(--card-width);
+        }
+
+        .avatar {
+            height: var(--avatar-height);
+            width: var(--avatar-width);
+        }
+
+        .name-location {
+            gap: var(--space-50);
+        }
+
+        .title {
+            font-weight: 600;
+        }
+
+        .description {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .bio {
+            font-weight: 400;
+
+        }
+
+        .links {
+            gap: var(--space-200);
+
+        }
+
+        .link {
+            width: 100%;
+            display: inline-block;
+            color: inherit;
+            background-color: var(--grey-700);
+            padding: var(--space-150);
+            font-weight: 700;
+            transition: background-color 1s;
+        }
+
+        .link:hover {
+            background-color: var(--green);
+        }
+
+    </style>
+</head>
+<body>
+<main class="flex jc-center ai-center">
+    <article class="card flex fd-column ai-center br-12 ta-center text-white ls-0">
+        <picture>
+            <img class="avatar br-circle" src="./assets/images/avatar-jessica.jpeg" alt="Jessica Randall">
+        </picture>
+
+        <div class="name-location flex fd-column">
+            <h1 class="title fs-md lh-150">Jessica Randall</h1>
+            <p class="description fs-sm lh-150">London&#44; United Kingdom</p>
+        </div>
+
+        <p class="bio fs-sm lh-150">"Front-end developer and avid reader."</p>
+
+        <nav class="width-100per">
+            <ul class="links flex fd-column">
+                <li>
+                    <a class="link br-8 fs-sm lh-150" href="https://github.com/" target="_blank"
+                       rel="noopener noreferrer">Github</a>
+                </li>
+                <li>
+                    <a class="link br-8 fs-sm lh-150" href="https://www.frontendmentor.io/" target="_blank"
+                       rel="noopener noreferrer">Frontend
+                        Mentor</a>
+                </li>
+                <li>
+                    <a class="link br-8 fs-sm lh-150" href="https://in.linkedin.com/" target="_blank"
+                       rel="noopener noreferrer">LinkedIn</a>
+                </li>
+                <li>
+                    <a class="link br-8 fs-sm lh-150" href="https://x.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+                </li>
+                <li>
+                    <a class="link br-8 fs-sm lh-150" href="https://www.instagram.com/" target="_blank"
+                       rel="noopener noreferrer">Instagram</a>
+                </li>
+            </ul>
+        </nav>
+    </article>
+</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
