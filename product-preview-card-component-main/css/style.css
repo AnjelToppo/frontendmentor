@@ -158,6 +158,10 @@ picture {
   border-bottom-left-radius: 0.8rem;
 }
 
+.tag {
+  text-transform: uppercase;
+}
+
 .add-cart-btn {
   padding: var(--space-200) var(--space-400);
   background: var(--green-500);
