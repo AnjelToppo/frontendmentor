@@ -1,0 +1,142 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+
+:root
+  // COLORS
+  --black: #1C232B
+  --grey: #6C7289
+  --cream: #F2EAE2
+  --white: #FFFFFF
+  --green-500: #3D8168
+  --green-700: #1A4032
+
+  // SPACE
+  --space-500: 4rem
+  --space-400: 3.2rem
+  --space-300: 2.4rem
+  --space-200: 1.6rem
+  --space-100: 0.8rem
+  --space-50: 0.4rem
+
+@mixin text-preset($font-size, $font-family, $line-height, $letter-spacing, $font-weight)
+  font-size: $font-size
+  font-family: $font-family, serif
+  line-height: $line-height
+  letter-spacing: $letter-spacing
+  font-weight: $font-weight
+  font-style: normal
+
+
+.text-preset-1
+  @include text-preset(3.2rem, "Fraunces", 100%, 0, 700)
+
+.text-preset-2
+  @include text-preset(1.4rem, "Montserrat", 110%, 0, 700)
+
+
+.text-preset-3
+  @include text-preset(1.4rem, "Montserrat", 160%, 0, 500)
+
+.text-preset-4
+  @include text-preset(1.2rem, "Montserrat", 120%, 5px, 500)
+
+.text-preset-5
+  @include text-preset(1.3rem, "Montserrat", 120%, 0, 400)
+  text-decoration: line-through
+
+@mixin text-color($color-name, $color-code)
+  .text-#{$color-name}
+    color: $color-code
+
+@include text-color(black, var(--black))
+@include text-color(grey, var(--grey))
+@include text-color(cream, var(--cream))
+@include text-color(green-500, var(--green-500))
+@include text-color(green-700, var(--green-700))
+
+
+@mixin gap($gap-name, $gap)
+  .gap-#{$gap-name}
+    gap: $gap
+
+@include gap(sm, var(--space-100))
+@include gap(md, var(--space-200))
+@include gap(lg, var(--space-300))
+@include gap(xl, var(--space-400))
+
+%add-cart-animation
+  background: var(--green-700)
+  transform: translateY(2px)
+
+main
+  min-height: 100vh
+  background: var(--cream)
+
+.flex
+  display: flex
+
+.flex-column
+  flex-direction: column
+
+.ai-center
+  align-items: center
+
+.jc-center
+  justify-content: center
+
+.card
+  max-width: 60rem
+  height: 45.6rem
+  display: grid
+  grid-template-columns: 1fr 1fr
+  align-items: center
+  border-radius: 0.8rem
+  background-color: var(--white)
+
+picture
+  height: 100%
+
+
+.product-details
+  padding: var(--space-400)
+
+.product-image
+  display: inline-block
+  width: 100%
+  height: 100%
+  border-top-left-radius: 0.8rem
+  border-bottom-left-radius: 0.8rem
+
+.add-cart-btn
+  padding: var(--space-200) var(--space-400)
+  background: var(--green-500)
+  color: var(--white)
+  border: none
+  border-radius: 0.8rem
+  cursor: pointer
+  transition: all 0.2s
+
+.add-cart-btn
+  &:hover
+    @extend %add-cart-animation
+
+  &:focus
+    outline-offset: 4px
+    outline-color: var(--green-500)
+
+@media only screen and (max-width: 41.25em)
+  .card
+    grid-template-columns: minmax(26rem, 40rem)
+    grid-template-rows: repeat(2, 1fr)
+    height: fit-content
+    margin: var(--space-500) var(--space-300)
+
+  .product-image
+    border-bottom-left-radius: 0
+    border-top-left-radius: 0.8rem
+    border-top-right-radius: 0.8rem

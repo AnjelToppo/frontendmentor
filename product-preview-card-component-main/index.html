@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Product preview card component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="flex ai-center jc-center">
+    <article class="card">
+        <picture>
+            <source media="(max-width: 660px)" srcset="images/image-product-mobile.jpg" />
+            <source media="(min-width: 659px)" srcset="images/image-product-desktop.jpg" />
+            <img class="product-image" src="images/image-product-desktop.jpg" alt="Perfume bottle" />
+        </picture>
+        <div class="product-details flex flex-column gap-xl">
+            <div class="flex flex-column gap-lg">
+                <span class="text-preset-4 text-grey">Perfume</span>
+
+                <h2 class="text-preset-1 text-black">Gabrielle Essence Eau De Parfum</h2>
+
+                <p class="text-preset-3 text-grey">A floral, solar and voluptuous interpretation composed by Olivier
+                    Polge,
+                    Perfumer-Creator for the House of CHANEL.</p>
+            </div>
+            <div class="product-pricing flex gap-md ai-center"><span class="text-preset-1 text-green-500">$149.99</span><span
+                    class="text-preset-5 text-grey">$169.99</span></div>
+
+            <button class="add-cart-btn text-preset-2 flex gap-sm ai-center jc-center"><img src="images/icon-cart.svg"
+                                                                              alt="Shopping cart icon">Add to Cart
+            </button>
+        </div>
+    </article>
+</main>
+</body>
+</html>

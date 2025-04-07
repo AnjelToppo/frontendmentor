@@ -1,0 +1,14 @@
+{
+  "name": "product-preview-card-component-main",
+  "version": "1.0.0",
+  "description": "This is a simple product preview card build with html and css.",
+  "main": "index.js",
+  "scripts": {
+    "compilesass": "sass --watch css/style.sass css/style.css"
+  },
+  "author": "Anjel Toppo",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.86.3"
+  }
+}
