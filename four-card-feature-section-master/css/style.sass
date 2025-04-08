@@ -1,0 +1,130 @@
+html
+  font-size: 62.5%
+
+:root
+  // SPACE
+  --grey-500: #4D4F62
+  --grey-400: #6A7178
+  --white: #FFFFFF
+  --red: #EA5454
+  --cyan: #44D3D2
+  --blue: #549EF2
+  --orange: #FCAE4A
+
+  // SPACE
+  --space-600: 7.4rem
+  --space-500: 4rem
+  --space-400: 3.2rem
+  --space-300: 2.4rem
+  --space-200: 1.6rem
+  --space-100: 0.8rem
+  --space-50: 0.6rem
+
+  // BORDER RADIUS
+  --border-radius: 0.8rem
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+@mixin text-preset($value, $font-size, $line-height, $letter-spacing, $font-weight)
+  .text-preset-#{$value}
+    font-size: $font-size
+    line-height: $line-height
+    letter-spacing: $letter-spacing
+    font-weight: $font-weight
+    font-style: normal
+    font-family: "Poppins", sans-serif
+
+
+@include text-preset(1, 3.6rem, 140%, 0.25px, 600)
+@include text-preset(2, 3.6rem, 140%, 0.25px, 275)
+@include text-preset(3, 2rem, 135%, 0, 600)
+@include text-preset(4, 1.5rem, 140%, 0, 400)
+@include text-preset(5, 1.3rem, 160%, 0, 400)
+
+@mixin gap($name, $value)
+  .gap-#{$name}
+    gap: $value
+
+@include gap(74, var(--space-600))
+@include gap(32, var(--space-400))
+@include gap(16, var(--space-200))
+@include gap(6, var(--space-50))
+
+@mixin color($name, $value)
+  .color-#{$name}
+    color: $value
+
+@include color(grey-500, var(--grey-500))
+@include color(grey-400, var(--grey-400))
+
+@mixin card($name, $color)
+  .card--#{$name}
+    border-top: 4px solid $color
+    box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 0.5)
+
+@include card(supervisor, var(--cyan))
+@include card(team, var(--red))
+@include card(karma, var(--orange))
+@include card(calculator, var(--blue))
+
+.flex
+  display: flex
+
+.ai-center
+  align-items: center
+
+.jc-center
+  justify-content: center
+
+.fd-column
+  flex-direction: column
+
+.as-flex-end
+  align-self: flex-end
+
+.feature
+  padding: 8rem var(--space-300)
+  background-color: var(--white)
+
+  &__header
+    text-align: center
+    max-width: 54rem
+
+  &__main
+    max-width: 111.4rem
+
+
+.card
+  padding: var(--space-400)
+  flex-grow: 1
+  max-width: 35rem
+  min-width: 15rem
+  border-radius: var(--border-radius)
+  height: 25rem
+
+.middle-cards
+  flex-direction: column
+
+
+@media only screen and (max-width: 1024px)
+  .feature__main
+    width: 100%
+    flex-direction: column
+
+  .middle-cards
+    width: 100%
+    flex-wrap: wrap
+    flex-direction: row
+    justify-content: center
+
+@media only screen and (max-width: 500px)
+  @include text-preset(1, 2.4rem, 140%, 0.25px, 600)
+  @include text-preset(2, 2.4rem, 140%, 0.25px, 275)
+
+  .feature
+    padding: var(--space-400) var(--space-300)
+    gap: 6rem
+

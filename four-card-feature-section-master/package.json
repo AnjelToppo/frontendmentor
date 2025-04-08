@@ -1,0 +1,15 @@
+{
+  "name": "four-card-feature-section-master",
+  "version": "1.0.0",
+  "description": "This is a four card feature section build with html, css and sass.",
+  "main": "index.js",
+  "scripts": {
+    "compilesass": "sass css/style.sass css/style.css",
+    "watchsass": "sass --watch css/style.sass css/style.css"
+  },
+  "author": "Anjel Toppo",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.86.3"
+  }
+}
