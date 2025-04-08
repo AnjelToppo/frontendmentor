@@ -136,7 +136,7 @@ html {
 }
 
 .feature {
-  padding: 8rem var(--space-300);
+  padding: 11rem var(--space-300);
   background-color: var(--white);
 }
 .feature__header {
