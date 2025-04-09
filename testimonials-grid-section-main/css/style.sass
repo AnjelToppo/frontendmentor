@@ -1,0 +1,170 @@
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+
+:root
+  --black: #121212
+  --dark-blue: #19202D
+  --white: #FFFFFF
+  --off-white: #F6F5F6
+  --grey-100: #E7EAEE
+  --grey-200: #CFCFCF
+  --grey-400: #676D7E
+  --grey-500: #48556A
+  --purple-50: #EDE4FF
+  --purple-300: #A775F1
+  --purple-500: #733FC8
+
+  --space-500: 4rem
+  --space-400: 3.2rem
+  --space-300: 2.4rem
+  --space-200: 1.6rem
+  --space-100: 0.8rem
+  --space-50: 0.4rem
+
+  --border-radius: 0.8rem
+  --box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.247378)
+
+
+@mixin gap($name, $value)
+  .gap-#{$name}
+    gap: $value
+
+@include gap(32, var(--space-400))
+@include gap(24, var(--space-300))
+@include gap(16, var(--space-200))
+@include gap(4, var(--space-50))
+
+@mixin text-preset($name, $font-size, $line-height, $font-weight)
+  .text-preset-#{$name}
+    font-size: $font-size
+    line-height: $line-height
+    font-weight: $font-weight
+    font-family: "Barlow Semi Condensed", sans-serif
+    font-style: normal
+    letter-spacing: 0
+
+
+@include text-preset(1, 2rem, 120%, 600)
+@include text-preset(2, 1.3rem, 110%, 500)
+@include text-preset(3, 1.3rem, 140%, 500)
+@include text-preset(4, 1.1rem, 110%, 500)
+
+@mixin color($name, $value)
+  .color-#{$name}
+    color: $value
+
+@include color(grey-400, var(--grey-400))
+@include color(grey-500, var(--grey-500))
+@include color(grey-100, var(--grey-100))
+@include color(grey-200, var(--grey-200))
+@include color(white, var(--white))
+@include color(purple-50, var(--purple-50))
+
+main
+  background-color: var(--off-white)
+  min-height: 100vh
+
+.flex
+  display: flex
+
+.fd-column
+  flex-direction: column
+
+.ai-center
+  align-items: center
+
+.jc-center
+  justify-content: center
+
+.testimonials
+  max-width: 111.4rem
+  width: 100%
+  margin-inline: var(--space-200)
+
+.wrap
+  display: grid
+  grid-template-columns:  repeat(3, 1fr) minmax(10rem, 25.5rem)
+  grid-template-areas: 'a a b e' 'c d d e'
+  column-gap: var(--space-400)
+  row-gap: var(--space-300)
+
+%group
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: var(--space-400)
+
+.group-1
+  @extend %group
+  grid-template-areas: 'a a b'
+
+.group-2
+  @extend %group
+  grid-template-areas: 'c d d'
+
+.testimonial-card
+  padding: var(--space-400)
+  border-radius: var(--border-radius)
+  box-shadow: var(--box-shadow)
+
+.profile-image
+  height: 2.8rem
+  width: 2.8rem
+  border-radius: 50%
+  &--highlight
+    border: 2px solid var(--purple-300)
+
+.card-1
+  background-color: var(--purple-500)
+  grid-area: a
+  position: relative
+  z-index: 10
+
+.card-1:before
+  content: url("../images/bg-pattern-quotation.svg")
+  display: block
+  position: absolute
+  top: 0
+  height: 10.2rem
+  width: 10.4rem
+  right: 6rem
+  z-index: -10
+
+.card-2
+  background-color: var(--grey-500)
+  grid-area: b
+
+.card-3
+  background-color: var(--white)
+  grid-area: e
+
+.card-4
+  background-color: var(--white)
+  grid-area: c
+
+.card-5
+  background-color: var(--dark-blue)
+  grid-area: d
+
+@media only screen and (max-width: 62em)
+  main
+    padding-top: var(--space-300)
+    padding-bottom: var(--space-300)
+
+  .testimonials
+    display: flex
+    flex-direction: column
+
+  .wrap
+    grid-template-columns: 1fr 1fr
+    grid-template-areas: 'a a' 'b c' 'd d' 'e e'
+
+
+@media only screen and (max-width: 35rem)
+  .wrap
+    grid-template-columns: 1fr
+    grid-template-areas: 'a' 'b' 'c' 'd' 'e'
