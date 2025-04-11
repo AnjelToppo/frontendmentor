@@ -1,0 +1,20 @@
+@use "../abstracts/variables"
+@use "../abstracts/mixins"
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+
+:root
+  /* SPACE */
+  @each $space, $value in variables.$spaces
+    @include mixins.root-space($space, $value)
+
+  /* COLORS */
+  @each $color, $value in variables.$colors
+    @include mixins.root-color($color, $value)
+

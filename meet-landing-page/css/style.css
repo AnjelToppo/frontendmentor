@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  /* SPACE */
+  --space-1400: 11.2rem;
+  --space-1000: 8rem;
+  --space-900: 7.2rem;
+  --space-800: 6.4rem;
+  --space-700: 5.6rem;
+  --space-500: 4rem;
+  --space-400: 3.2rem;
+  --space-300: 2.4rem;
+  --space-200: 1.6rem;
+  --space-100: 0.8rem;
+  --space-50: 0.4rem;
+  /* COLORS */
+  --cyan-600: #4D96A9;
+  --cyan-300: #8FE3F9;
+  --purple-600: #855FB1;
+  --purple-300: #D9B8FF;
+  --slate-900: #28283D;
+  --slate-600: #87879D;
+  --slate-300: #D1D1DF;
+  --white: #FAFAFA;
+}
+
+.text-preset-1 {
+  font-size: 6.4rem;
+  font-weight: 900;
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.text-preset-2 {
+  font-size: 4rem;
+  font-weight: 900;
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.text-preset-3 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 110%;
+  letter-spacing: 4px;
+}
+
+.text-preset-4 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.text-preset-5 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text-cyan-600 {
+  color: var(--cyan-600);
+}
+
+.text-cyan-300 {
+  color: var(--cyan-300);
+}
+
+.text-purple-600 {
+  color: var(--purple-600);
+}
+
+.text-purple-300 {
+  color: var(--purple-300);
+}
+
+.text-slate-900 {
+  color: var(--slate-900);
+}
+
+.text-slate-600 {
+  color: var(--slate-600);
+}
+
+.text-slate-300 {
+  color: var(--slate-300);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: var(--white);
+}
+
+.header {
+  padding: var(--space-1000) var(--space-1000) 0 var(--space-1000);
+}
+
+.hero-section {
+  max-width: 144rem;
+  margin-inline: auto;
+  padding-top: var(--space-1000);
+  padding-bottom: var(--space-1000);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.hero-section__text {
+  text-align: center;
+  max-width: 44.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  align-items: center;
+}
+
+.hero-img--right {
+  justify-self: end;
+}
+
+.cta {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-200);
+}
+.cta--download, .cta--explore {
+  cursor: pointer;
+  border-radius: 9999px;
+  border: none;
+  padding: var(--space-200) var(--space-500);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cta--download {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-50);
+  background-color: var(--cyan-600);
+}
+.cta--explore {
+  background-color: var(--purple-600);
+}
+
+/*# sourceMappingURL=style.css.map */

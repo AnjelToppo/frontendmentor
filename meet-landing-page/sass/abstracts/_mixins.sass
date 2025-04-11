@@ -1,0 +1,34 @@
+@mixin root-color($key, $value)
+  --#{$key}: #{$value}
+
+@mixin root-space($key, $value)
+  --space-#{$key}: #{$value}
+
+@mixin text-preset($name, $font-size, $line-height, $letter-spacing, $font-weight)
+  .#{$name}
+    font:
+      size: $font-size
+      weight: $font-weight
+      family: "Red Hat Display", sans-serif
+    line-height: $line-height
+    letter-spacing: $letter-spacing
+
+@mixin grid($column, $row-gap: null, $column-gap: null)
+  display: grid
+  grid-template-columns: $column
+  @if $row-gap
+    row-gap: $row-gap
+  @if $column-gap
+    column-gap: $column-gap
+
+@mixin flex($direction: row, $gap: null, $justify: null, $align: null)
+  display: flex
+  flex-direction: $direction
+  gap: $gap
+  justify-content: $justify
+  align-items: $align
+
+@mixin text-color($colors-list)
+  @each $name, $_ in $colors-list
+    .text-#{$name}
+      color: var(--#{$name})

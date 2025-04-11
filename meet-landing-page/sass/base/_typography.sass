@@ -1,0 +1,7 @@
+@use "../abstracts/mixins"
+@use "../abstracts/variables"
+
+@each $key, $value in variables.$text-presets
+  @include mixins.text-preset($key, $value...)
+
+@include mixins.text-color(variables.$colors)

@@ -1,0 +1,15 @@
+{
+  "name": "meet-landing-page",
+  "version": "1.0.0",
+  "description": "This is a meet landing page build with html, css and sass.",
+  "main": "index.js",
+  "scripts": {
+    "compilesass": "sass sass/main.sass css/style.css",
+    "watchsass": "sass --watch sass/main.sass css/style.css"
+  },
+  "author": "Anjel Toppo",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.86.3"
+  }
+}
