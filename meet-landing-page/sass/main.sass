@@ -8,6 +8,9 @@
 body
   background-color: var(--white)
 
+//main
+//  @include mixins.flex($direction: column, $align: center)
+
 .header
   @extend %flex-center
   padding: var(--space-1000) var(--space-1000) 0 var(--space-1000)
@@ -20,7 +23,7 @@ body
     top: var(--space-800)
     bottom: var(--space-800)
 
-  @include mixins.grid(repeat(3, 1fr))
+  @include mixins.grid($column: repeat(3, 1fr), $column-gap: 3.2rem)
 
   &__text
     text-align: center
@@ -39,14 +42,22 @@ body
     border-radius: 9999px
     border: none
     padding: var(--space-200) var(--space-500)
+    transition: background-color 0.2s
     @include mixins.flex($align: center, $justify: center)
 
   &--download
     @include mixins.flex($gap: var(--space-50))
-    background-color: var(--cyan-600)
 
-  &--explore
+
+  &--cyan
+    background-color: var(--cyan-600)
+    &:hover
+      background-color: #71C0D4
+
+  &--purple
     background-color: var(--purple-600)
+    &:hover
+      background-color: #B18BDD
 
 .content-section
   padding: var(--space-700) var(--space-1000) var(--space-900) var(--space-1000)
@@ -76,6 +87,8 @@ body
   width: 5.6rem
   border-radius: 50%
   border: 1px solid var(--slate-300)
+  background-color: var(--white)
+  z-index: 10
 
 .step-style
   @include mixins.flex($direction: column, $align: center)
@@ -93,3 +106,29 @@ body
   &--img
     width: 100%
     border-radius: 0.8rem
+
+.wrapper
+  @extend %flex-center
+  padding: var(--space-1400) var(--space-1000)
+  margin-top: -2.8rem
+  background-image: url("../assets/desktop/image-footer.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  position: relative
+
+  &::before
+    content: ""
+    position: absolute
+    background-color: rgba(77, 150, 169, 0.8)
+    width: 100%
+    height: 100%
+
+.footer-content
+  max-width: 112rem
+  @include mixins.grid($column: minmax(44.5rem, 20rem) minmax(35.5rem, 20rem) 25.6rem, $column-gap: var(--space-400))
+  align-items: start
+  z-index: 100
+
+  .cta--download
+    justify-self: end
