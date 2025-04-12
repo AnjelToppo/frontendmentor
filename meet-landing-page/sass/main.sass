@@ -2,14 +2,13 @@
 @use "base/typography"
 @use "abstracts/placeholder"
 @use "abstracts/mixins"
+@use "abstracts/variables"
+@use "sass:math"
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap')
 
 body
   background-color: var(--white)
-
-//main
-//  @include mixins.flex($direction: column, $align: center)
 
 .header
   @extend %flex-center
@@ -19,17 +18,18 @@ body
 .hero-section
   max-width: 144rem
   margin-inline: auto
+  overflow: hidden
   padding:
     top: var(--space-800)
     bottom: var(--space-800)
 
   @include mixins.grid($column: repeat(3, 1fr), $column-gap: 3.2rem)
+  justify-content: center
 
   &__text
     text-align: center
     max-width: 44.8rem
     @include mixins.flex(column, var(--space-400), $align: center)
-
 
 .hero-img--right
   justify-self: end
@@ -78,7 +78,6 @@ body
   margin-inline: auto
   max-width: 112rem
   @include mixins.flex($direction: column, $gap: var(--space-800), $align: center)
-
 
 
 .step
@@ -132,3 +131,55 @@ body
 
   .cta--download
     justify-self: end
+
+
+@media only screen and (max-width: variables.$tablet-screen)
+  .hero-section
+    @include mixins.grid($column: repeat(2, 1fr), $column-gap: var(--space-400), $row-gap: var(--space-900))
+    grid-template-areas: 'a b' 'c c'
+
+    &__text
+
+      grid-area: c
+      justify-self: center
+
+  .hero-img
+    &--right
+      grid-area: b
+      justify-self: start
+
+    &--left
+      justify-self: end
+
+  .content-section
+    padding: var(--space-700) var(--space-400) var(--space-800) var(--space-400)
+
+
+  .wrapper
+    padding: var(--space-800) var(--space-400)
+    background-image: url("../assets/tablet/image-footer.jpg")
+
+  .footer-content
+    max-width: 50.4rem
+    text-align: center
+    @include mixins.flex(column, var(--space-300), $align: center)
+
+@media only screen and (max-width: variables.$mobile-screen)
+  .hero-section
+    row-gap: var(--space-500)
+    column-gap: var(--space-200)
+    padding:
+      bottom: var(--space-400)
+
+    &__text
+      max-width: 30.5rem
+      row-gap: var(--space-200)
+
+  .content-section
+    padding-top: var(--space-400)
+
+  .gallery
+    @include mixins.grid($column: repeat(2, 1fr), $column-gap: var(--space-200), $row-gap: var(--space-200))
+
+  .cta
+    @include mixins.flex($direction: column)

@@ -1,4 +1,5 @@
 @use "sass:map"
+@use "sass:math"
 
 // COLORS
 $colors: ('cyan-600': #4D96A9, 'cyan-300': #8FE3F9, 'purple-600': #855FB1, 'purple-300': #D9B8FF, 'slate-900': #28283D, 'slate-600': #87879D, 'slate-300': #D1D1DF, 'white': #FAFAFA)
@@ -9,3 +10,7 @@ $spaces: (1400: 11.2rem, 1000: 8rem, 900: 7.2rem, 800: 6.4rem, 700: 5.6rem, 500:
 
 // TYPOGRAPHY
 $text-presets: (text-preset-1: 6.4rem 110% 0 900, text-preset-2: 4rem 110% 0 900, text-preset-3: 1.6rem 110% 4px 900, text-preset-4: 1.8rem 110% 0 500, text-preset-5: 1.6rem 150% 0 900)
+
+// SCREEN
+$tablet-screen: '#{math.div(1290, 16)}em'
+$mobile-screen: '#{math.div(630, 16)}em'

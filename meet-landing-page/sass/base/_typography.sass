@@ -5,3 +5,13 @@
   @include mixins.text-preset($key, $value...)
 
 @include mixins.text-color(variables.$colors)
+
+@media only screen and (max-width: variables.$tablet-screen)
+  $text-presets: (text-preset-1: 4.8rem 110% 0 900, text-preset-2: 3.6rem 110% 0 900, text-preset-3: 1.4rem 110% 4px 900, text-preset-4: 1.6rem 110% 0 500)
+  @each $key, $value in $text-presets
+    @include mixins.text-preset($key, $value...)
+
+@media only screen and (max-width: variables.$mobile-screen)
+  $text-presets: (text-preset-1: 4rem 110% 0 900, text-preset-2: 3.2rem 110% 0 900, text-preset-3: 1.2rem 110% 4px 900)
+  @each $key, $value in $text-presets
+    @include mixins.text-preset($key, $value...)

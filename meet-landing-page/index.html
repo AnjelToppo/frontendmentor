@@ -17,7 +17,11 @@
 </header>
 <main>
     <section class="hero-section">
-        <picture class="hero-img--left"><img src="assets/desktop/image-hero-left.png" alt="Group of people"></picture>
+        <picture class="hero-img--left">
+            <source media="(max-width: 380px)" srcset="assets/mobile/image-hero-left.png" />
+            <source media="(min-width: 379px)" srcset="assets/desktop/image-hero-left.png" />
+            <img src="assets/desktop/image-hero-left.png" alt="Group of people">
+        </picture>
         <div class="hero-section__text">
             <h1 class="text-preset-1 text-slate-900">Group Chat for Everyone</h1>
             <p class="text-preset-4 text-slate-600">Meet makes it easy to connect with others face-to-face virtually and
@@ -28,7 +32,11 @@
                 <button class="cta--explore cta--purple text-preset-5 text-white">What is it?</button>
             </div>
         </div>
-        <picture class="hero-img--right"><img src="assets/desktop/image-hero-right.png" alt="Group of people"></picture>
+        <picture class="hero-img--right">
+            <source media="(max-width: 380px)" srcset="assets/mobile/image-hero-right.png" />
+            <source media="(min-width: 379px)" srcset="assets/desktop/image-hero-right.png" />
+            <img src="assets/desktop/image-hero-right.png" alt="Group of people">
+        </picture>
     </section>
     <section class="content-section">
         <div class="container">
