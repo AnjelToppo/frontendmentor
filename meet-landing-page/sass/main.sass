@@ -17,8 +17,8 @@ body
   max-width: 144rem
   margin-inline: auto
   padding:
-    top: var(--space-1000)
-    bottom: var(--space-1000)
+    top: var(--space-800)
+    bottom: var(--space-800)
 
   @include mixins.grid(repeat(3, 1fr))
 
@@ -47,3 +47,49 @@ body
 
   &--explore
     background-color: var(--purple-600)
+
+.content-section
+  padding: var(--space-700) var(--space-1000) var(--space-900) var(--space-1000)
+
+  &__text
+    max-width: 54.4rem
+    text-align: center
+    @include mixins.flex($direction: column, $gap: var(--space-400), $align: center)
+
+    .heading
+      max-width: 44.5rem
+      @include mixins.flex($direction: column, $gap: var(--space-200))
+
+      p
+        text-transform: uppercase
+
+.container
+  margin-inline: auto
+  max-width: 112rem
+  @include mixins.flex($direction: column, $gap: var(--space-800), $align: center)
+
+
+
+.step
+  @extend %flex-center
+  height: 5.6rem
+  width: 5.6rem
+  border-radius: 50%
+  border: 1px solid var(--slate-300)
+
+.step-style
+  @include mixins.flex($direction: column, $align: center)
+
+.step-style::before
+    display: block
+    content: ""
+    width: 1px
+    height: 8rem
+    background-color: var(--slate-300)
+
+.gallery
+  @include mixins.grid($column: repeat(4, 1fr), $column-gap: var(--space-400))
+
+  &--img
+    width: 100%
+    border-radius: 0.8rem
