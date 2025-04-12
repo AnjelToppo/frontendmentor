@@ -20,7 +20,7 @@ body
   margin-inline: auto
   overflow: hidden
   padding:
-    top: var(--space-800)
+    top: var(--space-1400)
     bottom: var(--space-800)
 
   @include mixins.grid($column: repeat(3, 1fr), $column-gap: 3.2rem)
@@ -135,6 +135,9 @@ body
 
 @media only screen and (max-width: variables.$tablet-screen)
   .hero-section
+    padding:
+      top: var(--space-800)
+      bottom: var(--space-800)
     @include mixins.grid($column: repeat(2, 1fr), $column-gap: var(--space-400), $row-gap: var(--space-900))
     grid-template-areas: 'a b' 'c c'
 

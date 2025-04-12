@@ -188,7 +188,7 @@ body {
   max-width: 144rem;
   margin-inline: auto;
   overflow: hidden;
-  padding-top: var(--space-800);
+  padding-top: var(--space-1400);
   padding-bottom: var(--space-800);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -336,6 +336,8 @@ body {
 
 @media only screen and (max-width: 80.625em) {
   .hero-section {
+    padding-top: var(--space-800);
+    padding-bottom: var(--space-800);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: var(--space-900);
