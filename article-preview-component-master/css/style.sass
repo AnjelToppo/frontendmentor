@@ -134,7 +134,7 @@ main
 
 .share-btn
   @include flex()
-  background-color: var(--grey-200)
+  //background-color: var(--grey-200)
   border: none
   width: 3.2rem
   height: 3.2rem
@@ -142,6 +142,7 @@ main
   cursor: pointer
 
 .share-toaster
+  display: none
   max-width: 24.8rem
   width: 100%
   position: absolute
@@ -224,12 +225,6 @@ main
           &::after
             display: none
 
-    .user
-      display: none
-
-  .share-btn
-    display: none
-
   .share-toaster__links
     margin-right: var(--spacing-800)
 
@@ -240,6 +235,7 @@ main
     flex-shrink: 0
     border-radius: 50%
     border: none
+    cursor: pointer
 
 
 

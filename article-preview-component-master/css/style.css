@@ -151,7 +151,6 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: var(--grey-200);
   border: none;
   width: 3.2rem;
   height: 3.2rem;
@@ -160,6 +159,7 @@ main {
 }
 
 .share-toaster {
+  display: none;
   max-width: 24.8rem;
   width: 100%;
   position: absolute;
@@ -252,12 +252,6 @@ main {
   .card__footer .share-toaster .container::after {
     display: none;
   }
-  .card .user {
-    display: none;
-  }
-  .share-btn {
-    display: none;
-  }
   .share-toaster__links {
     margin-right: var(--spacing-800);
   }
@@ -271,6 +265,7 @@ main {
     flex-shrink: 0;
     border-radius: 50%;
     border: none;
+    cursor: pointer;
   }
 }
 
