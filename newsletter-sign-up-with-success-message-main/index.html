@@ -35,7 +35,10 @@
             </div>
         </div>
         <picture>
-            <img src="assets/images/illustration-sign-up-desktop.svg" alt="Illustration sign up desktop image">
+            <source media="(max-width: 483px)" srcset="assets/images/illustration-sign-up-mobile.svg">
+            <source media="(max-width: 926px)" srcset="assets/images/illustration-sign-up-tablet.svg" />
+            <source media="(min-width: 925px)" srcset="assets/images/illustration-sign-up-desktop.svg" />
+            <img src="assets/images/illustration-sign-up-desktop.svg" alt="Illustration sign up desktop image" />
         </picture>
     </form>
 </main>
