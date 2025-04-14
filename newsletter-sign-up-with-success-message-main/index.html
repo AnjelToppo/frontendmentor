@@ -9,6 +9,7 @@
     <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
 </head>
 <body>
 <main>
@@ -26,10 +27,10 @@
 
                     <div class="label-error">
                         <label class="text-preset-3 blue-800" for="email">Email address</label>
-                        <span aria-live="polite" id="email-error"></span>
+                        <span class="email-error text-preset-3 red" aria-live="polite" id="email-error"></span>
                     </div>
 
-                    <input class="email-input" id="email" type="email" name="email" placeholder="email@company.com">
+                    <input class="email-input text-preset-2-r blue-800" id="email" type="email" name="email" placeholder="email@company.com">
                 </div>
                 <button class="subscribe-btn text-preset-2-b white">Subscribe to monthly newsletter</button>
             </div>
@@ -41,20 +42,14 @@
             <img src="assets/images/illustration-sign-up-desktop.svg" alt="Illustration sign up desktop image" />
         </picture>
     </form>
+    <div class="confirmation-card gap-400">
+        <img src="assets/images/icon-success.svg" alt="success icon" />
+        <h2 class="text-preset-1 blue-800">Thanks for subscribing!</h2>
+        <p class="text-preset-2-r blue-800">A confirmation email has been sent to <span class="user-email text-preset-2-b blue-800"></span>
+            Please open it and click the button inside to confirm your subscription.</p>
+        <button class="dismiss-btn text-preset-2-b white">Dismiss message</button>
+    </div>
 </main>
-<!-- Sign-up form start -->
 
-<!-- Sign-up form end -->
-
-<!-- Success message start -->
-
-Thanks for subscribing!
-
-A confirmation email has been sent to ash@loremcompany.com.
-Please open it and click the button inside to confirm your subscription.
-
-Dismiss message
-
-<!-- Success message end -->
 </body>
 </html>

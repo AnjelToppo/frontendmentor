@@ -2,10 +2,12 @@
   font-family: "Roboto", sans-serif
   src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype"), url("../assets/fonts/Roboto-Bold.ttf") format('truetype')
 
-$colors: ('white': #FFF, 'grey': #949494, 'blue-800': #242742, 'blue-700': #36384D)
+$colors: ('white': #FFF, 'grey': #949494, 'blue-800': #242742, 'blue-700': #36384D, 'red': #FF6155)
 $typographies: (preset-1: 5.6rem 100% 0 700, preset-2-b: 1.6rem 150% 0 700, preset-2-r: 1.6rem 150% 0 400, preset-3: 1.2rem 150% 0 700)
 $spaces: (100: 0.8rem, 200: 1.6rem, 300: 2.4rem, 400: 3.2rem, 500: 4rem, 600: 4.8rem, 800: 6.4rem, 900: 7.2rem, 1300: 10.4rem)
 $box-shadow: 0px 15px 60px rgba(0, 0, 0, 0.25)
+$gradient: linear-gradient(90deg, #FF6A3A 0%, #FF527B 100%)
+$subscribe-box-shadow: 0px 16px 32px rgba(255, 97, 85, 0.5)
 
 html
   font-size: 62.5%
@@ -54,6 +56,8 @@ html
   @include root-color($colors)
   @include root-space($spaces)
   --box-shadow: #{$box-shadow}
+  --gradient: #{$gradient}
+  --subscribe-box-shadow: #{$subscribe-box-shadow}
 
 @include text-color($colors)
 @include gap($spaces)
@@ -110,6 +114,10 @@ main
   border: 1px solid var(--grey)
   border-radius: 0.8rem
 
+  &:focus
+    border-color: var(--red)
+    outline: 2px solid var(--red)
+
 ::placeholder
   color: var(--grey)
   font-size: 1.6rem
@@ -119,7 +127,7 @@ main
   line-height: 150%
   letter-spacing: 0
 
-.subscribe-btn
+.subscribe-btn, .dismiss-btn
   @extend %flex-center
   background-color: var(--blue-800)
   border-radius: 0.8rem
@@ -129,13 +137,35 @@ main
   border: none
   cursor: pointer
 
+  &:focus
+    outline: 3px solid var(--red)
+
+  &:active
+    background: var(--gradient)
+    box-shadow: var(--box-shadow)
+
 picture
   flex-grow: 0
 
 img
   width: 100%
 
-@media only screen and (max-device-width: 57.9em)
+.confirmation-card
+  @include flex(column)
+  max-width: 50.4rem
+  min-height: 52rem
+  padding: var(--spacing-800)
+  border-radius: 3.6rem
+  background-color: var(--white)
+  display: none
+
+  img
+    height: 6.4rem
+    width: 6.4rem
+
+
+
+@media only screen and (max-width: 57.9em)
   #newsletter-form
     @include flex(column, $align: flex-start)
     padding: var(--spacing-500)
@@ -151,7 +181,7 @@ img
   picture
     order: 1
     width: 100%
-    height: 35.8rem
+    max-height: 35.8rem
 
     img
       height: 100%
@@ -160,7 +190,7 @@ img
   .cta
     gap: var(--spacing-200)
 
-@media only screen and (max-device-width: 30.19em)
+@media only screen and (max-width: 30.19em)
   .text-preset-1
     font-size: 4rem
 
