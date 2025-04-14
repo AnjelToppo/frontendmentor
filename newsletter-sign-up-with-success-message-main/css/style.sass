@@ -1,0 +1,135 @@
+@font-face
+  font-family: "Roboto", sans-serif
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype"), url("../assets/fonts/Roboto-Bold.ttf") format('truetype')
+
+$colors: ('white': #FFF, 'grey': #949494, 'blue-800': #242742, 'blue-700': #36384D)
+$typographies: (preset-1: 5.6rem 100% 0 700, preset-2-b: 1.6rem 150% 0 700, preset-2-r: 1.6rem 150% 0 400, preset-3: 1.2rem 150% 0 700)
+$spaces: (100: 0.8rem, 200: 1.6rem, 300: 2.4rem, 400: 3.2rem, 500: 4rem, 600: 4.8rem, 800: 6.4rem, 900: 7.2rem, 1300: 10.4rem)
+$box-shadow: 0px 15px 60px rgba(0, 0, 0, 0.25)
+
+html
+  font-size: 62.5%
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+@mixin root-color($color-map)
+    @each $name, $value in $color-map
+      --#{$name}: #{$value}
+
+@mixin root-space($space-map)
+    @each $name, $space in $spaces
+      --spacing-#{$name}: #{$space}
+
+@mixin text-color($color-map)
+  @each $name, $value in $color-map
+    .#{$name}
+      color: $value
+
+@mixin gap($space-map)
+  @each $name, $space in $spaces
+    .gap-#{$name}
+      gap: $space
+
+@mixin typography($name, $font-size, $line-height, $letter-spacing, $font-weight)
+  .text-#{$name}
+    font:
+      size: $font-size
+      weight: $font-weight
+      style: normal
+      family: "Roboto", sans-serif
+    line-height: $line-height
+    letter-spacing: $letter-spacing
+
+@mixin flex($direction: row, $align: null, $justify: null)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+
+
+:root
+  @include root-color($colors)
+  @include root-space($spaces)
+  --box-shadow: #{$box-shadow}
+
+@include text-color($colors)
+@include gap($spaces)
+
+@each $name, $property in $typographies
+  @include typography($name, $property...)
+
+%flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+main
+  @extend %flex-center
+  min-height: 100vh
+  background-color: var(--blue-700)
+
+#newsletter-form
+  @include flex($align: center)
+  max-width: 90.4rem
+  width: 100%
+  min-height: 64.1rem
+  padding: var(--spacing-400)
+  border-radius: 3.6rem
+  background-color: var(--white)
+  box-shadow: var(--box-shadow)
+
+.content
+  @include flex(column)
+  flex-basis: 37.6rem
+
+.perks
+  @include flex(column)
+
+  li
+    display: flex
+
+    &::before
+      content: url("../assets/images/icon-list.svg")
+
+
+.cta
+  @include flex(column)
+
+.label-input
+  @include flex(column)
+
+.label-error
+  @include flex($justify: space-between)
+
+.email-input
+  padding: var(--spacing-200) var(--spacing-300)
+  border: 1px solid var(--grey)
+  border-radius: 0.8rem
+
+::placeholder
+  color: var(--grey)
+  font-size: 1.6rem
+  font-weight: 400
+  font-style: normal
+  font-family: "Roboto", sans-serif
+  line-height: 150%
+  letter-spacing: 0
+
+.subscribe-btn
+  @extend %flex-center
+  background-color: var(--blue-800)
+  border-radius: 0.8rem
+  padding:
+    top: var(--spacing-200)
+    bottom: var(--spacing-200)
+  border: none
+  cursor: pointer
+
+picture
+  flex-grow: 0
+
+img
+  width: 100%

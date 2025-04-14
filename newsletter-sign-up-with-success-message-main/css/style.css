@@ -1,0 +1,210 @@
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype"), url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #FFF;
+  --grey: #949494;
+  --blue-800: #242742;
+  --blue-700: #36384D;
+  --spacing-100: 0.8rem;
+  --spacing-200: 1.6rem;
+  --spacing-300: 2.4rem;
+  --spacing-400: 3.2rem;
+  --spacing-500: 4rem;
+  --spacing-600: 4.8rem;
+  --spacing-800: 6.4rem;
+  --spacing-900: 7.2rem;
+  --spacing-1300: 10.4rem;
+  --box-shadow: 0px 15px 60px rgba(0, 0, 0, 0.25);
+}
+
+.white {
+  color: #FFF;
+}
+
+.grey {
+  color: #949494;
+}
+
+.blue-800 {
+  color: #242742;
+}
+
+.blue-700 {
+  color: #36384D;
+}
+
+.gap-100 {
+  gap: 0.8rem;
+}
+
+.gap-200 {
+  gap: 1.6rem;
+}
+
+.gap-300 {
+  gap: 2.4rem;
+}
+
+.gap-400 {
+  gap: 3.2rem;
+}
+
+.gap-500 {
+  gap: 4rem;
+}
+
+.gap-600 {
+  gap: 4.8rem;
+}
+
+.gap-800 {
+  gap: 6.4rem;
+}
+
+.gap-900 {
+  gap: 7.2rem;
+}
+
+.gap-1300 {
+  gap: 10.4rem;
+}
+
+.text-preset-1 {
+  font-size: 5.6rem;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.text-preset-2-b {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text-preset-2-r {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text-preset-3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.subscribe-btn, main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  min-height: 100vh;
+  background-color: var(--blue-700);
+}
+
+#newsletter-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 90.4rem;
+  width: 100%;
+  min-height: 64.1rem;
+  padding: var(--spacing-400);
+  border-radius: 3.6rem;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 37.6rem;
+}
+
+.perks {
+  display: flex;
+  flex-direction: column;
+}
+.perks li {
+  display: flex;
+}
+.perks li::before {
+  content: url("../assets/images/icon-list.svg");
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-error {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.email-input {
+  padding: var(--spacing-200) var(--spacing-300);
+  border: 1px solid var(--grey);
+  border-radius: 0.8rem;
+}
+
+::placeholder {
+  color: var(--grey);
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.subscribe-btn {
+  background-color: var(--blue-800);
+  border-radius: 0.8rem;
+  padding-top: var(--spacing-200);
+  padding-bottom: var(--spacing-200);
+  border: none;
+  cursor: pointer;
+}
+
+picture {
+  flex-grow: 0;
+}
+
+img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

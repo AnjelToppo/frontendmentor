@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+    <form id="newsletter-form" class="gap-800" novalidate>
+        <div class="content gap-400">
+            <h1 class="text-preset-1 blue-800">Stay updated!</h1>
+            <p class="text-preset-2-r blue-800">Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul class="perks gap-100">
+                <li class="text-preset-2-r blue-800 gap-200">Product discovery and building what matters</li>
+                <li class="text-preset-2-r blue-800 gap-200">Measuring to ensure updates are a success</li>
+                <li class="text-preset-2-r blue-800 gap-200">And much more!</li>
+            </ul>
+            <div class="cta gap-300">
+                <div class="label-input gap-100">
+
+                    <div class="label-error">
+                        <label class="text-preset-3 blue-800" for="email">Email address</label>
+                        <span aria-live="polite" id="email-error"></span>
+                    </div>
+
+                    <input class="email-input" id="email" type="email" name="email" placeholder="email@company.com">
+                </div>
+                <button class="subscribe-btn text-preset-2-b white">Subscribe to monthly newsletter</button>
+            </div>
+        </div>
+        <picture>
+            <img src="assets/images/illustration-sign-up-desktop.svg" alt="Illustration sign up desktop image">
+        </picture>
+    </form>
+</main>
+<!-- Sign-up form start -->
+
+<!-- Sign-up form end -->
+
+<!-- Success message start -->
+
+Thanks for subscribing!
+
+A confirmation email has been sent to ash@loremcompany.com.
+Please open it and click the button inside to confirm your subscription.
+
+Dismiss message
+
+<!-- Success message end -->
+</body>
+</html>
