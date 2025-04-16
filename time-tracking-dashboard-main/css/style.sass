@@ -1,0 +1,180 @@
+@use "sass:list"
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap')
+
+$colors: ('white': #FFF, 'black': #000, 'navy-950': #0E1323, 'navy-900': #1C204B, 'navy-800': #33397A, 'navy-200': #BBC0FF, 'orange-300': #FF8B64, 'purple-700': #7335D2, 'purple-600': #5747EA, 'purple-500': #7078C9, 'blue-300': #55C2E6, 'pink-400': #FF5E7D, 'green-400': #4BCF82, 'yellow-300': #F1C75B, 'grey-200': #D8D8D8)
+$spaces: (0: 0, 100: 0.8rem, 200: 1.6rem, 300: 2.4rem, 400: 3.2rem, 500: 4rem)
+
+$typography-1: (font-size: 5.6rem, line-height: 6.6rem, font-weight: 300)
+$typography-2: (font-size: 4rem, line-height: 4.7rem, font-weight: 300)
+$typography-3: (font-size: 3.2rem, line-height: 3.8rem, font-weight: 300)
+$typography-4: (font-size: 2.4rem, line-height: 2.8rem, font-weight: 300)
+$typography-5-md: (font-size: 1.8rem, line-height: 2.1rem, font-weight: 500)
+$typography-5-r: (font-size: 1.8rem, line-height: 2.1rem, font-weight: 400)
+$typography-6: (font-size: 1.5rem, line-height: 1.8rem, font-weight: 400)
+
+$profile-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+$cards: (work: var(--orange-300)) (play: var(--blue-300)) (study: var(--pink-400)) (exercise: var(--green-400)) (social: var(--purple-700)) (self-care: var(--yellow-300))
+$coordinates: (work: (left: 159.58px, top: -10.91px)) (play: (left: 154px, top: -8px)) (study: (left: 159.93px, top: -6.05px)) (exercise: (left: 157.72px, top: -0.42px)) (social: (left: 167.92px, top: 0px)) (self-care: (left: 163px, top: -16.79px))
+$routines: 'daily' 'weekly' 'monthly'
+
+
+@mixin root-color($color-map)
+  @each $name, $value in $colors
+    --#{$name}: #{$value}
+
+@mixin root-space($space-map)
+  @each $name, $value in $spaces
+    --spacing-#{$name}: #{$value}
+
+@mixin text-preset($color, $font-size, $line-height, $font-weight)
+  color: $color
+  font:
+      size: $font-size
+      weight: $font-weight
+      style: normal
+      family: "Rubik", sans-serif
+  line-height: $line-height
+  letter-spacing: 0
+
+@mixin flex($direction: row, $gap: null, $justify: null, $align: null)
+  display: flex
+  flex-direction: $direction
+  gap: $gap
+  align-items: $align
+  justify-content: $justify
+
+@mixin grid($template-column: null, $template-row: null, $row-gap: null, $column-gap: null)
+  display: grid
+  grid-template-columns: $template-column
+  grid-template-rows: $template-row
+  row-gap: $row-gap
+  column-gap: $column-gap
+
+@mixin card($cards-map)
+  @each $card in $cards-map
+    @each $key, $value in $card
+      &--#{$key}
+        display: flex
+        position: relative
+        background-color: #{$value}
+        border-radius: 1.5rem
+        overflow: hidden
+
+        &:hover .board__content
+          background-color: var(--navy-800)
+
+@mixin decorate-card-before($coordinate-map)
+  @each $card-before in $coordinate-map
+    @each $activity, $position in $card-before
+      &--#{$activity}::before
+        content: url("../images/icon-#{$activity}.svg")
+        position: absolute
+        @each $side, $side-value in $position
+          #{$side}: #{$side-value}
+
+:root
+  @include root-color($colors)
+  @include root-space($spaces)
+  --profile-shadow: #{$profile-shadow}
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+html
+  font-size: 62.5%
+
+main
+  @include flex($justify: center, $align: center)
+  min-height: 100vh
+  background-color: var(--navy-950)
+
+.dashboard
+  @include grid($template-column: minmax(10rem, 25.5rem) 1fr, $column-gap: var(--spacing-400))
+  max-width: 111.6rem
+  min-height: 52rem
+
+.user
+  @include grid($template-column: 1fr, $template-row: 1fr max-content)
+  background-color: var(--navy-900)
+  border-radius: 1.5rem
+
+  &__info
+    @include flex(column, var(--spacing-500))
+    background-color: var(--purple-600)
+    padding: var(--spacing-400)
+    border-radius: 1.5rem
+
+  &__avatar
+    width: 7.8rem
+    height: 7.8rem
+    border-radius: 50%
+    border: 3px solid var(--white)
+    box-shadow: var(--profile-shadow)
+
+  &__report
+    @include flex(column, var(--spacing-0))
+
+    &--title
+      @include text-preset(var(--navy-200), $typography-6...)
+
+  &__name
+    @include text-preset(var(--white), $typography-2...)
+
+.selected-routine
+  @include flex(column, var(--spacing-300))
+  padding: var(--spacing-400)
+
+  &--item
+    @include flex()
+
+    button
+      @include text-preset(var(--purple-500), $typography-5-r...)
+      cursor: pointer
+      border: none
+      background-color: transparent
+
+.board
+  @include grid($template-column: repeat(3, minmax(15rem, 25.5rem)), $template-row: minmax(20rem, 24.4rem), $row-gap: var(--spacing-400), $column-gap: var(--spacing-400))
+
+  &__content
+    flex-grow: 1
+    align-self: flex-end
+    @include flex(column, var(--spacing-300))
+    padding: var(--spacing-400)
+    background-color: var(--navy-900)
+    border-radius: 1.5rem
+    z-index: 10
+
+  &__title
+    @include flex($justify: space-between, $align: center)
+
+  &__data
+    @include flex(column, var(--spacing-100))
+
+.card
+  @include card($cards)
+  @include decorate-card-before($coordinates)
+
+.activity
+  @include text-preset(var(--white), $typography-5-md...)
+
+.time
+  @include text-preset(var(--white), $typography-1...)
+
+.previous-time
+  @include text-preset(var(--navy-200), $typography-6...)
+
+.more-btn
+  @include flex($align: center, $justify: center)
+  background-color: transparent
+  border: none
+  cursor: pointer
+
+  &:hover > svg path
+    fill: var(--white)
+
+@each $routine in $routines
+  .selected-routine[data-routine=#{$routine}] .#{$routine}-btn
+    color: var(--white)

@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+:root {
+  --white: #FFF;
+  --black: #000;
+  --navy-950: #0E1323;
+  --navy-900: #1C204B;
+  --navy-800: #33397A;
+  --navy-200: #BBC0FF;
+  --orange-300: #FF8B64;
+  --purple-700: #7335D2;
+  --purple-600: #5747EA;
+  --purple-500: #7078C9;
+  --blue-300: #55C2E6;
+  --pink-400: #FF5E7D;
+  --green-400: #4BCF82;
+  --yellow-300: #F1C75B;
+  --grey-200: #D8D8D8;
+  --spacing-0: 0;
+  --spacing-100: 0.8rem;
+  --spacing-200: 1.6rem;
+  --spacing-300: 2.4rem;
+  --spacing-400: 3.2rem;
+  --spacing-500: 4rem;
+  --profile-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--navy-950);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(10rem, 25.5rem) 1fr;
+  column-gap: var(--spacing-400);
+  max-width: 111.6rem;
+  min-height: 52rem;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr max-content;
+  background-color: var(--navy-900);
+  border-radius: 1.5rem;
+}
+.user__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-500);
+  background-color: var(--purple-600);
+  padding: var(--spacing-400);
+  border-radius: 1.5rem;
+}
+.user__avatar {
+  width: 7.8rem;
+  height: 7.8rem;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: var(--profile-shadow);
+}
+.user__report {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0);
+}
+.user__report--title {
+  color: var(--navy-200);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Rubik", sans-serif;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}
+.user__name {
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Rubik", sans-serif;
+  line-height: 4.7rem;
+  letter-spacing: 0;
+}
+
+.selected-routine {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  padding: var(--spacing-400);
+}
+.selected-routine--item {
+  display: flex;
+  flex-direction: row;
+}
+.selected-routine--item button {
+  color: var(--purple-500);
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Rubik", sans-serif;
+  line-height: 2.1rem;
+  letter-spacing: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(15rem, 25.5rem));
+  grid-template-rows: minmax(20rem, 24.4rem);
+  row-gap: var(--spacing-400);
+  column-gap: var(--spacing-400);
+}
+.board__content {
+  flex-grow: 1;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  padding: var(--spacing-400);
+  background-color: var(--navy-900);
+  border-radius: 1.5rem;
+  z-index: 10;
+}
+.board__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.board__data {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+.card--work {
+  display: flex;
+  position: relative;
+  background-color: var(--orange-300);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.card--work:hover .board__content {
+  background-color: var(--navy-800);
+}
+.card--play {
+  display: flex;
+  position: relative;
+  background-color: var(--blue-300);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.card--play:hover .board__content {
+  background-color: var(--navy-800);
+}
+.card--study {
+  display: flex;
+  position: relative;
+  background-color: var(--pink-400);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.card--study:hover .board__content {
+  background-color: var(--navy-800);
+}
+.card--exercise {
+  display: flex;
+  position: relative;
+  background-color: var(--green-400);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.card--exercise:hover .board__content {
+  background-color: var(--navy-800);
+}
+.card--social {
+  display: flex;
+  position: relative;
+  background-color: var(--purple-700);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.card--social:hover .board__content {
+  background-color: var(--navy-800);
+}
+.card--self-care {
+  display: flex;
+  position: relative;
+  background-color: var(--yellow-300);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.card--self-care:hover .board__content {
+  background-color: var(--navy-800);
+}
+.card--work::before {
+  content: url("../images/icon-work.svg");
+  position: absolute;
+  left: 159.58px;
+  top: -10.91px;
+}
+.card--play::before {
+  content: url("../images/icon-play.svg");
+  position: absolute;
+  left: 154px;
+  top: -8px;
+}
+.card--study::before {
+  content: url("../images/icon-study.svg");
+  position: absolute;
+  left: 159.93px;
+  top: -6.05px;
+}
+.card--exercise::before {
+  content: url("../images/icon-exercise.svg");
+  position: absolute;
+  left: 157.72px;
+  top: -0.42px;
+}
+.card--social::before {
+  content: url("../images/icon-social.svg");
+  position: absolute;
+  left: 167.92px;
+  top: 0px;
+}
+.card--self-care::before {
+  content: url("../images/icon-self-care.svg");
+  position: absolute;
+  left: 163px;
+  top: -16.79px;
+}
+
+.activity {
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Rubik", sans-serif;
+  line-height: 2.1rem;
+  letter-spacing: 0;
+}
+
+.time {
+  color: var(--white);
+  font-size: 5.6rem;
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Rubik", sans-serif;
+  line-height: 6.6rem;
+  letter-spacing: 0;
+}
+
+.previous-time {
+  color: var(--navy-200);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Rubik", sans-serif;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}
+
+.more-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.more-btn:hover > svg path {
+  fill: var(--white);
+}
+
+.selected-routine[data-routine=daily] .daily-btn {
+  color: var(--white);
+}
+
+.selected-routine[data-routine=weekly] .weekly-btn {
+  color: var(--white);
+}
+
+.selected-routine[data-routine=monthly] .monthly-btn {
+  color: var(--white);
+}
+
+/*# sourceMappingURL=style.css.map */

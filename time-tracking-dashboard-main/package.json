@@ -1,0 +1,15 @@
+{
+  "name": "time-tracking-dashboard-main",
+  "version": "1.0.0",
+  "description": "This is a time tracking dashboard build with html, sass, css and js.",
+  "main": "main.js",
+  "scripts": {
+    "compilesass": "sass css/style.sass css/style.css",
+    "watchsass": "sass --watch css/style.sass css/style.css"
+  },
+  "author": "Anjel Toppo",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.86.3"
+  }
+}
