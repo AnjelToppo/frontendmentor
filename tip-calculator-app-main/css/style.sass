@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+
+$colors: ('white': #FFF, 'black': #000, 'grey-600': #3D6666, 'grey-550': #547878, 'grey-500': #5E7A7D, 'grey-400': #7F9D9F, 'grey-300': #9EBBBD, 'grey-200': #C5E4E7, 'grey-50': #F3F9FA, 'green-900': #00474B, 'green-800': #085C61, 'green-750': #0D686D, 'green-400': #26C2AE, 'green-200': #9FE8DF, 'orange-400': #E17052)
+$spaces: (0: 0px, 100: 0.8rem, 200: 1.6rem, 300: 2.4rem, 400: 3.2rem, 500: 4rem, 600: 4.8rem, 1000: 8rem, 1100: 8.8rem, 1200: 9.6rem, 1500: 12rem, 1600: 12.8rem)
+
+$typography-1: (font-size: 4.8rem, line-height: 7.1rem, letter-spacing: -1px)
+$typography-2: (font-size: 3.2rem, line-height: 4.7rem, letter-spacing: -0.67px)
+$typography-3: (font-size: 2.4rem, line-height: 3.6rem, letter-spacing: 0px)
+$typography-4: (font-size: 2rem, line-height: 3rem, letter-spacing: 0px)
+$typography-5: (font-size: 1.6rem, line-height: 2.4rem, letter-spacing: 0px)
+$typography-6: (font-size: 1.3rem, line-height: 1.9rem, letter-spacing: 0px)
+
+@mixin root-color($color-map)
+  @each $color-name, $color-value in $color-map
+    --#{$color-name}: #{$color-value}
+
+@mixin root-space($space-map)
+  @each $space-name, $space-value in $spaces
+    --spacing-#{$space-name}: #{$space-value}
+
+@mixin text-preset($color, $font-size, $line-height, $letter-spacing)
+  color: $color
+  font:
+    family: "Space Mono", monospace, sans-serif
+    size: $font-size
+    weight: 700
+    style: normal
+  line-height: $line-height
+  letter-spacing: $letter-spacing
+
+@mixin flex($direction: row, $gap: null, $align: null, $justify: null)
+  display: flex
+  flex-direction: $direction
+  gap: $gap
+  align-items: $align
+  justify-content: $justify
+
+@mixin grid($template-column: null, $template-row: null, $row-gap: null, $column-gap: null, $justify-content: null, $align-content: null, $justify-items: null, $align-items: null)
+  display: grid
+  grid-template-columns: $template-column
+  grid-template-rows: $template-row
+  row-gap: $row-gap
+  column-gap: $column-gap
+  justify-content: $justify-content
+  align-content: $align-content
+  justify-items: $justify-items
+  align-items: $align-items
+
+@mixin decorate-input($icon-name, $left-pos: 1.6rem)
+  background-image: url('../images/icon-#{$icon-name}.svg')
+  background-position: left $left-pos center
+  background-repeat: no-repeat
+
+:root
+  @include root-color($colors)
+  @include root-space($spaces)
+
+html
+  font-size: 62.5%
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  margin: 0
+
+input[type=button]
+  cursor: pointer
+
+main
+  @include flex($align: center, $justify: center)
+  min-height: 100vh
+  background-color: var(--grey-200)
+
+.container
+  @include flex(column, var(--spacing-1100), $align: center)
+  max-width: 92rem
+  flex-grow: 1
+
+.tip-calculator
+  @include grid($template-column: minmax(min-content, 37.9rem) minmax(min-content, 41.3rem), $column-gap: var(--spacing-600), $justify-content: center)
+  padding: var(--spacing-400)
+  border-radius: 2.5rem
+  background-color: var(--white)
+  width: 100%
+  min-height: 48.1rem
+
+.result-container
+  padding: var(--spacing-300) var(--spacing-400)
+  background-color: var(--green-900)
+  border-radius: 1.5rem
+
+.bill-container, .result-container
+  @include flex($align: center, $justify: center)
+
+.tip-total
+  @include flex(column, var(--spacing-300))
+
+  &__text
+    @include flex(column, var(--spacing-0))
+
+    &--title
+      @include text-preset(var(--white), $typography-5...)
+
+    &--person
+      @include text-preset(var(--grey-400), $typography-6...)
+
+.tip, .total
+  @include flex($gap: var(--spacing-1200), $align: center, $justify: space-between)
+
+  &__amount
+    @include text-preset(var(--green-400), $typography-1...)
+
+.result
+  @include flex(column, var(--spacing-1600))
+
+.bill
+  @include flex(column, var(--spacing-500), $justify: flex-start)
+  flex-grow: 1
+
+.reset-btn
+  @include text-preset(var(--green-900), $typography-4...)
+  border: none
+  cursor: pointer
+  padding: var(--spacing-100) var(--spacing-500)
+  text-transform: uppercase
+  background-color: var(--green-400)
+  border-radius: 5px
+
+  &[disabled]
+    cursor: not-allowed
+    background-color: var(--green-750)
+
+.bill-input, .selected-tip, .total-people
+  @include grid($template-column: minmax(10rem, 1fr), $row-gap: var(--spacing-100))
+
+  label
+    @include text-preset(var(--grey-500), $typography-5...)
+
+.bill-input, .total-people
+  input
+    @include text-preset(var(--green-900), $typography-3...)
+    padding: var(--spacing-100) var(--spacing-200)
+    background-color: var(--grey-50)
+    border-radius: 5px
+    border: none
+    text-align: right
+
+    &::placeholder
+      @include text-preset(var(--grey-300), $typography-3...)
+
+.bill-input
+  input
+    @include decorate-input('dollar')
+
+.total-people
+  input
+    @include decorate-input('person')
+
+.tip-container
+  @include grid($template-column: repeat(3, minmax(7.5rem, 11.6rem)), $row-gap: var(--spacing-200), $column-gap: var(--spacing-200))
+
+  input[type=button], input[type=number]
+    border-radius: 5px
+    border: none
+
+  input[type=button]
+    @include text-preset(var(--white), $typography-3...)
+    padding: var(--spacing-100) var(--spacing-200)
+    background-color: var(--green-900)
+
+  input[type=number]
+    @include text-preset(var(--green-900), $typography-3...)
+    background-color: var(--grey-50)
+    text-align: center
+
+    &::placeholder
+      @include text-preset(var(--grey-550), $typography-3...)
+      text-align: center

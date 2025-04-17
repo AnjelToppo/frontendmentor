@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --white: #FFF;
+  --black: #000;
+  --grey-600: #3D6666;
+  --grey-550: #547878;
+  --grey-500: #5E7A7D;
+  --grey-400: #7F9D9F;
+  --grey-300: #9EBBBD;
+  --grey-200: #C5E4E7;
+  --grey-50: #F3F9FA;
+  --green-900: #00474B;
+  --green-800: #085C61;
+  --green-750: #0D686D;
+  --green-400: #26C2AE;
+  --green-200: #9FE8DF;
+  --orange-400: #E17052;
+  --spacing-0: 0px;
+  --spacing-100: 0.8rem;
+  --spacing-200: 1.6rem;
+  --spacing-300: 2.4rem;
+  --spacing-400: 3.2rem;
+  --spacing-500: 4rem;
+  --spacing-600: 4.8rem;
+  --spacing-1000: 8rem;
+  --spacing-1100: 8.8rem;
+  --spacing-1200: 9.6rem;
+  --spacing-1500: 12rem;
+  --spacing-1600: 12.8rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type=button] {
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--grey-200);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1100);
+  align-items: center;
+  max-width: 92rem;
+  flex-grow: 1;
+}
+
+.tip-calculator {
+  display: grid;
+  grid-template-columns: minmax(min-content, 37.9rem) minmax(min-content, 41.3rem);
+  column-gap: var(--spacing-600);
+  justify-content: center;
+  padding: var(--spacing-400);
+  border-radius: 2.5rem;
+  background-color: var(--white);
+  width: 100%;
+  min-height: 48.1rem;
+}
+
+.result-container {
+  padding: var(--spacing-300) var(--spacing-400);
+  background-color: var(--green-900);
+  border-radius: 1.5rem;
+}
+
+.bill-container, .result-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.tip-total {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+.tip-total__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0);
+}
+.tip-total__text--title {
+  color: var(--white);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 2.4rem;
+  letter-spacing: 0px;
+}
+.tip-total__text--person {
+  color: var(--grey-400);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.9rem;
+  letter-spacing: 0px;
+}
+
+.tip, .total {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-1200);
+  align-items: center;
+  justify-content: space-between;
+}
+.tip__amount, .total__amount {
+  color: var(--green-400);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 4.8rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 7.1rem;
+  letter-spacing: -1px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1600);
+}
+
+.bill {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-500);
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.reset-btn {
+  color: var(--green-900);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 3rem;
+  letter-spacing: 0px;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-100) var(--spacing-500);
+  text-transform: uppercase;
+  background-color: var(--green-400);
+  border-radius: 5px;
+}
+.reset-btn[disabled] {
+  cursor: not-allowed;
+  background-color: var(--green-750);
+}
+
+.bill-input, .selected-tip, .total-people {
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr);
+  row-gap: var(--spacing-100);
+}
+.bill-input label, .selected-tip label, .total-people label {
+  color: var(--grey-500);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 2.4rem;
+  letter-spacing: 0px;
+}
+
+.bill-input input, .total-people input {
+  color: var(--green-900);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 3.6rem;
+  letter-spacing: 0px;
+  padding: var(--spacing-100) var(--spacing-200);
+  background-color: var(--grey-50);
+  border-radius: 5px;
+  border: none;
+  text-align: right;
+}
+.bill-input input::placeholder, .total-people input::placeholder {
+  color: var(--grey-300);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 3.6rem;
+  letter-spacing: 0px;
+}
+
+.bill-input input {
+  background-image: url("../images/icon-dollar.svg");
+  background-position: left 1.6rem center;
+  background-repeat: no-repeat;
+}
+
+.total-people input {
+  background-image: url("../images/icon-person.svg");
+  background-position: left 1.6rem center;
+  background-repeat: no-repeat;
+}
+
+.tip-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(7.5rem, 11.6rem));
+  row-gap: var(--spacing-200);
+  column-gap: var(--spacing-200);
+}
+.tip-container input[type=button], .tip-container input[type=number] {
+  border-radius: 5px;
+  border: none;
+}
+.tip-container input[type=button] {
+  color: var(--white);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 3.6rem;
+  letter-spacing: 0px;
+  padding: var(--spacing-100) var(--spacing-200);
+  background-color: var(--green-900);
+}
+.tip-container input[type=number] {
+  color: var(--green-900);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 3.6rem;
+  letter-spacing: 0px;
+  background-color: var(--grey-50);
+  text-align: center;
+}
+.tip-container input[type=number]::placeholder {
+  color: var(--grey-550);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 3.6rem;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
