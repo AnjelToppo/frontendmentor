@@ -109,6 +109,7 @@ main
   background-color: var(--white)
   width: 100%
   min-height: 48.1rem
+  box-shadow: 0 32px 43px rgba(79, 166, 175, 0.200735)
 
 .result-container
   padding: var(--spacing-300) var(--spacing-400)
@@ -224,3 +225,46 @@ main
     &::placeholder
       @include text-preset(var(--grey-550), $typography-3...)
       text-align: center
+
+@media only screen and (max-width: 53.125em)
+  main
+    padding: var(--spacing-300)
+
+  .container
+    gap: 4.1rem
+    min-width: 40rem
+
+  .tip-calculator
+    @include grid($template-column: 1fr, $justify-items: center, $row-gap: var(--spacing-500))
+    max-width: max-content
+    padding: var(--spacing-600) var(--spacing-1000)
+
+  .bill
+    gap: var(--spacing-300)
+    width: 100%
+
+  .result
+    gap: var(--spacing-200)
+    width: 100%
+
+  .result-container
+    width: 100%
+
+  .tip, .total
+    gap: var(--spacing-300)
+    justify-content: space-between
+
+  .tip-total
+    gap: var(--spacing-100)
+
+@media only screen and (max-width: 34.125em)
+  .tip-calculator
+    padding: var(--spacing-400) var(--spacing-300)
+    grid-template-columns: minmax(max-content, 20rem)
+
+  .tip__amount, .total__amount
+    @include text-preset(var(--green-400), $typography-2...)
+
+  .tip-container
+    width: inherit
+    @include grid($template-column: minmax(10rem, 16.5rem) minmax(10rem, 16.5rem))
