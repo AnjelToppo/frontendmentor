@@ -258,13 +258,15 @@ main
     gap: var(--spacing-100)
 
 @media only screen and (max-width: 34.125em)
+  .container
+    min-width: 0
+
   .tip-calculator
     padding: var(--spacing-400) var(--spacing-300)
-    grid-template-columns: minmax(max-content, 20rem)
+    grid-template-columns: minmax(0, 37rem)
 
   .tip__amount, .total__amount
     @include text-preset(var(--green-400), $typography-2...)
 
   .tip-container
-    width: inherit
-    @include grid($template-column: minmax(10rem, 16.5rem) minmax(10rem, 16.5rem))
+    grid-template-columns: repeat(2, minmax(0, 1fr))
