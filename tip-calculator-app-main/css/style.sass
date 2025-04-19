@@ -189,8 +189,13 @@ main
     @include decorate-input('dollar')
 
 .total-people
+  div
+    @include flex($justify: space-between, $align: center)
   input
     @include decorate-input('person')
+
+.people-error
+  @include text-preset(var(--orange-400), $typography-5...)
 
 .tip-container
   @include grid($template-column: repeat(3, minmax(7.5rem, 11.6rem)), $row-gap: var(--spacing-200), $column-gap: var(--spacing-200))

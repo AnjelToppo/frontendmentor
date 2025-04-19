@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/main.js"></script>
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
 </head>
 <body>
 <main>
-  <div class="container">
-    <img src="images/logo.svg" alt="Splitter Logo">
-    <form class="tip-calculator" novalidate>
-      <div class="bill-container">
-        <div class="bill">
-          <div class="bill-input">
-            <label for="bill-amount">Bill</label>
-            <input id="bill-amount" type="number" placeholder="0" />
-          </div>
-          <div class="selected-tip">
-            <label for="selected-tip">Select Tip %</label>
-            <div id="selected-tip" class="tip-container" data-selected-tip>
-              <input type="button" value="5%" />
-              <input type="button" value="10%" />
-              <input type="button" value="15%" />
-              <input type="button" value="25%" />
-              <input type="button" value="50%" />
-              <input type="number" placeholder="Custom" />
+    <div class="container">
+        <img src="images/logo.svg" alt="Splitter Logo">
+        <form class="tip-calculator" novalidate>
+            <div class="bill-container">
+                <div class="bill">
+                    <div class="bill-input">
+                        <label for="bill-amount">Bill</label>
+                        <input id="bill-amount" type="number" placeholder="0"/>
+                    </div>
+                    <div class="selected-tip">
+                        <label for="selected-tip">Select Tip %</label>
+                        <div id="selected-tip" class="tip-container" data-selected-tip>
+                            <input type="button" value="5%"/>
+                            <input type="button" value="10%"/>
+                            <input type="button" value="15%"/>
+                            <input type="button" value="25%"/>
+                            <input type="button" value="50%"/>
+                            <input type="number" placeholder="Custom"/>
+                        </div>
+                    </div>
+                    <div class="total-people">
+                        <div>
+                            <label for="people-count">Number of People</label>
+                            <span class="people-error"></span>
+                        </div>
+                        <input type="number" id="people-count" placeholder="0"/>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="total-people">
-            <label for="people-count">Number of People</label>
-            <input type="number" id="people-count" placeholder="0" />
-          </div>
-        </div>
-      </div>
-      <div class="result-container">
-        <div class="result">
-          <div class="tip-total">
-            <div class="tip">
-              <div class="tip-total__text">
-                <span class="tip-total__text--title">Tip Amount</span>
-                <span class="tip-total__text--person">/ person</span>
-              </div>
-              <div class="tip__amount">$0.00</div>
+            <div class="result-container">
+                <div class="result">
+                    <div class="tip-total">
+                        <div class="tip">
+                            <div class="tip-total__text">
+                                <span class="tip-total__text--title">Tip Amount</span>
+                                <span class="tip-total__text--person">/ person</span>
+                            </div>
+                            <div class="tip__amount">$0.00</div>
+                        </div>
+                        <div class="total">
+                            <div class="tip-total__text">
+                                <span class="tip-total__text--title">Total</span>
+                                <span class="tip-total__text--person">/ person</span>
+                            </div>
+                            <div class="total__amount">$0.00</div>
+                        </div>
+                    </div>
+                    <button class="reset-btn" type="reset" disabled>Reset</button>
+                </div>
             </div>
-            <div class="total">
-              <div class="tip-total__text">
-                <span class="tip-total__text--title">Total</span>
-                <span class="tip-total__text--person">/ person</span>
-              </div>
-              <div class="total__amount">$0.00</div>
-            </div>
-          </div>
-          <button class="reset-btn" type="reset" disabled>Reset</button>
-        </div>
-      </div>
-    </form>
-  </div>
+        </form>
+    </div>
 </main>
 </body>
 </html>

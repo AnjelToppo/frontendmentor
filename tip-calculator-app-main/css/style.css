@@ -282,10 +282,26 @@ main {
   background-repeat: no-repeat;
 }
 
+.total-people div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 .total-people input {
   background-image: url("../images/icon-person.svg");
   background-position: left 1.6rem center;
   background-repeat: no-repeat;
+}
+
+.people-error {
+  color: var(--orange-400);
+  font-family: "Space Mono", monospace, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 2.4rem;
+  letter-spacing: 0px;
 }
 
 .tip-container {
