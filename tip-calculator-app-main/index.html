@@ -9,12 +9,13 @@
   <title>Frontend Mentor | Tip calculator app</title>
 
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
 </head>
 <body>
 <main>
   <div class="container">
     <img src="images/logo.svg" alt="Splitter Logo">
-    <form class="tip-calculator">
+    <form class="tip-calculator" novalidate>
       <div class="bill-container">
         <div class="bill">
           <div class="bill-input">
@@ -23,7 +24,7 @@
           </div>
           <div class="selected-tip">
             <label for="selected-tip">Select Tip %</label>
-            <div id="selected-tip" class="tip-container" data-selected-tip="25%">
+            <div id="selected-tip" class="tip-container" data-selected-tip>
               <input type="button" value="5%" />
               <input type="button" value="10%" />
               <input type="button" value="15%" />
