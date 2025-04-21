@@ -121,7 +121,7 @@ main {
   align-items: center;
   max-width: 92rem;
   flex-grow: 1;
-  margin-top: -3.2rem;
+  margin-top: -6.4rem;
 }
 
 .tip-calculator {
@@ -364,6 +364,7 @@ main {
   .container {
     gap: 4.1rem;
     min-width: 40rem;
+    padding-top: var(--spacing-600);
   }
   .tip-calculator {
     display: grid;
