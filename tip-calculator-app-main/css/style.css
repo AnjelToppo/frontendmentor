@@ -121,6 +121,7 @@ main {
   align-items: center;
   max-width: 92rem;
   flex-grow: 1;
+  margin-top: -3.2rem;
 }
 
 .tip-calculator {
@@ -392,6 +393,9 @@ main {
   }
 }
 @media only screen and (max-width: 34.125em) {
+  main {
+    padding-inline: 0;
+  }
   .container {
     min-width: 0;
   }
