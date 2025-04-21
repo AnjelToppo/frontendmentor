@@ -6,6 +6,8 @@ $typography-2: (font-size: 2.4rem, line-height: 3.2rem)
 $typography-3: (font-size: 1.8rem, line-height: 2.4rem)
 $typography-4: (font-size: 1.6rem, line-height: 2rem)
 
+$levels: ('too-weak': var(--red-500), 'weak': var(--orange-400),  'medium': var(--yellow-300),  'strong': var(--green-200))
+
 @font-face
   font-family: 'JetBrains Mono', monospace, serif
   src: url("/src/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf") format("truetype"), url("/src/assets/fonts/static/JetBrainsMono-BoldItalic.ttf") format("truetype")
@@ -35,6 +37,16 @@ $typography-4: (font-size: 1.6rem, line-height: 2rem)
   justify-content: $justify
   align-items: $align
 
+@mixin strength-bar($levels-map)
+  $index: 1
+  @each $level-name, $level-color in $levels
+    &[data-strength=#{$level-name}]
+      @for $times from 1 through $index
+        li:nth-child(#{$times})
+          border-color: #{$level-color}
+          background-color: $level-color
+    $index: $index + 1
+
 *
   box-sizing: border-box
   padding: 0
@@ -54,6 +66,7 @@ main
   @include flex($align: center, $justify: center)
   min-height: 100vh
   background-color: var(--grey-950)
+  padding-inline: 3.2rem
 
 .password-display
   @include flex($direction: column, $gap: var(--spacing-400))
@@ -137,6 +150,108 @@ main
     &:hover
       border: 2px solid var(--green-200)
       background: var(--grey-850)
+
+.checkbox-options
+  @include flex(column, var(--spacing-200))
+
+  li
+    @include flex($gap: var(--spacing-300), $align: center)
+
+    label
+      @include text-preset(var(--grey-200), $typography-3...)
+      order: 2
+      cursor: pointer
+
+    input[type=checkbox]
+      position: relative
+      width: 2rem
+      height: 2rem
+
+      &:before
+        content: ""
+        display: block
+        width: 1.8rem
+        height: 1.8rem
+        border: 2px solid var(--grey-200)
+        background: var(--grey-800)
+        cursor: pointer
+        transition: background-color 0.2s ease-in, border-color 0.2s ease-in
+
+      &:hover::before
+        border-color: var(--green-200)
+
+      &:checked:before
+        border-color: var(--green-200)
+
+      &:checked::after
+        position: absolute
+        top: 1px
+        left: 1px
+        width: 1.4rem
+        height: 1.1rem
+        display: block
+        content: url("../src/assets/images/icon-check.svg")
+        background-color: var(--green-200)
+        padding: 4px 3px
+
+.strength
+  @include flex($justify: space-between, $align: center)
+  padding: var(--spacing-200) var(--spacing-400)
+  background-color: var(--grey-850)
+
+  &__title
+    @include text-preset(var(--grey-600), $typography-3...)
+    text-transform: uppercase
+
+  &__level
+    @include flex($gap: var(--spacing-200), $align: center)
+    @include strength-bar($levels)
+
+
+
+    span
+      @include text-preset(var(--grey-200), $typography-2...)
+      text-transform: uppercase
+
+
+.bars
+  @include flex($gap: var(--spacing-100))
+
+  li
+    list-style: none
+    width: 1rem
+    height: 2.8rem
+    border: 2px solid var(--grey-200)
+
+.generate-btn
+  @include flex($gap: var(--spacing-300), $align: center, $justify: center)
+  padding:
+    top: var(--spacing-300)
+    bottom: var(--spacing-300)
+  border: 2px solid var(--green-200)
+  background-color: var(--green-200)
+  cursor: pointer
+  transition: background-color 0.2s ease-in
+
+  &:hover
+    background-color: transparent
+
+  &:hover &__text
+      color: var(--green-200)
+
+  &:hover &__icon
+    background-color: var(--green-200)
+
+  &__text
+    @include text-preset(var(--grey-800), $typography-3...)
+    text-transform: uppercase
+
+  &__icon
+    mask: url("../src/assets/images/icon-arrow-right.svg")
+    width: 1.2rem
+    height: 1.2rem
+    background-color: var(--grey-800)
+
 
 
 

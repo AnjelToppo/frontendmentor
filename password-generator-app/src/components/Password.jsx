@@ -1,5 +1,3 @@
-import copyIcon from '../assets/images/icon-copy.svg';
-
 export default function Password() {
     return (
         <div className="password-container">
