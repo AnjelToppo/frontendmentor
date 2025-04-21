@@ -1,0 +1,149 @@
+$colors: ('white': #FFF, 'black': #000, 'grey-950': #08070B, 'grey-900': #14131B, 'grey-850': #18171F, 'grey-800': #24232C, 'grey-700': #54535B, 'grey-600': #817D92, 'grey-200': #E6E5EA, 'green-200': #A4FFAF, 'yellow-300': #F8CD65, 'orange-400': #FB7C58, 'red-500': #F64A4A)
+$spaces: (100: 0.8rem, 200: 1.6rem, 300: 2.4rem, 400: 3.2rem, 700: 5.6rem, 1000: 8rem, 1300: 10.4rem, 1600: 12.8rem, 2000: 17.6rem, 2200: 17.6rem, 2300: 18.4rem)
+
+$typography-1: (font-size: 3.2rem, line-height: 4.2rem)
+$typography-2: (font-size: 2.4rem, line-height: 3.2rem)
+$typography-3: (font-size: 1.8rem, line-height: 2.4rem)
+$typography-4: (font-size: 1.6rem, line-height: 2rem)
+
+@font-face
+  font-family: 'JetBrains Mono', monospace, serif
+  src: url("/src/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf") format("truetype"), url("/src/assets/fonts/static/JetBrainsMono-BoldItalic.ttf") format("truetype")
+
+@mixin root-color($colors-map)
+  @each $color-name, $color-value in $colors
+    --#{$color-name}: #{$color-value}
+
+@mixin root-spacing($spaces-map)
+  @each $space-name, $space-value in $spaces-map
+    --spacing-#{$space-name}: #{$space-value}
+
+@mixin text-preset($color, $font-size, $line-height)
+  color: $color
+  font:
+    family: "JetBrains Mono", monospace, serif
+    size: $font-size
+    style: normal
+    weight: 700
+  line-height: $line-height
+  letter-spacing: 0
+
+@mixin flex($direction: row, $gap: null, $justify: null, $align: null)
+  display: flex
+  flex-direction: $direction
+  gap: $gap
+  justify-content: $justify
+  align-items: $align
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+:root
+  @include root-color($colors)
+  @include root-spacing($spaces)
+
+html
+  font-size: 62.5%
+
+body
+  font-family: 'JetBrains Mono', monospace, serif
+
+main
+  @include flex($align: center, $justify: center)
+  min-height: 100vh
+  background-color: var(--grey-950)
+
+.password-display
+  @include flex($direction: column, $gap: var(--spacing-400))
+  max-width: 54rem
+  width: 100%
+
+.title
+  @include text-preset(var(--grey-600), $typography-2...)
+  text-align: center
+
+.settings
+  @include flex(column, var(--spacing-300))
+
+.password-container
+  position: relative
+
+.password-input
+  @include text-preset(var(--grey-200), $typography-1...)
+  padding: var(--spacing-200) var(--spacing-400)
+  background-color: var(--grey-800)
+  border: none
+  width: 100%
+
+  &::placeholder
+    @include text-preset(var(--grey-700), $typography-1...)
+
+.copy-btn
+  cursor: pointer
+  position: absolute
+  right: 3.2rem
+  top: 50%
+  transform: translateY(-50%)
+  border: none
+  mask: url("assets/images/icon-copy.svg")
+  width: 2.1rem
+  height: 2.4rem
+  background-color: var(--green-200)
+
+  &:hover
+    background-color: #fff
+
+.options
+  @include flex(column, var(--spacing-400))
+  padding: var(--spacing-300) var(--spacing-400)
+  background-color: var(--grey-800)
+
+.character-length
+  @include flex(column, var(--spacing-200))
+
+  &__title
+    @include flex($justify: space-between, $align: center)
+
+    label
+      @include text-preset(var(--white), $typography-3...)
+
+    span
+      @include text-preset(var(--green-200), $typography-1...)
+
+  input[type=range]
+    -webkit-appearance: none
+    width: 100%
+    height: 0.8rem
+    transition: background 450ms ease-in
+
+    &:focus
+      outline: none
+
+    &::-ms-track
+      width: 100%
+      cursor: pointer
+
+  input[type=range]::-webkit-slider-thumb
+    -webkit-appearance: none
+    background: var(--grey-200)
+    border: none
+    height: 2.8rem
+    width: 2.8rem
+    border-radius: 50%
+    cursor: pointer
+
+    &:hover
+      border: 2px solid var(--green-200)
+      background: var(--grey-850)
+
+
+
+
+
+
+
+
+
+
