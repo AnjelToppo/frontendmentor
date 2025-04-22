@@ -1,18 +1,20 @@
-import {useEffect, useRef, useState} from "react";
+import {useContext, useEffect, useRef} from "react";
+import {PasswordContext} from "../context/PasswordContext.jsx";
 
 export default function Strength() {
     const strengthLevelRef = useRef();
-    const [strengthLevel, setStrengthLevel] = useState('');
+    const state = useContext(PasswordContext);
+
 
     useEffect(() => {
-        setStrengthLevel(strengthLevelRef.current.dataset.strength);
-    }, [strengthLevel]);
+        strengthLevelRef.current.dataset.strength = state.strengthLevel;
+    }, [state.strengthLevel]);
+    // console.log(state.options, state.characterLength, state.options, state.strengthLevel);
 
-    return (
-        <div className='strength'>
+    return (<div className='strength'>
             <span className='strength__title'>Strength</span>
             <div ref={strengthLevelRef} className='strength__level' data-strength=''>
-                <span>{strengthLevel}</span>
+                <span>{state.strengthLevel}</span>
                 <ul className='bars'>
                     <li></li>
                     <li></li>
@@ -20,6 +22,5 @@ export default function Strength() {
                     <li></li>
                 </ul>
             </div>
-        </div>
-    )
+        </div>)
 }
