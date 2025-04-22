@@ -105,7 +105,7 @@ main
   height: 2.4rem
   background-color: var(--green-200)
 
-  &:hover
+  &:active
     background-color: #fff
 
 .options
@@ -231,15 +231,14 @@ main
   border: 2px solid var(--green-200)
   background-color: var(--green-200)
   cursor: pointer
-  transition: background-color 0.2s ease-in
 
-  &:hover
+  &:active
     background-color: transparent
 
-  &:hover &__text
+  &:active &__text
       color: var(--green-200)
 
-  &:hover &__icon
+  &:active &__icon
     background-color: var(--green-200)
 
   &:disabled

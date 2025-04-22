@@ -97,6 +97,18 @@ function passwordReducer(state, action) {
                 }
             }
             return {...state, strengthLevel: ''}
+        case "SET_GENERATE_PASSWORD": {
+            const passwordLength = state.characterLength;
+            const options = state.options;
+            let password = '';
+            for (let i = 0; i < passwordLength; i++) {
+                const randInt = Math.floor(Math.random() * options.length) + 1;
+                const arr = options[randInt -1]
+                const randomIndex = Math.floor(Math.random() * arr.length);
+                password += passwordString[arr][randomIndex]
+            }
+            return {...state, generatedPassword: password}
+        }
         default: {
             throw Error('Unknown action: ' + action.type);
         }
@@ -107,4 +119,11 @@ const initialState = {
     characterLength: 0, options: [], strengthLevel: '', generatedPassword: '',
 }
 
+const lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const passwordString = {
+    'lowercase-letters': lowercaseLetters,
+    'uppercase-letters': lowercaseLetters.map(letter => letter.toUpperCase()),
+    'numbers': ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+    'symbols': ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '~', '|', ':', ';', '"', '<', '>', '/', '?']
+}
 export default App

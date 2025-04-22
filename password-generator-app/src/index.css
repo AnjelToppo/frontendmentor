@@ -118,7 +118,7 @@ main {
   height: 2.4rem;
   background-color: var(--green-200);
 }
-.copy-btn:hover {
+.copy-btn:active {
   background-color: #fff;
 }
 
@@ -339,19 +339,18 @@ main {
   border: 2px solid var(--green-200);
   background-color: var(--green-200);
   cursor: pointer;
-  transition: background-color 0.2s ease-in;
+}
+.generate-btn:active {
+  background-color: transparent;
+}
+.generate-btn:active .generate-btn__text {
+  color: var(--green-200);
+}
+.generate-btn:active .generate-btn__icon {
+  background-color: var(--green-200);
 }
 .generate-btn:disabled {
   cursor: not-allowed;
-}
-.generate-btn:hover {
-  background-color: transparent;
-}
-.generate-btn:hover .generate-btn__text {
-  color: var(--green-200);
-}
-.generate-btn:hover .generate-btn__icon {
-  background-color: var(--green-200);
 }
 .generate-btn__text {
   color: var(--grey-800);
