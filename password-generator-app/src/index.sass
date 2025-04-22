@@ -242,6 +242,9 @@ main
   &:hover &__icon
     background-color: var(--green-200)
 
+  &:disabled
+    cursor: not-allowed
+
   &__text
     @include text-preset(var(--grey-800), $typography-3...)
     text-transform: uppercase

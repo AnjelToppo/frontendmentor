@@ -341,6 +341,9 @@ main {
   cursor: pointer;
   transition: background-color 0.2s ease-in;
 }
+.generate-btn:disabled {
+  cursor: not-allowed;
+}
 .generate-btn:hover {
   background-color: transparent;
 }
