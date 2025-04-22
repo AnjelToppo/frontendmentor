@@ -5,11 +5,9 @@ export default function Strength() {
     const strengthLevelRef = useRef();
     const state = useContext(PasswordContext);
 
-
     useEffect(() => {
         strengthLevelRef.current.dataset.strength = state.strengthLevel;
     }, [state.strengthLevel]);
-    // console.log(state.options, state.characterLength, state.options, state.strengthLevel);
 
     return (<div className='strength'>
             <span className='strength__title'>Strength</span>

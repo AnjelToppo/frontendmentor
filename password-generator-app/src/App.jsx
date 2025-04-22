@@ -107,8 +107,14 @@ function passwordReducer(state, action) {
                 const randomIndex = Math.floor(Math.random() * arr.length);
                 password += passwordString[arr][randomIndex]
             }
-            return {...state, generatedPassword: password}
+            return {...state, generatedPassword: password, showCopy: false}
         }
+        case "RESET_PASSWORD":
+            return {...state, generatedPassword: ''}
+        case "SHOW_COPY":
+            return {...state, showCopy: true}
+        case "HIDE_COPY":
+            return {...state, showCopy: false}
         default: {
             throw Error('Unknown action: ' + action.type);
         }
@@ -116,7 +122,7 @@ function passwordReducer(state, action) {
 }
 
 const initialState = {
-    characterLength: 0, options: [], strengthLevel: '', generatedPassword: '',
+    characterLength: 0, options: [], strengthLevel: '', generatedPassword: '', showCopy: false
 }
 
 const lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];

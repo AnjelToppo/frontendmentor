@@ -93,6 +93,15 @@ main
   &::placeholder
     @include text-preset(var(--grey-700), $typography-1...)
 
+.copy
+  span
+    @include text-preset(var(--green-200), $typography-3...)
+    text-transform: uppercase
+    position: absolute
+    right: 6.4rem
+    top: 50%
+    transform: translateY(-50%)
+
 .copy-btn
   cursor: pointer
   position: absolute
@@ -265,10 +274,16 @@ main
     gap: var(--spacing-200)
 
   .password-input
+    @include text-preset(var(--grey-200), $typography-2...)
     padding-inline: var(--spacing-200)
+    text-wrap: wrap
 
     &::placeholder
       @include text-preset(var(--grey-700), $typography-2...)
+
+  .copy
+    span
+      right: 4.8rem
 
   .copy-btn
     right: var(--spacing-200)

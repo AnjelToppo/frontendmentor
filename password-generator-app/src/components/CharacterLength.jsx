@@ -17,6 +17,9 @@ export default function CharacterLength() {
         dispatch({
             type: 'SET_LEVEL'
         })
+        dispatch({
+            type: 'RESET_PASSWORD',
+        })
     }
 
     return (

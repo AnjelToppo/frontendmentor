@@ -1,9 +1,10 @@
 import CheckboxOption from "./CheckboxOption.jsx";
 import {useContext} from "react";
-import {PasswordDispatchContext} from "../context/PasswordContext.jsx";
+import {PasswordContext, PasswordDispatchContext} from "../context/PasswordContext.jsx";
 
 export default function CheckboxOptions() {
     const dispatch = useContext(PasswordDispatchContext);
+    const state = useContext(PasswordContext);
 
     function handleOptionClick(e) {
         dispatch({
@@ -12,7 +13,9 @@ export default function CheckboxOptions() {
         dispatch({
             type: 'SET_LEVEL'
         })
-        console.log(e.target.disabled, e.target.checked, e.target.value);
+        dispatch({
+            type: 'RESET_PASSWORD',
+        })
     }
 
     return (<ul className="checkbox-options">
