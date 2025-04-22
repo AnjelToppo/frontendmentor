@@ -1,5 +1,5 @@
 $colors: ('white': #FFF, 'black': #000, 'grey-950': #08070B, 'grey-900': #14131B, 'grey-850': #18171F, 'grey-800': #24232C, 'grey-700': #54535B, 'grey-600': #817D92, 'grey-200': #E6E5EA, 'green-200': #A4FFAF, 'yellow-300': #F8CD65, 'orange-400': #FB7C58, 'red-500': #F64A4A)
-$spaces: (100: 0.8rem, 200: 1.6rem, 300: 2.4rem, 400: 3.2rem, 700: 5.6rem, 1000: 8rem, 1300: 10.4rem, 1600: 12.8rem, 2000: 17.6rem, 2200: 17.6rem, 2300: 18.4rem)
+$spaces: (100: 0.8rem, 150: 1.4rem, 200: 1.6rem, 300: 2.4rem, 400: 3.2rem, 700: 5.6rem, 1000: 8rem, 1300: 10.4rem, 1600: 12.8rem, 2000: 17.6rem, 2200: 17.6rem, 2300: 18.4rem)
 
 $typography-1: (font-size: 3.2rem, line-height: 4.2rem)
 $typography-2: (font-size: 2.4rem, line-height: 3.2rem)
@@ -66,7 +66,7 @@ main
   @include flex($align: center, $justify: center)
   min-height: 100vh
   background-color: var(--grey-950)
-  padding-inline: 3.2rem
+  padding-inline: var(--spacing-200)
 
 .password-display
   @include flex($direction: column, $gap: var(--spacing-400))
@@ -252,7 +252,68 @@ main
     height: 1.2rem
     background-color: var(--grey-800)
 
+@media only screen and (max-width: 31.25em)
+  .password-display
+    gap: var(--spacing-200)
 
+    h1
+      @include text-preset(var(--grey-600), $typography-4...)
+
+  .settings
+    gap: var(--spacing-200)
+
+  .password-input
+    padding-inline: var(--spacing-200)
+
+    &::placeholder
+      @include text-preset(var(--grey-700), $typography-2...)
+
+  .copy-btn
+    right: var(--spacing-200)
+
+  .options
+    padding: var(--spacing-200)
+    gap: 0
+
+    .character-length
+      margin-bottom: var(--spacing-400)
+      gap: var(--spacing-100)
+
+      &__title
+        label
+          @include text-preset(var(--grey-200), $typography-4...)
+
+        span
+          @include text-preset(var(--green-200), $typography-2...)
+
+      input[type=range]
+        margin-top: var(--spacing-100)
+
+
+    .checkbox-options
+      margin-bottom: var(--spacing-400)
+
+      li
+        gap: var(--spacing-200)
+
+        label
+          @include text-preset(var(--grey-200), $typography-4...)
+
+    .strength
+      margin-bottom: var(--spacing-200)
+      padding: var(--spacing-150) var(--spacing-200)
+
+      span
+        @include text-preset(var(--grey-600), $typography-4...)
+
+  .generate-btn
+    gap: var(--spacing-200)
+    padding:
+      top: var(--spacing-200)
+      bottom: var(--spacing-200)
+
+    &__text
+      @include text-preset(var(--grey-800), $typography-4...)
 
 
 

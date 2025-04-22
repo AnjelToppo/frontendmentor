@@ -23,6 +23,7 @@
   --orange-400: #FB7C58;
   --red-500: #F64A4A;
   --spacing-100: 0.8rem;
+  --spacing-150: 1.4rem;
   --spacing-200: 1.6rem;
   --spacing-300: 2.4rem;
   --spacing-400: 3.2rem;
@@ -50,7 +51,7 @@ main {
   align-items: center;
   min-height: 100vh;
   background-color: var(--grey-950);
-  padding-inline: 3.2rem;
+  padding-inline: var(--spacing-200);
 }
 
 .password-display {
@@ -364,6 +365,110 @@ main {
   width: 1.2rem;
   height: 1.2rem;
   background-color: var(--grey-800);
+}
+
+@media only screen and (max-width: 31.25em) {
+  .password-display {
+    gap: var(--spacing-200);
+  }
+  .password-display h1 {
+    color: var(--grey-600);
+    font-family: "JetBrains Mono", monospace, serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
+  .settings {
+    gap: var(--spacing-200);
+  }
+  .password-input {
+    padding-inline: var(--spacing-200);
+  }
+  .password-input::placeholder {
+    color: var(--grey-700);
+    font-family: "JetBrains Mono", monospace, serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    letter-spacing: 0;
+  }
+  .copy-btn {
+    right: var(--spacing-200);
+  }
+  .options {
+    padding: var(--spacing-200);
+    gap: 0;
+  }
+  .options .character-length {
+    margin-bottom: var(--spacing-400);
+    gap: var(--spacing-100);
+  }
+  .options .character-length__title label {
+    color: var(--grey-200);
+    font-family: "JetBrains Mono", monospace, serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
+  .options .character-length__title span {
+    color: var(--green-200);
+    font-family: "JetBrains Mono", monospace, serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    letter-spacing: 0;
+  }
+  .options .character-length input[type=range] {
+    margin-top: var(--spacing-100);
+  }
+  .options .checkbox-options {
+    margin-bottom: var(--spacing-400);
+  }
+  .options .checkbox-options li {
+    gap: var(--spacing-200);
+  }
+  .options .checkbox-options li label {
+    color: var(--grey-200);
+    font-family: "JetBrains Mono", monospace, serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
+  .options .strength {
+    margin-bottom: var(--spacing-200);
+    padding: var(--spacing-150) var(--spacing-200);
+  }
+  .options .strength span {
+    color: var(--grey-600);
+    font-family: "JetBrains Mono", monospace, serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
+  .generate-btn {
+    gap: var(--spacing-200);
+    padding-top: var(--spacing-200);
+    padding-bottom: var(--spacing-200);
+  }
+  .generate-btn__text {
+    color: var(--grey-800);
+    font-family: "JetBrains Mono", monospace, serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
