@@ -248,6 +248,16 @@ const Option = styled.button`
     line-height: 100%;
     letter-spacing: 0;
     font-weight: 500;
+    border: 3px solid var(${props => props.theme === 'light-theme' ? '--white' : '--blue-850'});
+    
+    &:hover {
+        border: 3px solid var(--purple-600);
+    }
+    
+    &:hover span {
+        background-color: var(--purple-600);
+        color: var(--white);
+    }
     
     span {
         display: flex;
@@ -277,13 +287,17 @@ const SubmitButton = styled.button`
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), #A729F5;
     box-shadow: 0 16px 40px rgba(143, 160, 193, 0.14);
     border: none;
-
+    
     font-family: "Rubik", sans-serif;
     color: var(--white);
     font-size: 2.8rem;
     line-height: 100%;
     letter-spacing: 0;
     font-weight: 500;
+    
+    &:active {
+       background: var(--purple-600);
+    }
 `
 
 function App() {

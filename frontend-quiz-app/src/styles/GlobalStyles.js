@@ -39,6 +39,11 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
     }
     
+    *:focus {
+        outline-color: var(--purple-600);
+        outline-offset: 4px;
+    }
+    
     html {
         font-size: 62.5%;
     }
