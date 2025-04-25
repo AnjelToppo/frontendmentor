@@ -313,7 +313,6 @@ const Option = styled.button`
         display: none;
         margin-left: auto;
     }
-
 `
 
 const SubmitButton = styled.button`
@@ -357,6 +356,87 @@ const Error = styled.p`
     font-weight: 400;
 `
 
+const Result = styled.div`
+    display: grid;
+    grid-template-columns: minmax(20rem, 45rem) 1fr;
+    column-gap: var(--spacing-1800);
+    padding-bottom: var(--spacing-800);
+`
+
+const ScoreText = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+    
+    span:nth-child(1) {
+        font-family: "Rubik", sans-serif;
+        font-style: normal;
+        color: var(${props => props.theme === 'light-theme' ? '--blue-900' : '--white'});
+        font-size: 6.4rem;
+        line-height: 100%;
+        letter-spacing: 0;
+        font-weight: 300;
+    }
+
+    span:nth-child(2) {
+        font-family: "Rubik", sans-serif;
+        font-style: normal;
+        color: var(${props => props.theme === 'light-theme' ? '--blue-900' : '--white'});
+        font-size: 6.4rem;
+        line-height: 100%;
+        letter-spacing: 0;
+        font-weight: 500;
+    }
+`
+
+const ScoreContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+`
+
+const ResultCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-500);
+    padding: var(--spacing-600);
+    border-radius: 2.4rem;
+    box-shadow: ${props => props.theme === 'light-theme' ? '0 16px 40px rgba(143, 160, 193, 0.14)' : '0 16px 40px rgba(49, 62, 81, 0.14)'};
+    background-color: var(${props => props.theme === 'light-theme' ? '--white' : '--blue-850'});
+`
+
+const ScoreDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    align-items: center;
+`
+
+const ScoreNumber = styled.span`
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    color: var(${props => props.theme === 'light-theme' ? '--blue-900' : '--white'});
+    font-size: 14.4rem;
+    line-height: 100%;
+    letter-spacing: 0;
+    font-weight: 500;
+`
+
+const ScoreDescription = styled.p`
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    color: var(${props => props.theme === 'light-theme' ? '--grey-500' : '--blue-300'});
+    font-size: 2.4rem;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 400;
+`
+
+const PlayButton = styled(NextButton)`
+    background: var(--purple-600);
+`
+
 function App() {
     const [theme, setTheme] = useState('light-theme');
     const [subject, setSubject] = useState('');
@@ -369,6 +449,8 @@ function App() {
     const [correctAnswer, setCorrectAnswer] = useState('');
     const [isError, setIsError] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [score, setScore] = useState(0);
+    const [totalQuestions, setTotalQuestions] = useState(null);
 
     function handleToggleTheme() {
         setTheme(pt => pt === 'light-theme' ? 'dark-theme' : 'light-theme');
@@ -408,6 +490,7 @@ function App() {
             const correctAnswer = await fetchCorrectAnswer();
             setCorrectAnswer(correctAnswer);
             if (userAnswer === correctAnswer) {
+                setScore(s => s + 1);
                 const copyOptions = Array.from(optionRef.current.children);
                 copyOptions.forEach((option) => {
                     option.disabled = true;
@@ -463,7 +546,7 @@ function App() {
             const question = data.quizzes.filter(t => t.title.toLowerCase() === subject.toLowerCase());
             setQuestionText(question[0]?.questions[currentQuestion].question);
             setOptions(question[0]?.questions[currentQuestion].options);
-            console.log(question[0]?.questions[currentQuestion])
+            setTotalQuestions(question[0]?.questions.length);
         }
         fetchQuestions();
     }, [subject, currentQuestion]);
@@ -473,6 +556,10 @@ function App() {
         const data = await res.json();
         const question = data.quizzes.filter(t => t.title.toLowerCase() === subject.toLowerCase());
         return question[0]?.questions[currentQuestion].answer
+    }
+
+    function handlePlayAgainClick() {
+        window.location.reload();
     }
 
     return (<>
@@ -487,7 +574,7 @@ function App() {
                             <MoonIcon theme={theme}></MoonIcon>
                         </ToggleTheme>
                     </Header>
-                    <StartMenu>
+                    {currentQuestion !== totalQuestions && <StartMenu>
                         {subject === '' && <Welcome>
                             <WelcomeText theme={theme}>
                                 <span>Welcome to the</span>
@@ -498,28 +585,35 @@ function App() {
                         {subject === '' && <SubjectList>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--orange-50)'}><img src="../src/assets/images/icon-html.svg" alt="html icon"/></SubjectIcon>
+                                <SubjectIcon color={'var(--orange-50)'}><img src="../src/assets/images/icon-html.svg"
+                                                                             alt="html icon"/></SubjectIcon>
                                 HTML
                             </Subject>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--green-100)'}><img src="../src/assets/images/icon-css.svg" alt="css icon"/></SubjectIcon>
+                                <SubjectIcon color={'var(--green-100)'}><img src="../src/assets/images/icon-css.svg"
+                                                                             alt="css icon"/></SubjectIcon>
                                 CSS
                             </Subject>
                             <Subject theme={theme} color={'var(--blue-50)'}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--blue-50)'}><img src="../src/assets/images/icon-js.svg" alt="js icon"/></SubjectIcon>
+                                <SubjectIcon color={'var(--blue-50)'}><img src="../src/assets/images/icon-js.svg"
+                                                                           alt="js icon"/></SubjectIcon>
                                 Javascript
                             </Subject>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--purple-100)'}><img src="../src/assets/images/icon-accessibility.svg" alt="accessibility icon"/></SubjectIcon>
+                                <SubjectIcon color={'var(--purple-100)'}><img
+                                    src="../src/assets/images/icon-accessibility.svg"
+                                    alt="accessibility icon"/></SubjectIcon>
                                 Accessibility
                             </Subject>
                         </SubjectList>}
                         {subject !== '' && <QuestionContainer>
                             <QuestionText>
-                                <QuestionNumber theme={theme}>Question <span>{currentQuestion + 1}</span> of 10</QuestionNumber>
+                                <QuestionNumber
+                                    theme={theme}>Question <span>{currentQuestion + 1}</span> of {totalQuestions}
+                                </QuestionNumber>
                                 <Question theme={theme}>
                                     {questionText}
                                 </Question>
@@ -528,35 +622,47 @@ function App() {
                         </QuestionContainer>}
                         {subject !== '' && <OptionsContainer>
                             <Options ref={optionRef} data-option={''}>
-                                <Option theme={theme} onClick={() => handleOptionClick('1', options[0])}><span>A</span>{options && options[0]}<span><img
+                                <Option theme={theme}
+                                        onClick={() => handleOptionClick('1', options[0])}><span>A</span>{options && options[0]}<span><img
                                     src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
                                     src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
-                                <Option theme={theme} onClick={() => handleOptionClick('2', options[1])}><span>B</span>{options && options[1]}<span><img
+                                <Option theme={theme}
+                                        onClick={() => handleOptionClick('2', options[1])}><span>B</span>{options && options[1]}<span><img
                                     src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
                                     src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
-                                <Option theme={theme} onClick={() => handleOptionClick('3', options[2])}><span>C</span>{options && options[2]}<span><img
+                                <Option theme={theme}
+                                        onClick={() => handleOptionClick('3', options[2])}><span>C</span>{options && options[2]}<span><img
                                     src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
                                     src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
-                                <Option theme={theme} onClick={() => handleOptionClick('4', options[3])}><span>D</span>{options && options[3]}<span><img
+                                <Option theme={theme}
+                                        onClick={() => handleOptionClick('4', options[3])}><span>D</span>{options && options[3]}<span><img
                                     src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
                                     src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
                             </Options>
                             {!isSubmitted && <SubmitButton onClick={handleSubmit}>Submit answer</SubmitButton>}
-                            {isSubmitted && <NextButton onClick={handleNext}>Next Question</NextButton>}
-                            {isError && <Error theme={theme}><img src="../src/assets/images/icon-error.svg" alt="error icon"/> Please select an
+                            {isSubmitted && <NextButton onClick={handleNext}>{currentQuestion === totalQuestions - 1 ? 'See Result' : 'Next Question'}</NextButton>}
+                            {isError && <Error theme={theme}><img src="../src/assets/images/icon-error.svg"
+                                                                  alt="error icon"/> Please select an
                                 answer</Error>}
                         </OptionsContainer>}
-                    </StartMenu>
+                    </StartMenu>}
+                    {currentQuestion === totalQuestions && <Result>
+                        <ScoreText theme={theme}>
+                            <span>Quiz completed</span>
+                            <span>You scored...</span>
+                        </ScoreText>
+                        <ScoreContent>
+                            <ResultCard theme={theme}>
+                                <SubjectTitleContainer><SubjectIcon color={subjectIconColor}><img src={subject === 'Javascript' ? `../src/assets/images/icon-js.svg` : `../src/assets/images/icon-${subject}.svg`} alt={`${subject} icon`}/></SubjectIcon><SubjectTitle theme={theme}>{subject}</SubjectTitle></SubjectTitleContainer>
+                                <ScoreDetails>
+                                    <ScoreNumber theme={theme}>{score}</ScoreNumber>
+                                    <ScoreDescription theme={theme}>out of {totalQuestions}</ScoreDescription>
+                                </ScoreDetails>
+                            </ResultCard>
+                            <PlayButton onClick={handlePlayAgainClick}>Play again</PlayButton>
+                        </ScoreContent>
+                    </Result>}
                 </Container>
-
-                {/*/!*Quiz completed start*!/*/}
-
-                {/*Quiz completed*/}
-                {/*You scored...*/}
-
-                {/*/!*score*!/ out of 10*/}
-
-                {/*/!*Quiz completed end*!/*/}
             </Main>
         </>)
 }
