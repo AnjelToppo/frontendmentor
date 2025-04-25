@@ -1,6 +1,6 @@
 import GlobalStyles from "./styles/GlobalStyles.js";
 import styled from "styled-components";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 const Main = styled.main`
     display: flex;
@@ -229,6 +229,42 @@ const Options = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--spacing-200);
+
+    &[data-option='1'] button:nth-child(1) {
+        border: 3px solid var(--purple-600) !important;
+    }
+        
+    &[data-option='1'] button:nth-child(1) span:nth-child(1) {
+        background-color: var(--purple-600) !important;
+        color: var(--white) !important;
+    }
+
+    &[data-option='2'] button:nth-child(2) {
+        border: 3px solid var(--purple-600) !important;
+    }
+
+    &[data-option='2'] button:nth-child(2) span:nth-child(1) {
+        background-color: var(--purple-600) !important;
+        color: var(--white) !important;
+    }
+
+    &[data-option='3'] button:nth-child(3) {
+        border: 3px solid var(--purple-600) !important;
+    }
+
+    &[data-option='3'] button:nth-child(3) span:nth-child(1) {
+        background-color: var(--purple-600) !important;
+        color: var(--white) !important;
+    }
+
+    &[data-option='4'] button:nth-child(4) {
+        border: 3px solid var(--purple-600) !important;
+    }
+
+    &[data-option='4'] button:nth-child(4) span:nth-child(1) {
+        background-color: var(--purple-600) !important;
+        color: var(--white) !important;
+    }
 `
 
 const Option = styled.button`
@@ -239,7 +275,6 @@ const Option = styled.button`
     padding: var(--spacing-300);
     border-radius: 2.4rem;
     background-color: var(${props => props.theme === 'light-theme' ? '--white' : '--blue-850'});
-    border: none;
     box-shadow: ${props => props.theme === 'light-theme' ? '0 16px 40px rgba(143, 160, 193, 0.14)' : '0 16px 40px rgba(49, 62, 81, 0.14)'};
     
     font-family: "Rubik", sans-serif;
@@ -248,19 +283,12 @@ const Option = styled.button`
     line-height: 100%;
     letter-spacing: 0;
     font-weight: 500;
-    border: 3px solid var(${props => props.theme === 'light-theme' ? '--white' : '--blue-850'});
+    border: 3px solid var(${props => props.theme === 'light-theme' ? '--white' : '--blue-850'}) !important;
     
-    &:hover {
-        border: 3px solid var(--purple-600);
-    }
     
-    &:hover span {
-        background-color: var(--purple-600);
-        color: var(--white);
-    }
-    
-    span {
+    span:nth-child(1) {
         display: flex;
+        flex-shrink: 0;
         align-items: center;
         justify-content: center;
         height: 5.6rem;
@@ -274,6 +302,16 @@ const Option = styled.button`
         line-height: 100%;
         letter-spacing: 0;
         font-weight: 500;
+    }
+    
+    span:nth-child(2) {
+        visibility: hidden;
+        margin-left: auto;
+    }
+    
+    span:nth-child(3) {
+        display: none;
+        margin-left: auto;
     }
 
 `
@@ -300,6 +338,25 @@ const SubmitButton = styled.button`
     }
 `
 
+const NextButton = styled(SubmitButton)`
+    background-color: var(--purple-600);
+`
+
+const Error = styled.p`
+    display: flex;
+    gap: var(--spacing-100);
+    align-items: center;
+    justify-content: center;
+    
+    font-family: "Rubik", sans-serif;
+    color: var(${props => props.theme === 'light-theme' ? '--red-500' : '--grey-50'});
+    font-style: normal;
+    font-size: 2.4rem;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 400;
+`
+
 function App() {
     const [theme, setTheme] = useState('light-theme');
     const [subject, setSubject] = useState('');
@@ -307,6 +364,11 @@ function App() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [questionText, setQuestionText] = useState('');
     const [options, setOptions] = useState([]);
+    const optionRef = useRef('');
+    const [userAnswer, setUserAnswer] = useState('');
+    const [correctAnswer, setCorrectAnswer] = useState('');
+    const [isError, setIsError] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     function handleToggleTheme() {
         setTheme(pt => pt === 'light-theme' ? 'dark-theme' : 'light-theme');
@@ -326,8 +388,71 @@ function App() {
             setSubject(value);
             setSubjectIconColor('var(--purple-100)');
         }
+    }
 
+    function handleOptionClick(value, option) {
+        optionRef.current.dataset.option = value;
+        setUserAnswer(option)
+    }
 
+    async function handleSubmit() {
+        if (userAnswer === '') {
+            setIsError(true);
+            return;
+        }
+        if (userAnswer !== '') {
+            setIsSubmitted(true);
+
+            // optionRef.current.dataset.option = '';
+            setIsError(false)
+            const correctAnswer = await fetchCorrectAnswer();
+            setCorrectAnswer(correctAnswer);
+            if (userAnswer === correctAnswer) {
+                const copyOptions = Array.from(optionRef.current.children);
+                copyOptions.forEach((option) => {
+                    option.disabled = true;
+                    const optionText = option.textContent.slice(1, );
+                    const copySpan = Array.from(option.children);
+                    if (optionText === userAnswer) {
+                        option.style.borderColor = 'var(--green-500) !important';
+                        copySpan[0].style.backgroundColor = 'var(--green-500) !important';
+                        copySpan[1].style.visibility = 'visible';
+                    }
+
+                })
+                // const copyOptions = Array.from(optionRef.current.children);
+                // // If you want to modify html collection, then you have to copy it first
+                // copyOptions.forEach((option) => {
+                //     option.disabled = true;
+                //     const optionText = option.textContent.slice(1, );
+                //     option.dataset.correct = optionText === correctAnswer ? 'true' : 'false';
+                //     console.log(option, optionText, userAnswer);
+                //     // if (optionText === userAnswer) {
+                //     //     option.dataset.correct = 'true';
+                //     //     console.log(option)
+                //     // }
+                // })
+                // setUserAnswer('');
+
+                // setCurrentQuestion(cq => cq + 1);
+            }
+        }
+    }
+
+    function handleNext() {
+        optionRef.current.dataset.option = '';
+        setUserAnswer('')
+        const copyOptions = Array.from(optionRef.current.children);
+        copyOptions.forEach((option) => {
+            option.disabled = false;
+            option.style.borderColor = theme === 'light-theme' ? 'var(--white)' : 'var(--blue-850)';
+            const copySpan = Array.from(option.children);
+            copySpan[0].style.backgroundColor = 'var(--grey-50)';
+            copySpan[0].style.color = 'var(--grey-500)';
+            copySpan[1].style.visibility = 'hidden';
+        })
+        setIsSubmitted(false);
+        setCurrentQuestion(cq => cq + 1);
     }
 
     useEffect(() => {
@@ -337,11 +462,17 @@ function App() {
             const question = data.quizzes.filter(t => t.title.toLowerCase() === subject.toLowerCase());
             setQuestionText(question[0]?.questions[currentQuestion].question);
             setOptions(question[0]?.questions[currentQuestion].options);
+            console.log(question[0]?.questions[currentQuestion])
         }
-
         fetchQuestions();
-
     }, [subject, currentQuestion]);
+
+    async function fetchCorrectAnswer() {
+        const res = await fetch('./data.json');
+        const data = await res.json();
+        const question = data.quizzes.filter(t => t.title.toLowerCase() === subject.toLowerCase());
+        return question[0]?.questions[currentQuestion].answer
+    }
 
     return (<>
             <GlobalStyles />
@@ -395,13 +526,24 @@ function App() {
                             <ProgressBar theme={theme} max={10} value={currentQuestion + 1}></ProgressBar>
                         </QuestionContainer>}
                         {subject !== '' && <OptionsContainer>
-                            <Options>
-                                <Option theme={theme}><span>A</span>{options && options[0]}</Option>
-                                <Option theme={theme}><span>B</span>{options && options[1]}</Option>
-                                <Option theme={theme}><span>C</span>{options && options[2]}</Option>
-                                <Option theme={theme}><span>D</span>{options && options[3]}</Option>
+                            <Options ref={optionRef} data-option={''}>
+                                <Option theme={theme} onClick={() => handleOptionClick('1', options[0])}><span>A</span>{options && options[0]}<span><img
+                                    src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
+                                <Option theme={theme} onClick={() => handleOptionClick('2', options[1])}><span>B</span>{options && options[1]}<span><img
+                                    src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
+                                <Option theme={theme} onClick={() => handleOptionClick('3', options[2])}><span>C</span>{options && options[2]}<span><img
+                                    src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
+                                <Option theme={theme} onClick={() => handleOptionClick('4', options[3])}><span>D</span>{options && options[3]}<span><img
+                                    src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
                             </Options>
-                            <SubmitButton>Submit answer</SubmitButton>
+                            {!isSubmitted && <SubmitButton onClick={handleSubmit}>Submit answer</SubmitButton>}
+                            {isSubmitted && <NextButton onClick={handleNext}>Next Question</NextButton>}
+                            {isError && <Error theme={theme}><img src="../src/assets/images/icon-error.svg" alt="error icon"/> Please select an
+                                answer</Error>}
                         </OptionsContainer>}
                     </StartMenu>
                 </Container>
