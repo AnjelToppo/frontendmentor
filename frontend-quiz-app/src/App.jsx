@@ -7,7 +7,7 @@ const Main = styled.main`
     justify-content: center;
     min-height: 100vh;
     background-color: ${(props) => props.theme === 'dark-theme' ? '#313E51' : '#F4F6FA'};
-    background-image: url(${(props) => props.theme === 'dark-theme' ? "../src/assets/images/pattern-background-desktop-dark.svg" : "../src/assets/images/pattern-background-desktop-light.svg"});
+    background-image: url(${(props) => props.theme === 'dark-theme' ? "/images/pattern-background-desktop-dark.svg" : "/images/pattern-background-desktop-light.svg"});
     background-repeat: no-repeat;
     //background-position: bottom;
 `
@@ -30,7 +30,7 @@ const ToggleTheme = styled.div`
 `
 
 const SunIcon = styled.span`
-    background-image: url(${(props) => props.theme === 'dark-theme' ? "../src/assets/images/icon-sun-light.svg" : "../src/assets/images/icon-sun-dark.svg"});
+    background-image: url(${(props) => props.theme === 'dark-theme' ? "/images/icon-sun-light.svg" : "/images/icon-sun-dark.svg"});
     background-repeat: no-repeat;
     background-position: center;
     width: 2.4rem;
@@ -57,7 +57,7 @@ const ToggleThemeButton = styled.button`
 `
 
 const MoonIcon = styled.span`
-    background-image: url(${(props) => props.theme === 'dark-theme' ? "../src/assets/images/icon-moon-light.svg" : "../src/assets/images/icon-moon-dark.svg"});
+    background-image: url(${(props) => props.theme === 'dark-theme' ? "/images/icon-moon-light.svg" : "/images/icon-moon-dark.svg"});
     background-repeat: no-repeat;
     background-position: center;
     width: 2.4rem;
@@ -567,7 +567,7 @@ function App() {
             <Main theme={theme}>
                 <Container>
                     <Header>
-                        {subject !== '' && <SubjectTitleContainer><SubjectIcon color={subjectIconColor}><img src={subject === 'Javascript' ? `../src/assets/images/icon-js.svg` : `../src/assets/images/icon-${subject}.svg`} alt={`${subject} icon`}/></SubjectIcon><SubjectTitle theme={theme}>{subject}</SubjectTitle></SubjectTitleContainer>}
+                        {subject !== '' && <SubjectTitleContainer><SubjectIcon color={subjectIconColor}><img src={subject === 'Javascript' ? `/images/icon-js.svg` : `/images/icon-${subject.toLowerCase()}.svg`} alt={`${subject} icon`}/></SubjectIcon><SubjectTitle theme={theme}>{subject}</SubjectTitle></SubjectTitleContainer>}
                         <ToggleTheme>
                             <SunIcon theme={theme}></SunIcon>
                             <ToggleThemeButton theme={theme} onClick={handleToggleTheme}></ToggleThemeButton>
@@ -585,26 +585,26 @@ function App() {
                         {subject === '' && <SubjectList>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--orange-50)'}><img src="../public/images/icon-html.svg"
+                                <SubjectIcon color={'var(--orange-50)'}><img src="/images/icon-html.svg"
                                                                              alt="html icon"/></SubjectIcon>
                                 HTML
                             </Subject>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--green-100)'}><img src="../public/images/icon-css.svg"
+                                <SubjectIcon color={'var(--green-100)'}><img src="/images/icon-css.svg"
                                                                              alt="css icon"/></SubjectIcon>
                                 CSS
                             </Subject>
                             <Subject theme={theme} color={'var(--blue-50)'}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--blue-50)'}><img src="../public/images/icon-js.svg"
+                                <SubjectIcon color={'var(--blue-50)'}><img src="/images/icon-js.svg"
                                                                            alt="js icon"/></SubjectIcon>
                                 Javascript
                             </Subject>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
                                 <SubjectIcon color={'var(--purple-100)'}><img
-                                    src="../public/images/icon-accessibility.svg"
+                                    src="/images/icon-accessibility.svg"
                                     alt="accessibility icon"/></SubjectIcon>
                                 Accessibility
                             </Subject>
@@ -624,24 +624,24 @@ function App() {
                             <Options ref={optionRef} data-option={''}>
                                 <Option theme={theme}
                                         onClick={() => handleOptionClick('1', options[0])}><span>A</span>{options && options[0]}<span><img
-                                    src="../public/images/icon-correct.svg" alt=""/></span><span><img
-                                    src="../public/images/icon-error.svg" alt=""/></span></Option>
+                                    src="/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="/images/icon-error.svg" alt=""/></span></Option>
                                 <Option theme={theme}
                                         onClick={() => handleOptionClick('2', options[1])}><span>B</span>{options && options[1]}<span><img
-                                    src="../public/images/icon-correct.svg" alt=""/></span><span><img
-                                    src="../public/images/icon-error.svg" alt=""/></span></Option>
+                                    src="/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="/images/icon-error.svg" alt=""/></span></Option>
                                 <Option theme={theme}
                                         onClick={() => handleOptionClick('3', options[2])}><span>C</span>{options && options[2]}<span><img
-                                    src="../public/images/icon-correct.svg" alt=""/></span><span><img
-                                    src="../public/images/icon-error.svg" alt=""/></span></Option>
+                                    src="/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="/images/icon-error.svg" alt=""/></span></Option>
                                 <Option theme={theme}
                                         onClick={() => handleOptionClick('4', options[3])}><span>D</span>{options && options[3]}<span><img
-                                    src="../public/images/icon-correct.svg" alt=""/></span><span><img
-                                    src="../public/images/icon-error.svg" alt=""/></span></Option>
+                                    src="/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="/images/icon-error.svg" alt=""/></span></Option>
                             </Options>
                             {!isSubmitted && <SubmitButton onClick={handleSubmit}>Submit answer</SubmitButton>}
                             {isSubmitted && <NextButton onClick={handleNext}>{currentQuestion === totalQuestions - 1 ? 'See Result' : 'Next Question'}</NextButton>}
-                            {isError && <Error theme={theme}><img src="../public/images/icon-error.svg"
+                            {isError && <Error theme={theme}><img src="/images/icon-error.svg"
                                                                   alt="error icon"/> Please select an
                                 answer</Error>}
                         </OptionsContainer>}
@@ -653,7 +653,7 @@ function App() {
                         </ScoreText>
                         <ScoreContent>
                             <ResultCard theme={theme}>
-                                <SubjectTitleContainer><SubjectIcon color={subjectIconColor}><img src={subject === 'Javascript' ? `../src/assets/images/icon-js.svg` : `../src/assets/images/icon-${subject}.svg`} alt={`${subject} icon`}/></SubjectIcon><SubjectTitle theme={theme}>{subject}</SubjectTitle></SubjectTitleContainer>
+                                <SubjectTitleContainer><SubjectIcon color={subjectIconColor}><img src={subject === 'Javascript' ? `/images/icon-js.svg` : `/images/icon-${subject.toLowerCase()}.svg`} alt={`${subject} icon`}/></SubjectIcon><SubjectTitle theme={theme}>{subject}</SubjectTitle></SubjectTitleContainer>
                                 <ScoreDetails>
                                     <ScoreNumber theme={theme}>{score}</ScoreNumber>
                                     <ScoreDescription theme={theme}>out of {totalQuestions}</ScoreDescription>
