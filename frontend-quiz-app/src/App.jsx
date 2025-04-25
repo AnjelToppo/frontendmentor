@@ -418,23 +418,23 @@ function App() {
                         copySpan[0].style.backgroundColor = 'var(--green-500) !important';
                         copySpan[1].style.visibility = 'visible';
                     }
-
                 })
-                // const copyOptions = Array.from(optionRef.current.children);
-                // // If you want to modify html collection, then you have to copy it first
-                // copyOptions.forEach((option) => {
-                //     option.disabled = true;
-                //     const optionText = option.textContent.slice(1, );
-                //     option.dataset.correct = optionText === correctAnswer ? 'true' : 'false';
-                //     console.log(option, optionText, userAnswer);
-                //     // if (optionText === userAnswer) {
-                //     //     option.dataset.correct = 'true';
-                //     //     console.log(option)
-                //     // }
-                // })
-                // setUserAnswer('');
-
-                // setCurrentQuestion(cq => cq + 1);
+            }
+            if (userAnswer !== correctAnswer) {
+                const copyOptions = Array.from(optionRef.current.children);
+                copyOptions.forEach((option) => {
+                    option.disabled = true;
+                    const optionText = option.textContent.slice(1, );
+                    const copySpan = Array.from(option.children);
+                    if (optionText === userAnswer) {
+                        option.style.borderColor = 'var(--red-500) !important';
+                        copySpan[0].style.backgroundColor = 'var(--red-500) !important';
+                        copySpan[2].style.display = 'block';
+                    }
+                    if (optionText === correctAnswer) {
+                        copySpan[1].style.visibility = 'visible';
+                    }
+                })
             }
         }
     }
@@ -450,6 +450,7 @@ function App() {
             copySpan[0].style.backgroundColor = 'var(--grey-50)';
             copySpan[0].style.color = 'var(--grey-500)';
             copySpan[1].style.visibility = 'hidden';
+            copySpan[2].style.display = 'none';
         })
         setIsSubmitted(false);
         setCurrentQuestion(cq => cq + 1);
