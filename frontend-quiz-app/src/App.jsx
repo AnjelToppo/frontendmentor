@@ -585,26 +585,26 @@ function App() {
                         {subject === '' && <SubjectList>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--orange-50)'}><img src="../src/assets/images/icon-html.svg"
+                                <SubjectIcon color={'var(--orange-50)'}><img src="../public/images/icon-html.svg"
                                                                              alt="html icon"/></SubjectIcon>
                                 HTML
                             </Subject>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--green-100)'}><img src="../src/assets/images/icon-css.svg"
+                                <SubjectIcon color={'var(--green-100)'}><img src="../public/images/icon-css.svg"
                                                                              alt="css icon"/></SubjectIcon>
                                 CSS
                             </Subject>
                             <Subject theme={theme} color={'var(--blue-50)'}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
-                                <SubjectIcon color={'var(--blue-50)'}><img src="../src/assets/images/icon-js.svg"
+                                <SubjectIcon color={'var(--blue-50)'}><img src="../public/images/icon-js.svg"
                                                                            alt="js icon"/></SubjectIcon>
                                 Javascript
                             </Subject>
                             <Subject theme={theme}
                                      onClick={(e) => handleSubjectClick(e.target.textContent)}>
                                 <SubjectIcon color={'var(--purple-100)'}><img
-                                    src="../src/assets/images/icon-accessibility.svg"
+                                    src="../public/images/icon-accessibility.svg"
                                     alt="accessibility icon"/></SubjectIcon>
                                 Accessibility
                             </Subject>
@@ -624,24 +624,24 @@ function App() {
                             <Options ref={optionRef} data-option={''}>
                                 <Option theme={theme}
                                         onClick={() => handleOptionClick('1', options[0])}><span>A</span>{options && options[0]}<span><img
-                                    src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
-                                    src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
+                                    src="../public/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="../public/images/icon-error.svg" alt=""/></span></Option>
                                 <Option theme={theme}
                                         onClick={() => handleOptionClick('2', options[1])}><span>B</span>{options && options[1]}<span><img
-                                    src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
-                                    src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
+                                    src="../public/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="../public/images/icon-error.svg" alt=""/></span></Option>
                                 <Option theme={theme}
                                         onClick={() => handleOptionClick('3', options[2])}><span>C</span>{options && options[2]}<span><img
-                                    src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
-                                    src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
+                                    src="../public/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="../public/images/icon-error.svg" alt=""/></span></Option>
                                 <Option theme={theme}
                                         onClick={() => handleOptionClick('4', options[3])}><span>D</span>{options && options[3]}<span><img
-                                    src="../src/assets/images/icon-correct.svg" alt=""/></span><span><img
-                                    src="../src/assets/images/icon-error.svg" alt=""/></span></Option>
+                                    src="../public/images/icon-correct.svg" alt=""/></span><span><img
+                                    src="../public/images/icon-error.svg" alt=""/></span></Option>
                             </Options>
                             {!isSubmitted && <SubmitButton onClick={handleSubmit}>Submit answer</SubmitButton>}
                             {isSubmitted && <NextButton onClick={handleNext}>{currentQuestion === totalQuestions - 1 ? 'See Result' : 'Next Question'}</NextButton>}
-                            {isError && <Error theme={theme}><img src="../src/assets/images/icon-error.svg"
+                            {isError && <Error theme={theme}><img src="../public/images/icon-error.svg"
                                                                   alt="error icon"/> Please select an
                                 answer</Error>}
                         </OptionsContainer>}
