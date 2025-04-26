@@ -10,6 +10,7 @@ const Main = styled.main`
     background-image: url(${(props) => props.theme === 'dark-theme' ? "/images/pattern-background-desktop-dark.svg" : "/images/pattern-background-desktop-light.svg"});
     background-repeat: no-repeat;
     //background-position: bottom;
+    padding-inline: var(--spacing-200);
 `
 
 const Container = styled.div`
@@ -69,12 +70,21 @@ const StartMenu = styled.div`
     grid-template-columns: minmax(20rem, 46.5rem) 1fr;
     column-gap: var(--spacing-1600);
     padding-bottom: var(--spacing-800);
+    
+    @media only screen and (max-width: 63.5em) {
+        grid-template-columns: 1fr;
+        row-gap: var(--spacing-800);
+    }
 `
 
 const Welcome = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--spacing-600);
+    
+    @media only screen and (max-width: 63.5em) {
+        gap: var(--spacing-200);
+    }
 `
 
 const WelcomeText = styled.div`
@@ -114,6 +124,10 @@ const SubjectList = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--spacing-200);
+    
+    @media only screen and (max-width: 63.5em) {
+        gap: var(--spacing-300);
+    }
 `
 
 const Subject = styled.button`
