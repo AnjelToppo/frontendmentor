@@ -385,6 +385,11 @@ const Result = styled.div`
     grid-template-columns: minmax(20rem, 45rem) 1fr;
     column-gap: var(--spacing-1800);
     padding-bottom: var(--spacing-800);
+    
+    @media only screen and (max-width: 63.5em) {
+        grid-template-columns: 1fr;
+        row-gap: var(--spacing-800);
+    }
 `
 
 const ScoreText = styled.div`
