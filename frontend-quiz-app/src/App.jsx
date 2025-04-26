@@ -22,6 +22,12 @@ const Header = styled.header`
     display: flex;
     padding-top: 9.3rem;
     padding-bottom: 10.3rem;
+    align-items: center;
+    
+    @media only screen and (max-width: 63.5em) {
+        padding-top: var(--spacing-400);
+        padding-bottom: var(--spacing-400);
+    }
 `
 
 const ToggleTheme = styled.div`
@@ -180,6 +186,10 @@ const QuestionContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--spacing-2300);
+    
+    @media only screen and (max-width: 63.5em) {
+        gap: var(--spacing-500);
+    }
 `
 
 const QuestionText = styled.div`
