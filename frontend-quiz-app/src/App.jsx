@@ -11,6 +11,11 @@ const Main = styled.main`
     background-repeat: no-repeat;
     //background-position: bottom;
     padding-inline: var(--spacing-200);
+
+
+    @media only screen and (max-width: 31.25em) {
+        padding-inline: var(--spacing-300);
+    }
 `
 
 const Container = styled.div`
@@ -28,12 +33,22 @@ const Header = styled.header`
         padding-top: var(--spacing-400);
         padding-bottom: var(--spacing-400);
     }
+
+
+    @media only screen and (max-width: 31.25em) {
+        padding-top: var(--spacing-200);
+        padding-bottom: var(--spacing-200);
+    }
 `
 
 const ToggleTheme = styled.div`
     display: flex;
     gap: var(--spacing-200);
     margin-left: auto;
+
+    @media only screen and (max-width: 31.25em) {
+        gap: var(--spacing-100);
+    }
 `
 
 const SunIcon = styled.span`
@@ -81,6 +96,11 @@ const StartMenu = styled.div`
         grid-template-columns: 1fr;
         row-gap: var(--spacing-800);
     }
+
+    @media only screen and (max-width: 31.25em) {
+        padding-top: var(--spacing-400);
+        row-gap: var(--spacing-500);
+    }
 `
 
 const Welcome = styled.div`
@@ -104,6 +124,10 @@ const WelcomeText = styled.div`
         letter-spacing: 0;
         font-size: 6.4rem;
         font-weight: 300;
+        
+        @media only screen and (max-width: 31.25em) {
+            font-size: 4rem;
+        }
     }
     h1 {
         font-family: "Rubik", sans-serif;
@@ -112,6 +136,10 @@ const WelcomeText = styled.div`
         letter-spacing: 0;
         font-weight: 500;
         color: var(${props => props.theme === 'light-theme' ? '--blue-900' : '--white'});
+
+        @media only screen and (max-width: 31.25em) {
+            font-size: 4rem;
+        }
     }
     
 `
@@ -124,6 +152,10 @@ const InstructionText = styled.p`
     line-height: 150%;
     letter-spacing: 0;
     font-weight: 400;
+
+    @media only screen and (max-width: 31.25em) {
+        font-size: 1.4rem;
+    }
 `
 
 const SubjectList = styled.div`
@@ -133,6 +165,10 @@ const SubjectList = styled.div`
     
     @media only screen and (max-width: 63.5em) {
         gap: var(--spacing-300);
+    }
+
+    @media only screen and (max-width: 31.25em) {
+        gap: var(--spacing-200);
     }
 `
 
@@ -154,6 +190,11 @@ const Subject = styled.button`
     line-height: 100%;
     letter-spacing: 0;
     font-weight: 500;
+
+    @media only screen and (max-width: 31.25em) {
+        font-size: 1.8rem;
+        gap: var(--spacing-200);
+    }
 `
 
 const SubjectIcon = styled.span`
@@ -164,12 +205,28 @@ const SubjectIcon = styled.span`
     height: 5.6rem;
     background-color: ${props => props.color};
     border-radius: 0.8rem;
+
+    @media only screen and (max-width: 31.25em) {
+        height: 4rem;
+        width: 4rem;
+    }
+    
+    img {
+        @media only screen and (max-width: 31.25em) {
+        width: 2.8rem;
+        height: 2.8rem;
+        }
+    }
 `
 
 const SubjectTitleContainer = styled.div`
     display: flex;
     gap: var(--spacing-300);
     align-items: center;
+
+    @media only screen and (max-width: 31.25em) {
+        gap: var(--spacing-200);
+    }
 `
 
 const SubjectTitle = styled.span`
@@ -180,6 +237,11 @@ const SubjectTitle = styled.span`
     line-height: 100%;
     letter-spacing: 0;
     font-weight: 500;
+
+
+    @media only screen and (max-width: 31.25em) {
+       font-size: 1.8rem;
+    }
 `
 
 const QuestionContainer = styled.div`
@@ -206,6 +268,10 @@ const QuestionNumber = styled.p`
     line-height: 150%;
     letter-spacing: 0;
     font-weight: 400;
+    
+    @media only screen and (max-width: 31.25em) {
+        font-size: 1.4rem;
+    }
 `
 
 const Question = styled.p`
@@ -216,6 +282,11 @@ const Question = styled.p`
     line-height: 120%;
     letter-spacing: 0;
     font-weight: 500;
+
+
+    @media only screen and (max-width: 31.25em) {
+        font-size: 2rem;
+    }
 `
 
 const ProgressBar = styled.progress`
@@ -308,7 +379,12 @@ const Option = styled.button`
     letter-spacing: 0;
     font-weight: 500;
     border: 3px solid var(${props => props.theme === 'light-theme' ? '--white' : '--blue-850'}) !important;
-    
+
+
+    @media only screen and (max-width: 31.25em) {
+        gap: var(--spacing-200);
+        font-size: 1.8rem;
+    }
     
     span:nth-child(1) {
         display: flex;
@@ -326,6 +402,12 @@ const Option = styled.button`
         line-height: 100%;
         letter-spacing: 0;
         font-weight: 500;
+
+
+        @media only screen and (max-width: 31.25em) {
+            width: 4rem;
+            height: 4rem;
+        }
     }
     
     span:nth-child(2) {
@@ -359,6 +441,12 @@ const SubmitButton = styled.button`
     &:active {
        background: var(--purple-600);
     }
+    
+    @media only screen and (max-width: 31.25em) {
+        padding: var(--spacing-200);
+        font-size: 1.8rem;
+        border-radius: 1.2rem;
+    }
 `
 
 const NextButton = styled(SubmitButton)`
@@ -390,6 +478,11 @@ const Result = styled.div`
         grid-template-columns: 1fr;
         row-gap: var(--spacing-800);
     }
+
+    @media only screen and (max-width: 31.25em) {
+        padding-top: var(--spacing-400);
+        row-gap: var(--spacing-500);
+    }
 `
 
 const ScoreText = styled.div`
@@ -405,6 +498,11 @@ const ScoreText = styled.div`
         line-height: 100%;
         letter-spacing: 0;
         font-weight: 300;
+
+        @media only screen and (max-width: 31.25em) {
+            font-size: 4rem;
+        }
+        
     }
 
     span:nth-child(2) {
@@ -415,6 +513,10 @@ const ScoreText = styled.div`
         line-height: 100%;
         letter-spacing: 0;
         font-weight: 500;
+        
+        @media only screen and (max-width: 31.25em) {
+            font-size: 4rem;
+        }
     }
 `
 
@@ -422,6 +524,10 @@ const ScoreContent = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--spacing-400);
+
+    @media only screen and (max-width: 31.25em) {
+        gap: var(--spacing-200);
+    }
 `
 
 const ResultCard = styled.div`
@@ -433,6 +539,11 @@ const ResultCard = styled.div`
     border-radius: 2.4rem;
     box-shadow: ${props => props.theme === 'light-theme' ? '0 16px 40px rgba(143, 160, 193, 0.14)' : '0 16px 40px rgba(49, 62, 81, 0.14)'};
     background-color: var(${props => props.theme === 'light-theme' ? '--white' : '--blue-850'});
+
+    @media only screen and (max-width: 31.25em) {
+        padding: var(--spacing-400);
+        gap: var(--spacing-200);
+    }
 `
 
 const ScoreDetails = styled.div`
@@ -450,6 +561,10 @@ const ScoreNumber = styled.span`
     line-height: 100%;
     letter-spacing: 0;
     font-weight: 500;
+
+    @media only screen and (max-width: 31.25em) {
+        font-size: 8.8rem;
+    }
 `
 
 const ScoreDescription = styled.p`
@@ -459,7 +574,11 @@ const ScoreDescription = styled.p`
     font-size: 2.4rem;
     line-height: 150%;
     letter-spacing: 0;
-    font-weight: 400;
+    font-weight: 500;
+
+    @media only screen and (max-width: 31.25em) {
+        font-size: 1.8rem;
+    }
 `
 
 const PlayButton = styled(NextButton)`
