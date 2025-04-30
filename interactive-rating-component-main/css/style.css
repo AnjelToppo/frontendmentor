@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: #FFF;
+    --black: #000;
+    --grey-950: #131518;
+    --grey-900: #262E38;
+    --grey-500: #969FAD;
+    --orange-500: #FC7614;
+
+    --spacing-0: 0;
+    --spacing-50: 0.6rem;
+    --spacing-100: 0.8rem;
+    --spacing-200: 1.6rem;
+    --spacing-300: 2.4rem;
+    --spacing-400: 3.2rem;
+    --spacing-500: 4rem;
+    --spacing-1300: 10.8rem;
+    --spacing-1700: 13.6rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--grey-950);
+}
+
+.rating-card {
+    display: flex;
+    justify-content: center;
+    border-radius: 3rem;
+    padding: var(--spacing-400) var(--spacing-300);
+    background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+    max-width: 41.2rem;
+    width: 100%;
+}
+
+.rating-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+    max-width: 35.1rem;
+}
+
+.star-container {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 2.4rem;
+    padding: var(--spacing-200);
+    background-color: var(--grey-900);
+}
+
+.rating-texts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+}
+
+h1 {
+    font-family: 'Overpass', sans-serif;
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+    letter-spacing: 0;
+    font-weight: 700;
+    color: var(--white);
+}
+
+p {
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    letter-spacing: 0;
+    font-weight: 400;
+    color: var(--grey-500);
+}
+
+ul {
+    display: flex;
+    gap: var(--spacing-300);
+    list-style: none;
+}
+
+ul button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    /*padding: var(--spacing-200) var(--spacing-300);*/
+    border-radius: 25.5rem;
+    background-color: var(--grey-900);
+    height: 5.1rem;
+    width: 5.1rem;
+    cursor: pointer;
+
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.2px;
+    font-weight: 700;
+    color: var(--grey-500);
+
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+ul button:hover {
+    background-color: var(--orange-500);
+    color: var(--grey-900);
+}
+
+.rating-content[data-rating='1'] li:nth-child(1) button {
+    background-color: var(--white);
+    color: var(--grey-900);
+}
+
+.rating-content[data-rating='2'] li:nth-child(2) button {
+    background-color: var(--white);
+    color: var(--grey-900);
+}
+
+.rating-content[data-rating='3'] li:nth-child(3) button {
+    background-color: var(--white);
+    color: var(--grey-900);
+}
+
+.rating-content[data-rating='4'] li:nth-child(4) button {
+    background-color: var(--white);
+    color: var(--grey-900);
+}
+
+.rating-content[data-rating='5'] li:nth-child(5) button {
+    background-color: var(--white);
+    color: var(--grey-900);
+}
+
+.submit-btn {
+    text-transform: uppercase;
+    background-color: var(--orange-500);
+    border-radius: 22.5rem;
+    padding-top: var(--spacing-50);
+    padding-bottom: var(--spacing-50);
+    border: none;
+    cursor: pointer;
+    height: 45px;
+
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.17px;
+    font-weight: 600;
+    color: var(--grey-950);
+}
+
+.rating-content[data-rating='1'] .submit-btn {
+    background-color:var(--white);
+}
+
+.rating-content[data-rating='2'] .submit-btn {
+    background-color:var(--white);
+}
+
+.rating-content[data-rating='3'] .submit-btn {
+    background-color:var(--white);
+}
+
+.rating-content[data-rating='4'] .submit-btn {
+    background-color:var(--white);
+}
+
+.rating-content[data-rating='5'] .submit-btn {
+    background-color:var(--white);
+}
