@@ -49,10 +49,6 @@ main {
     width: 100%;
 }
 
-.rating-card {
-    display: none;
-}
-
 .rating-content {
     display: flex;
     flex-direction: column;
@@ -159,6 +155,7 @@ ul button:hover {
     border: none;
     cursor: pointer;
     height: 45px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
     font-family: 'Overpass', sans-serif;
     font-size: 1.4rem;
@@ -249,4 +246,8 @@ ul button:hover {
     letter-spacing: 0;
     font-weight: 400;
     color: var(--grey-500);
+}
+
+.hidden {
+    display: none;
 }
