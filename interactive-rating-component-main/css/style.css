@@ -37,6 +37,8 @@ main {
     justify-content: center;
     min-height: 100vh;
     background-color: var(--grey-950);
+
+    padding-inline: var(--spacing-200);
 }
 
 .rating-card {
@@ -57,6 +59,9 @@ main {
 }
 
 .star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 4.8rem;
     height: 4.8rem;
     border-radius: 2.4rem;
@@ -92,6 +97,7 @@ ul {
     display: flex;
     gap: var(--spacing-300);
     list-style: none;
+    flex-wrap: wrap;
 }
 
 ul button {
@@ -250,4 +256,59 @@ ul button:hover {
 
 .hidden {
     display: none;
+}
+
+@media only screen and (max-width: 28.75em) {
+    .rating-card {
+        padding: var(--spacing-300);
+        max-width: 32.7rem;
+        width: 100%;
+    }
+
+    .rating-content {
+        gap: var(--spacing-300);
+    }
+
+    .star-container {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .rating-texts h1 {
+        font-size: 2.4rem;
+    }
+
+    .rating-texts p {
+        font-size: 1.4rem;
+    }
+
+    ul {
+        gap: var(--spacing-200);
+    }
+
+    ul button {
+        height: 4.2rem;
+        width: 4.2rem;
+    }
+
+    .submit-btn {
+        padding-top: var(--spacing-200);
+        padding-bottom: var(--spacing-200);
+    }
+
+    .thanks-card {
+        padding: var(--spacing-400) var(--spacing-300);
+    }
+
+    .thanks-content {
+        gap: var(--spacing-300);
+    }
+
+    .thanks-content p {
+        font-size: 1.4rem;
+    }
+
+    .message-container span {
+        font-size: 2.4rem;
+    }
 }
