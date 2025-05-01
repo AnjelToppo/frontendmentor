@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | FAQ accordion</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+    <picture>
+        <source srcset="assets/images/background-pattern-desktop.svg" media="(min-width: 376px)"/>
+        <source srcset="assets/images/background-pattern-mobile.svg" media="(max-width: 375px)"/>
+        <img src="assets/images/background-pattern-desktop.svg" alt="pattern"/>
+    </picture>
+    <div class="accordion">
+        <header class="header"><img src="assets/images/icon-star.svg" alt="">
+            <h1 class="main-heading">FAQs</h1></header>
+        <div class="content">
+            <details class="details" open>
+                <summary>What is Frontend Mentor, and how will it help me? <span></span></summary>
+                <p class="details--text">Frontend Mentor offers realistic coding challenges to help developers improve their
+                    frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
+                    all levels and ideal for portfolio building.</p>
+            </details>
+            <hr class="divider-line">
+            <details class="details">
+                <summary>Is Frontend Mentor free? <span></span></summary>
+                <p class="details--text">Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+                    option providing access to a range of projects suitable for all skill levels.</p>
+            </details>
+            <hr class="divider-line">
+            <details class="details">
+                <summary>Can I use Frontend Mentor projects in my portfolio? <span></span></summary>
+                <p class="details--text">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+                    way to showcase your skills to potential employers!</p>
+            </details>
+            <hr class="divider-line">
+            <details class="details">
+                <summary>How can I get help if I'm stuck on a challenge? <span></span></summary>
+                <p class="details--text">The best place to get help is inside Frontend Mentor's Discord community. There's a help
+                    channel where you can ask questions and seek support from other community members.</p>
+            </details>
+        </div>
+    </div>
+</main>
+</body>
+</html>
