@@ -164,9 +164,9 @@ ul button:hover {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
     font-family: 'Overpass', sans-serif;
-    font-size: 1.4rem;
-    line-height: 2.4rem;
-    letter-spacing: 0.17px;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    letter-spacing: 2px;
     font-weight: 600;
     color: var(--grey-950);
 }
