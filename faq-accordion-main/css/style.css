@@ -30,7 +30,7 @@ main {
     flex-direction: column;
     background-color: var(--light-pink);
     min-height: 100vh;
-    padding-inline: 1.6rem;
+    padding-inline: 2.4rem;
 }
 
 .accordion {
@@ -75,7 +75,6 @@ details > summary::-webkit-details-marker {
 }
 
 .details--text {
-    /*margin-bottom: 2.4rem;*/
     margin-top: 2.4rem;
 }
 
@@ -84,7 +83,6 @@ summary {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    /*margin-bottom: 2.4rem;*/
 
     color: var(--dark-purple);
     font-family: 'Work Sans', sans-serif;
@@ -92,11 +90,6 @@ summary {
     letter-spacing: 0;
     font-weight: 600;
 }
-
-/*.content:last-child summary {*/
-/*    margin-bottom: 0;*/
-/*    color: red;*/
-/*}*/
 
 summary span {
     display: flex;
@@ -136,9 +129,43 @@ details:not([open]) span {
 .divider-line {
     border: none;
     border-top: 1px solid var(--light-pink);
-    /*border-top: 1px solid red;*/
     margin-bottom: 2.4rem;
     margin-top: 2.4rem;
+}
+
+@media only screen and (max-width: 23.4em) {
+    .accordion {
+        margin-top: -8.95rem;
+        padding: 2.4rem;
+        gap: 2.4rem;
+    }
+
+    .header {
+        gap: 2.4rem;
+    }
+
+    .header img {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .main-heading {
+        font-size: 3.2rem;
+    }
+
+    summary {
+        font-size: 1.6rem;
+        gap: 2.4rem;
+    }
+
+    .details {
+        font-size: 1.4rem;
+    }
+
+    .divider-line {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
 }
 
 
