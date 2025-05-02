@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --grey-900: #2A4144;
+    --grey-500: #86A2A5;
+    --white: #FFFFFF;
+    --green-600: #0C7D69;
+    --green-200: #E0F1E8;
+    --red: #D73C3C;
+
+    --spacing-1600: 12.8rem;
+    --spacing-500: 4rem;
+    --spacing-400: 3.2rem;
+    --spacing-300: 2.4rem;
+    --spacing-200: 1.6rem;
+    --spacing-150: 1.2rem;
+    --spacing-100: 0.8rem;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-1600) var(--spacing-200);
+
+    background: var(--green-200);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--spacing-500);
+    gap: var(--spacing-500);
+
+    max-width: 73.6rem;
+    width: 100%;
+
+    background: #FFFFFF;
+    border-radius: 1.6rem;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-200) var(--spacing-500);
+    cursor: pointer;
+
+    border: none;
+
+    background: var(--green-600);
+    border-radius: 0.8rem;
+
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+
+    font-family: "Karla", serif;
+    color: var(--white);
+    font-size: 1.8rem;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 700;
+}
+
+.consent-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    gap: var(--spacing-200);
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.consent-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.consent-checkbox label {
+    cursor: pointer;
+    padding-left: 3.6rem;
+    position: relative;
+
+    font-family: "Karla", serif;
+    color: var(--grey-900);
+    font-size: 1.6rem;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+.consent-checkbox label:before {
+    box-sizing: border-box;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 2px solid var(--grey-500);
+    border-radius: 2px;
+}
+
+.consent-checkbox input[type="checkbox"]:checked + label:before {
+    content: url("../assets/images/icon-checkbox-check.svg");
+    border: none;
+}
+
+.consent-checkbox span {
+    color: var(--green-600);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-400);
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.contact-form h1 {
+    font-family: "Karla", serif;
+    font-size: 3.2rem;
+    line-height: 100%;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: var(--spacing-300);
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.fields__name, .fields__query {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-200);
+    width: 100%;
+}
+
+.fields__name--first, .fields__name--last, .fields__email, .message {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+    width: 100%;
+}
+
+.fields label, .fields legend {
+    display: flex;
+    gap: var(--spacing-100);
+
+    font-family: "Karla", serif;
+    color: var(--grey-900);
+    font-size: 1.6rem;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+.fields label span, .fields legend span {
+    color: var(--green-600);
+}
+
+.fields input, .fields__radio label, .fields textarea {
+    padding: var(--spacing-150) var(--spacing-300);
+    border-radius: 0.8rem;
+    border: 1px solid var(--grey-500);
+    cursor: pointer;
+
+    font-family: "Karla", serif;
+    color: var(--grey-900);
+    font-size: 1.8rem;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+textarea {
+    resize: none;
+}
+
+
+
