@@ -9,43 +9,9 @@
     <title>Frontend Mentor | Contact form</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            font-family: "Karla", sans-serif;
-        }
-
-        .attribution {
-            font-size: 11px;
-            text-align: center;
-        }
-
-        .attribution a {
-            color: hsl(228, 45%, 44%);
-        }
-
-        .errormessage {
-            visibility: hidden;
-        }
-
-        [aria-invalid="true"] {
-            outline: 2px solid red;
-        }
-
-        [aria-invalid="true"] ~ .errormessage {
-            visibility: visible;
-        }
-
-    </style>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-<!--<form action="" novalidate>-->
-<!--  <label for="name">Name <span aria-hidden="true">*</span></label>-->
-<!--  <input type="text" name="name" id="name" aria-invalid="true" aria-errormessage="err1" required aria-required="true" autocomplete="name">-->
-<!--  <span id="err1" class="errormessage" aria-live="polite">Error: Enter a valid name</span>-->
-<!--  <label for="email">Email <span aria-hidden="true">*</span></label>-->
-<!--  <input type="email" name="name" id="email" aria-invalid="true" aria-errormessage="err2" required aria-required="true" autocomplete="email">-->
-<!--  <span id="err2" class="errormessage" aria-live="polite">Error: Enter a valid email</span>-->
-<!--</form>-->
 <main>
     <form action="" class="contact-form" novalidate>
         <div class="content">
@@ -54,18 +20,21 @@
                 <div class="fields__name">
                     <div class="fields__name--first">
                         <label for="first-name">First Name <span aria-hidden="true">*</span></label>
-                        <input id="first-name" type="text" name="first-name" required>
+                        <input id="first-name" type="text" name="first-name" required aria-required="true" aria-errormessage="first-name-error" autocomplete="name">
+                        <p id="first-name-error" class="error-message" aria-live="polite">This field is required</p>
                     </div>
                     <div class="fields__name--last">
                         <label for="last-name">Last Name <span aria-hidden="true">*</span></label>
-                        <input id="last-name" type="text" name="last-name" required>
+                        <input id="last-name" type="text" name="last-name" required aria-required="true" aria-errormessage="last-name-error" autocomplete="name">
+                        <p id="last-name-error" class="error-message" aria-live="polite">This field is required</p>
                     </div>
                 </div>
                 <div class="fields__email">
                     <label for="email">Email Address <span aria-hidden="true">*</span></label>
-                    <input id="email" type="email" name="email" required>
+                    <input id="email" type="email" name="email" required aria-required="true" aria-errormessage="email-error" autocomplete="email">
+                    <p id="email-error" class="error-message" aria-live="polite">Please enter a valid email address</p>
                 </div>
-                <fieldset class="fields__query">
+                <fieldset class="fields__query" aria-required="true" aria-errormessage="query-error" role="radiogroup">
                     <legend>Query Type <span>*</span></legend>
                     <div class="fields__radio">
                         <div class="fields__radio--enquiry">
@@ -73,22 +42,25 @@
                             <label for="radio-enquiry">General Enquiry</label>
                         </div>
                         <div class="fields__radio--request">
-                            <input type="radio" name="query" id="radio-request" value="support request">
+                            <input type="radio" name="query" id="radio-request" value="support request" required>
                             <label for="radio-request">Support Request</label>
                         </div>
                     </div>
+                    <p id="query-error" class="error-message" aria-live="polite">Please select a query type</p>
                 </fieldset>
                 <div class="message">
                     <label for="message">Message <span aria-hidden="true">*</span></label>
-                    <textarea name="message" id="message" rows="3" required></textarea>
+                    <textarea name="message" id="message" rows="3" required aria-required="true" aria-errormessage="message-error"></textarea>
+                    <p id="message-error" class="error-message" aria-live="polite">This field is required</p>
                 </div>
 
             </div>
         </div>
 
         <div class="consent-checkbox">
-            <input type="checkbox" name="consent" id="consent">
+            <input type="checkbox" name="consent" id="consent" required aria-required="true" aria-errormessage="consent-error">
             <label for="consent">I consent to being contacted by the team <span aria-hidden="true">*</span></label>
+            <p id="consent-error" class="error-message" aria-live="polite">To submit this form, please consent to being contacted</p>
         </div>
 
         <button class="submit-btn">Submit</button>

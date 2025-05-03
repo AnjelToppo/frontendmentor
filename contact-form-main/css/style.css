@@ -92,7 +92,7 @@ main {
 
 .consent-checkbox {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     padding: 0;
 
     flex: none;
@@ -104,6 +104,11 @@ main {
 .consent-checkbox input[type="checkbox"] {
     opacity: 0;
     width: 0;
+    height: 0;
+}
+
+.consent-checkbox input[aria-invalid="true"] + label{
+    margin-bottom: var(--spacing-100);
 }
 
 .consent-checkbox label {
@@ -183,6 +188,14 @@ main {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: var(--spacing-200);
     width: 100%;
+}
+
+fieldset[aria-invalid="true"] .fields__radio {
+    margin-bottom: var(--spacing-200);
+}
+
+fieldset[aria-invalid="true"] .error-message{
+    display: inline-block;
 }
 
 .fields__name--first, .fields__name--last, .fields__email, .message {
@@ -292,6 +305,24 @@ fieldset legend {
 .fields__radio--request input:checked + label, .fields__radio--request input:focus + label {
     background-color: var(--green-200);
     border-color: var(--green-600);
+}
+
+input[aria-invalid="true"], textarea[aria-invalid="true"] {
+    border-color: var(--red);
+}
+
+[aria-invalid="true"] ~ .error-message {
+    display: inline-block;
+}
+
+.error-message {
+    display: none;
+    font-family: "Karla", serif;
+    color: var(--red);
+    font-size: 1.6rem;
+    line-height: 150%;
+    letter-spacing: 0;
+    font-weight: 400;
 }
 
 @media only screen and (max-width: 48em) {
