@@ -160,9 +160,9 @@ main {
     flex-grow: 0;
 }
 
-.fields__name, .fields__query {
+.fields__name, .fields__radio {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: var(--spacing-200);
     width: 100%;
 }
@@ -190,7 +190,7 @@ main {
     color: var(--green-600);
 }
 
-.fields input, .fields__radio label, .fields textarea {
+.fields input, .fields textarea {
     padding: var(--spacing-150) var(--spacing-300);
     border-radius: 0.8rem;
     border: 1px solid var(--grey-500);
@@ -207,6 +207,68 @@ main {
 textarea {
     resize: none;
 }
+
+fieldset {
+    border: 0 none;
+    width: 100%;
+}
+
+fieldset legend {
+    margin-bottom: var(--spacing-100);
+}
+
+.fields__radio--enquiry, .fields__radio--request {
+    display: flex;
+    align-items: center;
+    /*padding: var(--spacing-150) var(--spacing-300);*/
+    /*border-radius: 0.8rem;*/
+    /*border: 1px solid var(--grey-500);*/
+}
+
+.fields__radio--enquiry label, .fields__radio--request label {
+    padding: var(--spacing-150) var(--spacing-300);
+    border-radius: 0.8rem;
+    border: 1px solid var(--grey-500);
+    width: 100%;
+    cursor: pointer;
+}
+
+.fields__radio--enquiry input, .fields__radio--request input {
+    display: none;
+}
+
+.fields__radio--enquiry label:before, .fields__radio--request label:before {
+    content: "";
+    box-sizing: border-box;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--grey-500);
+    margin: 0.2rem;
+}
+
+.fields__radio--enquiry input:checked + label:before {
+    content: url("../assets/images/icon-radio-selected.svg");
+    border: none;
+}
+
+.fields__radio--request input:checked + label:before {
+    content: url("../assets/images/icon-radio-selected.svg");
+    border: none;
+}
+
+.fields__radio--enquiry input:checked + label {
+    background-color: var(--green-200);
+    border-color: var(--green-600);
+}
+
+.fields__radio--request input:checked + label {
+    background-color: var(--green-200);
+    border-color: var(--green-600);
+}
+
+
 
 
 
