@@ -6,11 +6,12 @@ const messageEl = document.querySelector('textarea');
 const allRadioEl = document.querySelectorAll('input[type="radio"]');
 const consentEl = document.querySelector('input[type="checkbox"]');
 
-const emailErrorEl = document.querySelector('#email-error');
+const toastEl = document.querySelector('.toast');
 
 allInputEl.forEach(input => input.addEventListener('blur', (e) => {
     if (e.target.value.trim() === '') {
-        e.target.setAttribute('aria-invalid', 'true')
+        e.target.setAttribute('aria-describedby', `${e.target.name}-error`);
+        e.target.setAttribute('aria-invalid', 'true');
     }
 }))
 
@@ -23,30 +24,36 @@ allInputEl.forEach(input => input.addEventListener('keyup', (e) => {
 allInputEl[2].addEventListener('blur', (e) => {
     const isValidEmail = /^\S+@\S+\.\S+$/
     if (!isValidEmail.test(e.target.value)) {
+        e.target.setAttribute('aria-describedby', `${e.target.name}-error`);
         e.target.setAttribute('aria-invalid', 'true')
     }
 })
 
 allRadioEl.forEach(input => input.addEventListener('focusout', (e) => {
     if (!e.target.checked) {
+        fieldsetEl.setAttribute('aria-describedby', `${e.target.name}-error`);
         fieldsetEl.setAttribute('aria-invalid', 'true')
     }
     if (e.target.checked) {
+        fieldsetEl.removeAttribute('aria-describedby');
         fieldsetEl.setAttribute('aria-invalid', 'false')
     }
 }))
 
 allRadioEl.forEach(input => input.addEventListener('focus', (e) => {
     if (allInputEl[3].checked && allInputEl[4].checked) {
+        fieldsetEl.setAttribute('aria-describedby', `${e.target.name}-error`);
         fieldsetEl.setAttribute('aria-invalid', 'true')
     }
     if (!e.target.checked) {
+        fieldsetEl.removeAttribute('aria-describedby');
         fieldsetEl.setAttribute('aria-invalid', 'false')
     }
 }))
 
 messageEl.addEventListener('blur', (e) => {
     if (e.target.value.trim() === '') {
+        e.target.setAttribute('aria-describedby', `${e.target.name}-error`);
         e.target.setAttribute('aria-invalid', 'true')
     }
 })
@@ -62,12 +69,14 @@ consentEl.addEventListener('focusout', (e) => {
         allInputEl[5].setAttribute('aria-invalid', 'false')
     }
     if (!e.target.checked) {
+        e.target.setAttribute('aria-describedby', `${e.target.name}-error`);
         allInputEl[5].setAttribute('aria-invalid', 'true')
     }
 })
 
 consentEl.addEventListener('focus', (e) => {
     if (e.target.checked) {
+        e.target.setAttribute('aria-describedby', `${e.target.name}-error`);
         allInputEl[5].setAttribute('aria-invalid', 'true')
     }
     if (!e.target.checked) {
@@ -107,5 +116,8 @@ form.addEventListener('submit', (e) => {
     }
 
     form.reset();
-    // console.log(data);
+    toastEl.showModal();
+    setTimeout(() => {
+        toastEl.close();
+    }, 7000)
 })

@@ -35,7 +35,7 @@
                     <p id="email-error" class="error-message" aria-live="polite">Please enter a valid email address</p>
                 </div>
                 <fieldset class="fields__query" aria-required="true" aria-errormessage="query-error" role="radiogroup">
-                    <legend>Query Type <span>*</span></legend>
+                    <legend>Query Type <span aria-hidden="true">*</span></legend>
                     <div class="fields__radio">
                         <div class="fields__radio--enquiry">
                             <input type="radio" name="query" id="radio-enquiry" value="general enquiry">
@@ -65,10 +65,13 @@
 
         <button class="submit-btn">Submit</button>
     </form>
+    <dialog class="toast" role="alertdialog" aria-live="assertive">
+        <div class="container">
+            <h2><img src="assets/images/icon-success-check.svg" alt="">Message Sent!</h2>
+            <p>Thanks for completing the form. We'll be in touch soon!</p>
+        </div>
+    </dialog>
 </main>
-
-<!--  Message Sent!-->
-<!--  Thanks for completing the form. We'll be in touch soon!-->
 
 </body>
 </html>
