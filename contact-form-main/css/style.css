@@ -164,6 +164,7 @@ main {
 
 .contact-form h1 {
     font-family: "Karla", serif;
+    color: var(--grey-900);
     font-size: 3.2rem;
     line-height: 100%;
     letter-spacing: -1px;
