@@ -9,6 +9,7 @@
     <title>Frontend Mentor | News homepage</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 <header class="header">
@@ -22,11 +23,28 @@
             <li><a href="/">Categories</a></li>
         </ul>
     </nav>
+    <button class="menu-btn"><img src="assets/images/icon-menu.svg" alt=""></button>
+    <dialog class="nav-dialog">
+        <button class="close-nav"><img src="assets/images/icon-menu-close.svg" alt=""></button>
+        <nav class="menu-nav">
+            <ul class="menu-nav__list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">New</a></li>
+                <li><a href="/">Popular</a></li>
+                <li><a href="/">Trending</a></li>
+                <li><a href="/">Categories</a></li>
+            </ul>
+        </nav>
+    </dialog>
 </header>
 <main>
     <div class="hero">
         <section class="main-content">
-            <img src="assets/images/image-web-3-desktop.jpg" alt="A colorful arrangement of three-dimensional cubes, cylinders, and other geometric forms.">
+            <picture>
+                <source media="(max-width: 483px)" srcset="assets/images/image-web-3-mobile.jpg">
+                <source media="(min-width: 925px)" srcset="assets/images/image-web-3-desktop.jpg" />
+                <img src="assets/images/image-web-3-desktop.jpg" alt="A colorful arrangement of three-dimensional cubes, cylinders, and other geometric forms." />
+            </picture>
             <div class="main-content-container">
                 <h1>The Bright Future of Web 3.0?</h1>
                 <div>

@@ -46,6 +46,7 @@ main {
     height: fit-content;
     margin-top: 8.9rem;
     margin-inline: auto;
+    position: relative;
 }
 
 .nav {
@@ -245,5 +246,106 @@ main {
     line-height: 2.6rem;
     letter-spacing: 0;
     font-weight: 400;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.menu-nav__list a {
+    color: var(--dark-space-blue);
+
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+dialog:open {
+    display: none;
+}
+
+::backdrop {
+    /*background-color: red;*/
+}
+@media only screen and (max-width: 67.75em) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 58.125em) {
+    .top-articles {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 3rem;
+    }
+}
+
+@media only screen and (max-width: 42.75em) {
+    .nav-dialog {
+        min-height: 100vh;
+        max-width: 25.6rem;
+        width: 100%;
+        border: none;
+        position: static;
+        top: 0;
+        left: 100%;
+        transform: translateX(-25.5rem);
+        padding: 2.73rem 1.9rem;
+    }
+
+    dialog:open {
+        display: flex;
+        flex-direction: column;
+        gap: 8.57rem;
+    }
+
+    .close-nav {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        align-self: flex-end;
+
+    }
+
+    .header {
+        margin-top: 2.8rem;
+    }
+
+    .main-content-container {
+        grid-template-columns: 1fr;
+        gap: 2.4rem;
+    }
+
+    .main-content-container h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    .aside h2 {
+        font-size: 3.2rem;
+        line-height: 3.2rem;
+    }
+
+    .top-articles {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
 }
 
