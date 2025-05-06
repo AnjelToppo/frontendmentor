@@ -67,6 +67,12 @@ main {
     line-height: 2.6rem;
     letter-spacing: 0;
     font-weight: 400;
+
+    transition: color 0.2s ease-in-out;
+}
+
+.nav__list a:hover {
+    color: var(--light-vermillion);
 }
 
 .hero {
@@ -76,7 +82,7 @@ main {
     row-gap: 7.1rem;
     max-width: 111rem;
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 5.5rem;
 }
 
 .main-content {
@@ -137,6 +143,13 @@ main {
     line-height: 2.4rem;
     letter-spacing: 4.38px;
     font-weight: 700;
+
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.read-more-btn:active {
+    background-color: var(--dark-space-blue);
+    color: var(--almost-white);
 }
 
 .aside {
@@ -175,6 +188,12 @@ main {
     line-height: 2.4rem;
     letter-spacing: 0;
     font-weight: 800;
+
+    transition: color 0.2s ease-in-out;
+}
+
+.article__title:hover {
+    color: var(--yellow);
 }
 
 .article__summary {
@@ -188,10 +207,11 @@ main {
 }
 
 .separator {
-    height: 0;
-    border-top: 1px solid var(--gunmetal);
     margin-top: 3rem;
     margin-bottom: 3rem;
+    border: none;
+    height: 1px;
+    background-color: #5E607A;
 }
 
 .top-articles {
@@ -236,6 +256,12 @@ main {
     line-height: 2.4rem;
     letter-spacing: 0;
     font-weight: 800;
+
+    transition: color 0.2s ease-in-out;
+}
+
+.top-articles__content a:hover {
+    color: var(--light-vermillion);
 }
 
 .top-articles__content p {
