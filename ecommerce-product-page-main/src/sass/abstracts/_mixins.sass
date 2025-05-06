@@ -1,0 +1,16 @@
+@mixin root-color($color-map)
+  @each $color-name, $color-value in $color-map
+    --#{$color-name}: #{$color-value}
+
+@mixin root-space($space-map)
+  @each $space-name, $space-value in $space-map
+    --spacing-#{$space-name}: #{$space-value}
+
+@mixin text-preset($color, $font-size, $line-height, $letter-spacing, $font-weight)
+  color: $color
+  font:
+    family: "Kumbh Sans", sans-serif
+    size: $font-size
+    weight: $font-weight
+  letter-spacing: $letter-spacing
+  line-height: $line-height
