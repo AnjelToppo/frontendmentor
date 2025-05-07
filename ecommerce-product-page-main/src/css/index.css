@@ -34,4 +34,242 @@ html {
   --spacing-1600: 12.8rem;
 }
 
+body {
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 111rem;
+  width: 100%;
+  margin: 2.8rem auto var(--spacing-1200) auto;
+  border-bottom: 1px solid var(--grey-100);
+  padding-bottom: var(--spacing-400);
+}
+
+.navigation {
+  display: flex;
+  gap: var(--spacing-700);
+  align-items: center;
+}
+.navigation nav ul {
+  display: flex;
+  gap: var(--spacing-400);
+}
+.navigation nav a {
+  padding-bottom: var(--spacing-400);
+}
+.navigation nav ul[data-tab=collections] li:nth-child(1) a {
+  border-bottom: 4px solid var(--orange-500);
+  color: var(--grey-950);
+}
+.navigation nav ul[data-tab=men] li:nth-child(2) a {
+  border-bottom: 4px solid var(--orange-500);
+  color: var(--grey-950);
+}
+.navigation nav ul[data-tab=women] li:nth-child(3) a {
+  border-bottom: 4px solid var(--orange-500);
+  color: var(--grey-950);
+}
+.navigation nav ul[data-tab=about] li:nth-child(4) a {
+  border-bottom: 4px solid var(--orange-500);
+  color: var(--grey-950);
+}
+.navigation nav ul[data-tab=contact] li:nth-child(5) a {
+  border-bottom: 4px solid var(--orange-500);
+  color: var(--grey-950);
+}
+
+.cart-profile {
+  display: flex;
+  gap: var(--spacing-600);
+  align-items: center;
+}
+.cart-profile button {
+  background-color: var(--white);
+}
+.cart-profile .user-avatar {
+  width: 5rem;
+  height: 5rem;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  max-width: 111rem;
+  width: 100%;
+  margin-inline: auto;
+}
+.product-container .product {
+  display: grid;
+  grid-template-columns: minmax(20rem, 44.8rem) minmax(20rem, 44.5rem);
+  column-gap: var(--spacing-1600);
+  min-height: 56.5rem;
+}
+
+.product__content {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+.product__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+.product__price-container {
+  display: flex;
+  gap: var(--spacing-200);
+}
+.product__prices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+.product__discount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  max-width: 5.1rem;
+  width: 100%;
+  min-height: 2.7rem;
+  background-color: var(--grey-950);
+  border-radius: 0.6rem;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: minmax(0, 15.7rem) 1fr;
+  column-gap: var(--spacing-200);
+}
+
+.actions__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--grey-50);
+  padding: var(--spacing-200) var(--spacing-100);
+  border-radius: 1rem;
+}
+
+.btn__add-cart {
+  display: flex;
+  gap: var(--spacing-200);
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--spacing-200);
+  padding-bottom: var(--spacing-200);
+  background-color: var(--orange-500);
+  border-radius: 1rem;
+  box-shadow: 0px 20px 50px -20px rgba(255, 126, 27, 0.25);
+}
+.btn__add-cart span {
+  display: inline-block;
+  width: 2.2rem;
+  height: 2rem;
+  mask-image: url("../../../public/images/icon-cart.svg");
+  background-color: var(--grey-950);
+}
+
+.btn__decrease-quantity, .btn__increase-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.navigation nav li a {
+  color: var(--grey-500);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 2.6rem;
+}
+
+.company {
+  color: var(--grey-500);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+}
+
+.product__name {
+  color: var(--grey-950);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 4.4rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 4.8rem;
+}
+.product__description {
+  color: var(--grey-500);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 2.6rem;
+}
+.product__current-price {
+  color: var(--grey-950);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 3.2rem;
+}
+.product__actual-price {
+  color: var(--grey-500);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 2.6rem;
+  text-decoration: line-through;
+}
+.product__discount {
+  color: var(--white);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 2.6rem;
+}
+.product__add-quantity {
+  color: var(--grey-950);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.6rem;
+}
+
+.btn__add-cart {
+  color: var(--grey-950);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 2.6rem;
+}
+
 /*# sourceMappingURL=index.css.map */

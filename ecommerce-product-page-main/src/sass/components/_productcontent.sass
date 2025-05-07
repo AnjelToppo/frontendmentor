@@ -1,0 +1,70 @@
+.product
+  &__content
+    align-self: center
+    display: flex
+    flex-direction: column
+    gap: var(--spacing-400)
+
+  &__header
+    display: flex
+    flex-direction: column
+    gap: var(--spacing-300)
+
+  &__price-container
+    display: flex
+    gap: var(--spacing-200)
+
+  &__prices
+    display: flex
+    flex-direction: column
+    gap: var(--spacing-100)
+
+  &__discount
+    display: flex
+    align-items: center
+    justify-content: center
+    align-self: flex-start
+
+    max-width: 5.1rem
+    width: 100%
+    min-height: 2.7rem
+    background-color: var(--grey-950)
+    border-radius: 0.6rem
+
+.cta
+  display: grid
+  grid-template-columns: minmax(0, 15.7rem) 1fr
+  column-gap: var(--spacing-200)
+
+.actions__container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: var(--grey-50)
+  padding: var(--spacing-200) var(--spacing-100)
+  border-radius: 1rem
+
+.btn__add-cart
+  display: flex
+  gap: var(--spacing-200)
+  justify-content: center
+  align-items: center
+  padding:
+    top: var(--spacing-200)
+    bottom: var(--spacing-200)
+  background-color: var(--orange-500)
+  border-radius: 1rem
+  box-shadow: 0px 20px 50px -20px rgba(255, 126, 27, 0.25)
+
+  span
+    display: inline-block
+    width: 2.2rem
+    height: 2rem
+    mask-image: url("../../../public/images/icon-cart.svg")
+    background-color: var(--grey-950)
+
+.btn__decrease-quantity, .btn__increase-quantity
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: transparent

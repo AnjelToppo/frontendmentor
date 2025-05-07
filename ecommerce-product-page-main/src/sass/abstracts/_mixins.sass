@@ -14,3 +14,11 @@
     weight: $font-weight
   letter-spacing: $letter-spacing
   line-height: $line-height
+
+@mixin active-tab($tab-map)
+  $index: 1
+  @each $tab in $tab-map
+    nav ul[data-tab=#{$tab}] li:nth-child(#{$index}) a
+      border-bottom: 4px solid var(--orange-500)
+      color: var(--grey-950)
+    $index: $index + 1

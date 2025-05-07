@@ -1,0 +1,16 @@
+@use "../abstracts/variables"
+@use "../abstracts/mixins"
+
+.navigation
+  display: flex
+  gap: var(--spacing-700)
+  align-items: center
+
+  nav ul
+    display: flex
+    gap: var(--spacing-400)
+
+  nav a
+    padding-bottom: var(--spacing-400)
+
+  @include mixins.active-tab(variables.$tabs)
