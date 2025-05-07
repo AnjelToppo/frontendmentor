@@ -1,10 +1,11 @@
 import ProductContent from "./ProductContent.jsx";
+import ProductGallery from "./ProductGallery.jsx";
 
 export default function Product() {
     return (
         <div className="product-container">
             <div className="product">
-                <div className="Product__gallery"></div>
+                <ProductGallery />
                 <ProductContent />
             </div>
         </div>
