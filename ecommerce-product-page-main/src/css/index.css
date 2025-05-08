@@ -178,13 +178,16 @@ button {
   padding-bottom: var(--spacing-200);
   background-color: var(--orange-500);
   border-radius: 1rem;
-  box-shadow: 0px 20px 50px -20px rgba(255, 126, 27, 0.25);
+  box-shadow: 0 20px 50px -20px rgba(255, 126, 27, 0.25);
+}
+.btn__add-cart:active {
+  background: var(--orange-300);
 }
 .btn__add-cart span {
   display: inline-block;
   width: 2.2rem;
   height: 2rem;
-  mask-image: url("../../../public/images/icon-cart.svg");
+  mask-image: url("/images/icon-cart.svg");
   background-color: var(--grey-950);
 }
 
@@ -193,6 +196,30 @@ button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
+}
+
+.btn__decrease-quantity {
+  mask-image: url("/images/icon-minus.svg");
+  background-color: var(--orange-500);
+  width: 1rem;
+  height: 1.2rem;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.btn__decrease-quantity:active {
+  background-color: var(--orange-300);
+}
+
+.btn__increase-quantity {
+  mask-image: url("/images/icon-plus.svg");
+  background-color: var(--orange-500);
+  width: 1.2rem;
+  height: 1.2rem;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.btn__increase-quantity:active {
+  background-color: var(--orange-300);
 }
 
 .product__gallery[data-image="0"] .product__images .thumbnail-container:nth-of-type(1) {

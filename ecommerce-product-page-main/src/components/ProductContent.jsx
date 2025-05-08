@@ -18,9 +18,9 @@ export default function ProductContent() {
             </div>
             <div className="cta">
                 <div className="actions__container">
-                    <button className="btn__decrease-quantity"><img src="/images/icon-minus.svg" alt="decrease product quantity"/></button>
+                    <button className="btn__decrease-quantity"></button>
                     <span className="product__add-quantity">0</span>
-                    <button className="btn__decrease-quantity"><img src="/images/icon-plus.svg" alt="increase product quantity"/></button>
+                    <button className="btn__increase-quantity"></button>
                 </div>
                 <button className="btn__add-cart"><span></span>Add to cart</button>
             </div>
