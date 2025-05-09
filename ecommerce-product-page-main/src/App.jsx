@@ -2,6 +2,7 @@ import Header from "./components/Header.jsx";
 import Content from "./components/Product.jsx";
 import {useReducer} from "react";
 import {CartsContext, CartsDispatchContext} from "./context/CartsContext.jsx";
+import LightBoxModal from "./components/LightBoxModal.jsx";
 
 function App() {
     const [carts, dispatch] = useReducer(cartsReducer, initialCarts)
@@ -10,6 +11,7 @@ function App() {
             <CartsDispatchContext.Provider value={dispatch}>
                 <Header/>
                 <Content/>
+                {carts.isLightBoxOpen && <LightBoxModal/>}
             </CartsDispatchContext.Provider>
         </CartsContext.Provider>)
 }
@@ -33,6 +35,10 @@ function cartsReducer(carts, action) {
             return {...carts, itemQuantity: 0};
         case 'checkout-item':
             return {...carts, itemQuantity: 0, itemCounter: 0, isCartOpen: false};
+        case 'open-light-box':
+            return {...carts, isLightBoxOpen: true};
+        case 'close-light-box':
+            return {...carts, isLightBoxOpen: false};
     }
 
 }
@@ -41,5 +47,6 @@ const initialCarts = {
     isCartOpen: false,
     itemQuantity: 0,
     itemCounter: 0,
-    itemPrice: 125
+    itemPrice: 125,
+    isLightBoxOpen: false,
 };

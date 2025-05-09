@@ -1,6 +1,6 @@
 import Navigation from "./Navigation.jsx";
 import CartProfile from "./CartProfile.jsx";
-import CartModal from "../CartModal.jsx";
+import CartModal from "./CartModal.jsx";
 
 export default function Header() {
     return (

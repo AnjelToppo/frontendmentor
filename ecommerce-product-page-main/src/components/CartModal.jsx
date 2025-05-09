@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {CartsContext, CartsDispatchContext} from "./context/CartsContext.jsx";
+import {CartsContext, CartsDispatchContext} from "../context/CartsContext.jsx";
 
 export default function CartModal() {
     const carts = useContext(CartsContext);
