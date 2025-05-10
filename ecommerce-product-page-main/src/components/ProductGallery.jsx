@@ -25,14 +25,13 @@ export default function ProductGallery() {
 
     function handleNextClick() {
         if (+mainImgRef.current.dataset.image >= images.length - 1) return;
-        console.log(mainImgRef.current.dataset.image, currentImg);
         mainImgRef.current.dataset.image = +mainImgRef.current.dataset.image + 1;
         setCurrentImg(images[+mainImgRef.current.dataset.image]?.replace('-thumbnail', ''));
     }
 
     return (<div ref={mainImgRef} className="product__gallery" data-image="0">
         <div className="product__main-image">
-            <img src={`/images/${currentImg}`} alt="product" onClick={() => dispatch({type: 'open-light-box'})} />
+            <img src={`images/${currentImg}`} alt="product" onClick={() => dispatch({type: 'open-light-box'})} />
             <div className="move-image">
                 <button className="prev-image" onClick={handlePrevClick}><span></span></button>
                 <button className="next-image" onClick={handleNextClick}><span></span></button>
@@ -40,7 +39,7 @@ export default function ProductGallery() {
         </div>
         <div className="product__images">
             {images.map((imagePath, imageIndex) => <button key={imagePath} className="thumbnail-container" onClick={() => handleThumbnailClick(imageIndex)}><img
-                                                                                             src={`/images/${imagePath}`}
+                                                                                             src={`images/${imagePath}`}
                                                                                              alt="product image"
             />
             </button>)}

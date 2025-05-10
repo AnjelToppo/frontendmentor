@@ -9,7 +9,7 @@ export default function Navigation() {
     }
 
     return (<div className="navigation">
-            <a href="/"><img src="/images/logo.svg" alt="company logo"/></a>
+            <a href="/"><img src="images/logo.svg" alt="company logo"/></a>
             <nav>
                 <ul data-tab="" ref={tabRef}>
                     <li><a href="/" onClick={(e) => handleTabClick(e, 'collections')}>Collections</a></li>

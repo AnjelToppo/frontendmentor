@@ -12,7 +12,7 @@ export default function CartModal() {
                          {carts.itemQuantity === 0 && <p className="cart-message--empty">Your cart is empty.</p>}
                          {carts.itemQuantity > 0 && <div className="product-cart">
                              <div className="cart-item-details">
-                                 <img src="/images/image-product-1-thumbnail.jpg" alt="shoe"/>
+                                 <img src="images/image-product-1-thumbnail.jpg" alt="shoe"/>
                                  <div className="cart-item-text-container">
                                      <p className="cart-item-name">Fall Limited Edition Sneakers</p>
                                      <div className="cart-item-price-container">
@@ -20,7 +20,7 @@ export default function CartModal() {
                                          <span className="cart-item-total">${(Math.round((carts.itemPrice * carts.itemQuantity) * 100) / 100).toFixed(2)}</span>
                                      </div>
                                  </div>
-                                 <button className="btn__delete-item" onClick={() => dispatch({type: 'delete-item'})}><img src="/images/icon-delete.svg" alt=""/></button>
+                                 <button className="btn__delete-item" onClick={() => dispatch({type: 'delete-item'})}><img src="images/icon-delete.svg" alt=""/></button>
                              </div>
                              <button className="btn__checkout" onClick={() => dispatch({type: 'checkout-item'})}>Checkout</button>
                          </div>}

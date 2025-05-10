@@ -25,7 +25,7 @@ export default function CartProfile() {
                 className="item-quantity-notification">{carts.itemQuantity}</span>}</button>
             <img ref={profileRef} onClick={() => {
                 setProfileClick(pc => !pc)
-            }} className="user-avatar" src="/images/image-avatar.png" alt="user profile avatar"/>
+            }} className="user-avatar" src="images/image-avatar.png" alt="user profile avatar"/>
         </div>
     )
 }

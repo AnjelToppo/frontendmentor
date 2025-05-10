@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "compilesass": "sass --watch src/sass/main.sass src/css/index.css"
+    "compilesass": "sass src/sass/main.sass src/css/index.css",
+    "watchsass": "sass --watch src/sass/main.sass src/css/index.css",
+    "completebuild": "npm run build && npm run compilesass"
   },
   "dependencies": {
     "react": "^19.1.0",

@@ -76,7 +76,7 @@ main {
   gap: var(--spacing-400);
 }
 .navigation nav a {
-  padding-bottom: var(--spacing-400);
+  padding-bottom: 4.4rem;
 }
 .navigation nav ul[data-tab=collections] li:nth-child(1) a {
   border-bottom: 4px solid var(--orange-500);
