@@ -1,7 +1,9 @@
-import {useRef} from "react";
+import {useContext, useRef} from "react";
+import {CartsDispatchContext} from "../context/CartsContext.jsx";
 
 export default function Navigation() {
     const tabRef = useRef(null);
+    const dispatch = useContext(CartsDispatchContext);
 
     function handleTabClick(evt, tab) {
         evt.preventDefault();
@@ -19,6 +21,6 @@ export default function Navigation() {
                     <li><a href="/" onClick={(e) => handleTabClick(e, 'contact')}>Contact</a></li>
                 </ul>
             </nav>
-            <button className="btn__menu"><img src="images/icon-menu.svg" alt=""/></button>
+            <button className="btn__menu" onClick={() => dispatch({type: 'open-menu'})}><img src="images/icon-menu.svg" alt=""/></button>
         </div>)
 }

@@ -772,6 +772,47 @@ main {
     display: none;
   }
 }
+.menu-modal {
+  display: none;
+}
+
+@media only screen and (max-width: 56em) {
+  .menu-modal:open {
+    top: 0;
+    height: 100vh;
+    border: 0;
+    max-width: 30.1rem;
+    width: 100%;
+    padding: var(--spacing-600) var(--spacing-1000);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-700);
+  }
+  .menu-modal:open button {
+    background-color: transparent;
+  }
+  .menu-modal:open ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+  }
+  .menu-modal:open ul li {
+    cursor: pointer;
+  }
+  .menu-modal:open ul li:hover {
+    color: var(--orange-500);
+  }
+  ::backdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+@media only screen and (max-width: 26.5em) {
+  .menu-modal:open {
+    max-width: 25rem;
+    padding: var(--spacing-300);
+  }
+}
 .navigation nav li a {
   color: var(--grey-500);
   font-family: "Kumbh Sans", sans-serif;
@@ -932,6 +973,15 @@ main {
   font-weight: 700;
   letter-spacing: 0;
   line-height: auto;
+}
+
+.menu-modal:open li {
+  color: var(--grey-950);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 2.6rem;
 }
 
 /*# sourceMappingURL=index.css.map */
