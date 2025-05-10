@@ -94,3 +94,50 @@
 
   &:active
     background-color: var(--orange-300)
+
+@media only screen and (max-width: 56em)
+  .product
+    &__content
+      gap: var(--spacing-300)
+
+    &__header
+      gap: var(--spacing-300)
+
+    &__price-container
+      gap: var(--spacing-300)
+
+  .cta
+    grid-template-columns: 1fr 1fr
+    column-gap: var(--spacing-100)
+
+  .actions__container
+    padding: var(--spacing-200) var(--spacing-300)
+
+@media only screen and (max-width: 26.5em)
+  .product
+    &__content
+      padding-inline: var(--spacing-300)
+      gap: var(--spacing-0)
+
+    &__header
+      gap: var(--spacing-200)
+
+    &__name
+      margin-bottom: var(--spacing-200)
+
+    &__description, &__price-container
+      margin-bottom: var(--spacing-400)
+
+    &__price-container
+      gap: var(--spacing-200)
+      position: relative
+
+    &__actual-price
+      position: absolute
+      right: 0
+
+  .cta
+    grid-template-columns: 1fr
+    row-gap: var(--spacing-200)
+
+

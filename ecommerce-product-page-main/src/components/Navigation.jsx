@@ -19,5 +19,6 @@ export default function Navigation() {
                     <li><a href="/" onClick={(e) => handleTabClick(e, 'contact')}>Contact</a></li>
                 </ul>
             </nav>
+            <button className="btn__menu"><img src="images/icon-menu.svg" alt=""/></button>
         </div>)
 }

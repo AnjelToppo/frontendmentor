@@ -9,12 +9,22 @@
   @include mixins.text-preset(var(--grey-500), variables.$typography-5...)
   text-transform: uppercase
 
+  @media only screen and (max-width: 26.5em)
+    font-size: 1.2rem
+    letter-spacing: 1.85px
+
 .product
   &__name
     @include mixins.text-preset(var(--grey-950), variables.$typography-1...)
 
+    @media only screen and (max-width: 26.5em)
+      @include mixins.text-preset(var(--grey-950), variables.$typography-2...)
+
   &__description
     @include mixins.text-preset(var(--grey-500), variables.$typography-3...)
+
+    @media only screen and (max-width: 26.5em)
+      font-size: 1.5rem
 
   &__current-price
     @include mixins.text-preset(var(--grey-950), variables.$typography-2...)

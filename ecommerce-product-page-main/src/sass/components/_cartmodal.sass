@@ -11,6 +11,7 @@
   inset-inline-start: unset
   right: -7.6rem
   display: flex
+  z-index: 1000
 
 .cart-content
   display: flex
@@ -66,7 +67,11 @@
   height: fit-content
   background-color: transparent
 
+@media only screen and (max-width: 79.125em)
+  .cart-modal:open
+    right: var(--spacing-100)
 
-
-
+@media only screen and (max-width: 26.5em)
+  .cart-modal:open
+    right: var(--spacing-0)
 

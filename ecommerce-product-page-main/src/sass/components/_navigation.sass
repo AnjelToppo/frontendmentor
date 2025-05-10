@@ -14,3 +14,21 @@
     padding-bottom: 4.4rem
 
   @include mixins.active-tab(variables.$tabs)
+
+.btn__menu
+  display: none
+
+@media only screen and (max-width: 56em)
+  .navigation nav
+    display: none
+
+  .btn__menu
+    display: flex
+    order: 1
+
+  .navigation a
+    order: 2
+
+  .navigation
+    gap: var(--spacing-200)
+

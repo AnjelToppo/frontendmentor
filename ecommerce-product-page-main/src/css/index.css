@@ -66,6 +66,21 @@ main {
   position: relative;
 }
 
+@media only screen and (max-width: 56em) {
+  .header {
+    margin-bottom: var(--spacing-600);
+    max-width: 60.8rem;
+  }
+}
+@media only screen and (max-width: 26.5em) {
+  .header {
+    margin-top: 1.9rem;
+    padding-inline: var(--spacing-300);
+    padding-bottom: var(--spacing-300);
+    border-bottom: 0;
+    margin-bottom: var(--spacing-0);
+  }
+}
 .navigation {
   display: flex;
   gap: var(--spacing-700);
@@ -99,6 +114,25 @@ main {
   color: var(--grey-950);
 }
 
+.btn__menu {
+  display: none;
+}
+
+@media only screen and (max-width: 56em) {
+  .navigation nav {
+    display: none;
+  }
+  .btn__menu {
+    display: flex;
+    order: 1;
+  }
+  .navigation a {
+    order: 2;
+  }
+  .navigation {
+    gap: var(--spacing-200);
+  }
+}
 .cart-profile {
   display: flex;
   gap: var(--spacing-600);
@@ -141,13 +175,24 @@ main {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  border: 2px solid transparent;
   cursor: pointer;
 }
 .cart-profile .user-avatar[data-open=true] {
   border: 2px solid var(--orange-500);
 }
 
+@media only screen and (max-width: 26.5em) {
+  .cart-profile {
+    gap: var(--spacing-200);
+  }
+  .cart-profile button:before {
+    mask-position: center;
+  }
+  .user-avatar {
+    height: 2.4rem !important;
+    width: 2.4rem !important;
+  }
+}
 .product-container {
   display: flex;
   justify-content: center;
@@ -163,6 +208,14 @@ main {
   margin-bottom: 8rem;
 }
 
+@media only screen and (max-width: 56em) {
+  .product-container .product {
+    grid-template-columns: 1fr;
+    row-gap: var(--spacing-600);
+    max-width: 60.8rem;
+    max-height: fit-content;
+  }
+}
 .product__content {
   align-self: center;
   display: flex;
@@ -263,6 +316,51 @@ main {
   background-color: var(--orange-300);
 }
 
+@media only screen and (max-width: 56em) {
+  .product__content {
+    gap: var(--spacing-300);
+  }
+  .product__header {
+    gap: var(--spacing-300);
+  }
+  .product__price-container {
+    gap: var(--spacing-300);
+  }
+  .cta {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--spacing-100);
+  }
+  .actions__container {
+    padding: var(--spacing-200) var(--spacing-300);
+  }
+}
+@media only screen and (max-width: 26.5em) {
+  .product__content {
+    padding-inline: var(--spacing-300);
+    gap: var(--spacing-0);
+  }
+  .product__header {
+    gap: var(--spacing-200);
+  }
+  .product__name {
+    margin-bottom: var(--spacing-200);
+  }
+  .product__description, .product__price-container {
+    margin-bottom: var(--spacing-400);
+  }
+  .product__price-container {
+    gap: var(--spacing-200);
+    position: relative;
+  }
+  .product__actual-price {
+    position: absolute;
+    right: 0;
+  }
+  .cta {
+    grid-template-columns: 1fr;
+    row-gap: var(--spacing-200);
+  }
+}
 .product__gallery[data-image="0"] .product__images .thumbnail-container:nth-of-type(1) {
   border: 2px solid var(--orange-500);
   position: relative;
@@ -388,6 +486,90 @@ main {
   display: none;
 }
 
+@media only screen and (max-width: 56em) {
+  .product__images {
+    display: none;
+  }
+  .product__gallery {
+    grid-template-rows: 29rem auto;
+    row-gap: var(--spacing-0);
+  }
+  .product__main-image {
+    position: relative;
+  }
+  .product__main-image img {
+    height: 29rem;
+    object-fit: cover;
+  }
+  .product__main-image .move-image {
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .product__main-image .move-image .prev-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2.8rem;
+    background-color: var(--white);
+    left: 1.6rem;
+    z-index: 100;
+  }
+  .product__main-image .move-image .prev-image span {
+    mask-image: url("/images/icon-previous.svg");
+    background-color: var(--grey-950);
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.8rem;
+    mask-position: center;
+  }
+  .product__main-image .move-image .prev-image:active span {
+    background-color: var(--orange-500);
+  }
+  .product__main-image .move-image .next-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1.6rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2.8rem;
+    background-color: var(--white);
+  }
+  .product__main-image .move-image .next-image span {
+    mask-image: url("/images/icon-next.svg");
+    background-color: var(--grey-950);
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.8rem;
+    mask-position: center;
+  }
+  .product__main-image .move-image .next-image:active span {
+    background-color: var(--orange-500);
+  }
+}
+@media only screen and (max-width: 26.5em) {
+  .product__main-image {
+    border-radius: 0;
+  }
+  .product__main-image img {
+    border-radius: 0;
+    height: 30rem;
+  }
+  .product__gallery {
+    grid-template-rows: 30rem auto;
+  }
+  .product {
+    row-gap: var(--spacing-300) !important;
+  }
+}
 .cart-modal:open {
   max-width: 36rem;
   width: 100%;
@@ -401,6 +583,7 @@ main {
   inset-inline-start: unset;
   right: -7.6rem;
   display: flex;
+  z-index: 1000;
 }
 
 .cart-content {
@@ -466,6 +649,16 @@ main {
   background-color: transparent;
 }
 
+@media only screen and (max-width: 79.125em) {
+  .cart-modal:open {
+    right: var(--spacing-100);
+  }
+}
+@media only screen and (max-width: 26.5em) {
+  .cart-modal:open {
+    right: var(--spacing-0);
+  }
+}
 .light-box-modal {
   display: flex;
   flex-direction: column;
@@ -574,6 +767,11 @@ main {
   background: var(--orange-500);
 }
 
+@media only screen and (max-width: 56em) {
+  .backdrop {
+    display: none;
+  }
+}
 .navigation nav li a {
   color: var(--grey-500);
   font-family: "Kumbh Sans", sans-serif;
@@ -592,6 +790,12 @@ main {
   line-height: 1.6rem;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 26.5em) {
+  .company {
+    font-size: 1.2rem;
+    letter-spacing: 1.85px;
+  }
+}
 
 .product__name {
   color: var(--grey-950);
@@ -601,6 +805,16 @@ main {
   letter-spacing: 0;
   line-height: 4.8rem;
 }
+@media only screen and (max-width: 26.5em) {
+  .product__name {
+    color: var(--grey-950);
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 3.2rem;
+  }
+}
 .product__description {
   color: var(--grey-500);
   font-family: "Kumbh Sans", sans-serif;
@@ -608,6 +822,11 @@ main {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 2.6rem;
+}
+@media only screen and (max-width: 26.5em) {
+  .product__description {
+    font-size: 1.5rem;
+  }
 }
 .product__current-price {
   color: var(--grey-950);

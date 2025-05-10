@@ -46,5 +46,85 @@
 .move-image
   display: none
 
+@media only screen and (max-width: 56em)
+  .product__images
+    display: none
+
+  .product__gallery
+    grid-template-rows: 29rem auto
+    row-gap: var(--spacing-0)
+
+  .product__main-image
+    position: relative
+    img
+      height: 29rem
+      object-fit: cover
+
+    .move-image
+      display: flex
+      width: 100%
+      height: 4rem
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+
+      .prev-image
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        width: 4rem
+        height: 4rem
+        border-radius: 2.8rem
+        background-color: var(--white)
+        left: 1.6rem
+        z-index: 100
+
+        span
+          mask-image: url("/images/icon-previous.svg")
+          background-color: var(--grey-950)
+          display: inline-block
+          width: 1.2rem
+          height: 1.8rem
+          mask-position: center
+
+      .prev-image:active span
+        background-color: var(--orange-500)
+
+      .next-image
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        right: 1.6rem
+        width: 4rem
+        height: 4rem
+        border-radius: 2.8rem
+        background-color: var(--white)
+
+        span
+          mask-image: url("/images/icon-next.svg")
+          background-color: var(--grey-950)
+          display: inline-block
+          width: 1.2rem
+          height: 1.8rem
+          mask-position: center
+
+      .next-image:active span
+        background-color: var(--orange-500)
+
+@media only screen and (max-width: 26.5em)
+  .product__main-image
+    border-radius: 0
+
+    img
+      border-radius: 0
+      height: 30rem
+
+  .product__gallery
+    grid-template-rows: 30rem auto
+
+  .product
+    row-gap: var(--spacing-300) !important
 
 
