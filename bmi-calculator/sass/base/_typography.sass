@@ -1,0 +1,38 @@
+@use "../abstracts/mixins"
+@use "../abstracts/variables"
+
+.hero
+  &__text-container
+    h1
+      @include mixins.text-preset(var(--blue-900), variables.$typography-1...)
+
+    p
+      @include mixins.text-preset(var(--grey-500), variables.$typography-6-r...)
+
+.form-heading
+  @include mixins.text-preset(var(--blue-900), variables.$typography-4...)
+
+.unit__groups
+  label
+    @include mixins.text-preset(var(--blue-900), variables.$typography-6-sb...)
+
+.height-weight--metric
+  input
+    @include mixins.text-preset(var(--blue-900), variables.$typography-4...)
+
+    &::placeholder
+      @include mixins.text-preset(var(--grey-500), variables.$typography-4...)
+
+  label
+    @include mixins.text-preset(var(--grey-500), variables.$typography-7-r...)
+
+fieldset[data-unit="metric"] + .height-weight--metric
+  .height-weight--metric-container::after
+    @include mixins.text-preset(var(--blue-500), variables.$typography-4...)
+
+.welcome-result
+  h3
+    @include mixins.text-preset(var(--white), variables.$typography-4...)
+
+  p
+    @include mixins.text-preset(var(--white), variables.$typography-7-r...)

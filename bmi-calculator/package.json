@@ -1,0 +1,15 @@
+{
+  "name": "bmi-calculator",
+  "version": "1.0.0",
+  "description": "This is a bmi calculator app, build with html, sass, css and js.",
+  "main": "index.js",
+  "scripts": {
+    "watchsass": "sass --watch sass/main.sass css/style.css",
+    "compilesass": "sass sass/main.sass css/style.css"
+  },
+  "author": "Anjel Toppo",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.88.0"
+  }
+}

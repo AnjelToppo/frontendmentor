@@ -1,0 +1,74 @@
+.unit
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+
+  &__groups
+    display: flex
+
+    label
+      display: flex
+      gap: var(--spacing-200)
+      align-items: center
+      cursor: pointer
+      position: relative
+      max-height: 3.1rem
+
+      &:hover::before
+        border-color: var(--blue-500)
+
+      &::before
+        content: ""
+        display: block
+        height: 3.1rem
+        width: 3.1rem
+        border-radius: 50%
+        border: 1px solid var(--grey-500)
+
+      &::after
+        content: ""
+        display: none
+        height: 1.5rem
+        width: 1.5rem
+        border-radius: 50%
+        background-color: var(--blue-500)
+        position: absolute
+        left: 0.9rem
+        top: 50%
+        transform: translateY(-50%)
+
+    input
+      opacity: 0
+      height: 0 !important
+      width: 0 !important
+
+      //&:focus + label::before
+      //  outline: 2px solid var(--blue-500)
+      //  outline-offset: 3px
+
+      &:checked + label::before
+        border-color: var(--blue-100)
+        background-color: var(--blue-100)
+
+      &:checked + label::after
+        display: block
+
+//fieldset[data-unit='metric']
+//  .unit__groups:nth-child(1)
+//    label::before
+//      border-color: var(--blue-100)
+//      background-color: var(--blue-100)
+//
+//    label::after
+//      display: block
+//
+//fieldset[data-unit='imperial']
+//  .unit__groups:nth-child(2)
+//    label::before
+//      border-color: var(--blue-100)
+//      background-color: var(--blue-100)
+//
+//    label::after
+//      display: block
+
+

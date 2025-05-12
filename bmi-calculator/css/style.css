@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..9001,14..32,100..900&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey-500: #5E6E85;
+  --grey-300: #ACC1DE;
+  --blue-900: #253347;
+  --blue-500: #345FF6;
+  --blue-300: #B3D3F1;
+  --blue-100: #E1E7FE;
+  --spacing-0: 0;
+  --spacing-100: 0.8rem;
+  --spacing-200: 1.6rem;
+  --spacing-300: 2.4rem;
+  --spacing-400: 3.2rem;
+  --spacing-500: 4rem;
+  --spacing-600: 4.8rem;
+  --spacing-700: 5.6rem;
+  --spacing-900: 7.2rem;
+  --spacing-1100: 8.8rem;
+  --spacing-1200: 9.6rem;
+  --spacing-1300: 10.4rem;
+  --spacing-1600: 12.8rem;
+  --spacing-1800: 14.4rem;
+}
+
+fieldset {
+  border: 0 none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.hero__text-container h1 {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 6.4rem;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -5%;
+}
+.hero__text-container p {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+.form-heading {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -5%;
+}
+
+.unit__groups label {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+.height-weight--metric input {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -5%;
+}
+.height-weight--metric input::placeholder {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -5%;
+}
+.height-weight--metric label {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-container::after {
+  color: var(--blue-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -5%;
+}
+
+.welcome-result h3 {
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -5%;
+}
+.welcome-result p {
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  max-width: 144rem;
+  height: 73.7rem;
+  position: relative;
+  padding: var(--spacing-1100) 0 var(--spacing-1100) 0;
+  margin-inline: auto;
+}
+.hero:before {
+  content: "";
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100.2rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, #D6E6FE 100%);
+  border-radius: 0 0 3.5rem 3.5rem;
+  z-index: -10;
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+  max-width: 116rem;
+  width: 100%;
+}
+.hero__text-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--spacing-400);
+}
+.hero__text-container {
+  padding-top: var(--spacing-900);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+.hero__text-container h1 {
+  max-width: 51.1rem;
+}
+.hero__text-container p {
+  max-width: 44.3rem;
+}
+
+.bmi-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  padding: var(--spacing-400);
+  background: var(--white);
+  box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+  border-radius: 1.6rem;
+}
+
+.unit {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.unit__groups {
+  display: flex;
+}
+.unit__groups label {
+  display: flex;
+  gap: var(--spacing-200);
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  max-height: 3.1rem;
+}
+.unit__groups label:hover::before {
+  border-color: var(--blue-500);
+}
+.unit__groups label::before {
+  content: "";
+  display: block;
+  height: 3.1rem;
+  width: 3.1rem;
+  border-radius: 50%;
+  border: 1px solid var(--grey-500);
+}
+.unit__groups label::after {
+  content: "";
+  display: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--blue-500);
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.unit__groups input {
+  opacity: 0;
+  height: 0 !important;
+  width: 0 !important;
+}
+.unit__groups input:checked + label::before {
+  border-color: var(--blue-100);
+  background-color: var(--blue-100);
+}
+.unit__groups input:checked + label::after {
+  display: block;
+}
+
+.height-weight--metric {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--spacing-300);
+}
+.height-weight--metric-container {
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr);
+  row-gap: var(--spacing-100);
+  position: relative;
+}
+.height-weight--metric input {
+  box-sizing: border-box;
+  padding: var(--spacing-200) var(--spacing-900) var(--spacing-200) var(--spacing-300);
+  background: var(--white);
+  border-radius: 1.2rem;
+  border: 1px solid var(--grey-500);
+  max-height: 6.1rem;
+}
+.height-weight--metric input:hover {
+  cursor: pointer;
+  border-color: var(--blue-500);
+}
+
+fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-container:nth-child(1)::after {
+  content: "cm";
+  display: block;
+  bottom: var(--spacing-200);
+  right: var(--spacing-300);
+  position: absolute;
+}
+fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-container:nth-child(2)::after {
+  content: "kg";
+  display: block;
+  bottom: var(--spacing-200);
+  right: var(--spacing-300);
+  position: absolute;
+}
+
+.welcome-result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  padding: var(--spacing-400);
+  background: var(--blue-500);
+  border-radius: 1.6rem 10rem 10rem 1.6rem;
+}
+
+/*# sourceMappingURL=style.css.map */

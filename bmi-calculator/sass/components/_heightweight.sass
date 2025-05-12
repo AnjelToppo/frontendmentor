@@ -1,0 +1,38 @@
+.height-weight--metric
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  column-gap: var(--spacing-300)
+
+  &-container
+    display: grid
+    grid-template-columns: minmax(10rem, 1fr)
+    row-gap: var(--spacing-100)
+    position: relative
+
+  input
+    box-sizing: border-box
+    padding: var(--spacing-200) var(--spacing-900) var(--spacing-200) var(--spacing-300)
+    background: var(--white)
+    border-radius: 1.2rem
+    border: 1px solid var(--grey-500)
+    max-height: 6.1rem
+
+    &:hover
+      cursor: pointer
+      border-color: var(--blue-500)
+
+fieldset[data-unit="metric"] + .height-weight--metric
+  .height-weight--metric-container:nth-child(1)::after
+    content: "cm"
+    display: block
+    bottom: var(--spacing-200)
+    right: var(--spacing-300)
+    position: absolute
+
+  .height-weight--metric-container:nth-child(2)::after
+    content: "kg"
+    display: block
+    bottom: var(--spacing-200)
+    right: var(--spacing-300)
+    position: absolute
+
