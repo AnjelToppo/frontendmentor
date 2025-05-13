@@ -1,7 +1,28 @@
 .welcome-result
-  display: flex
-  flex-direction: column
-  gap: var(--spacing-200)
   padding: var(--spacing-400)
   background: var(--blue-500)
   border-radius: 1.6rem 10rem 10rem 1.6rem
+
+.welcome-result[data-show="welcome"]
+  .result
+    display: none
+
+  .welcome
+    display: flex
+    flex-direction: column
+    gap: var(--spacing-200)
+
+.welcome-result[data-show="result"]
+  .welcome
+    display: none
+
+  .result
+    display: grid
+    grid-template-columns: 1fr 1fr
+    column-gap: var(--spacing-300)
+    align-items: center
+
+    &__text
+      display: flex
+      flex-direction: column
+      gap: var(--spacing-100)

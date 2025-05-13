@@ -142,11 +142,85 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   letter-spacing: 0%;
 }
 
+.height-weight--imperial legend {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+.height-weight--imperial input {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -5%;
+}
+.height-weight--imperial input::placeholder {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -5%;
+}
+.height-weight--imperial-container div:before {
+  color: var(--blue-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -5%;
+}
+
+.result__text p {
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+.result__text span {
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 6.4rem;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -5%;
+}
+.result__suggestion p {
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+.result__suggestion .weight-range {
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
 .hero {
   display: flex;
   justify-content: center;
   max-width: 144rem;
-  height: 73.7rem;
+  min-height: 73.7rem;
   position: relative;
   padding: var(--spacing-1100) 0 var(--spacing-1100) 0;
   margin-inline: auto;
@@ -159,7 +233,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   left: 0;
   max-width: 100.2rem;
   width: 100%;
-  height: 100%;
+  height: 73.7rem;
   background: linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, #D6E6FE 100%);
   border-radius: 0 0 3.5rem 3.5rem;
   z-index: -10;
@@ -200,9 +274,9 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
 }
 
 .unit {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--spacing-300);
 }
 .unit__groups {
   display: flex;
@@ -290,13 +364,115 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   position: absolute;
 }
 
-.welcome-result {
+.height-weight--imperial {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-200);
+  gap: var(--spacing-300);
+}
+.height-weight--imperial-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: var(--spacing-100);
+}
+.height-weight--imperial-container div {
+  position: relative;
+}
+.height-weight--imperial-container-input-group {
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr) minmax(10rem, 1fr);
+  column-gap: var(--spacing-300);
+}
+.height-weight--imperial-container-input-group:first-child::before {
+  content: "helo";
+  display: block;
+}
+.height-weight--imperial-container-input-group input {
+  width: 100%;
+  padding: var(--spacing-300) var(--spacing-900) var(--spacing-300) var(--spacing-300);
+  border-radius: 1.2rem;
+  border: 1px solid var(--grey-500);
+}
+
+.height-weight--imperial-container:nth-child(1) div:first-child:before {
+  content: "ft";
+  display: block;
+  color: var(--blue-500);
+  position: absolute;
+  bottom: var(--spacing-300);
+  right: var(--spacing-300);
+}
+
+.height-weight--imperial-container:nth-child(1) div:nth-child(2):before {
+  content: "in";
+  display: block;
+  color: var(--blue-500);
+  position: absolute;
+  bottom: var(--spacing-300);
+  right: var(--spacing-300);
+}
+
+.height-weight--imperial-container:nth-child(2) div:first-child:before {
+  content: "st";
+  display: block;
+  color: var(--blue-500);
+  position: absolute;
+  bottom: var(--spacing-300);
+  right: var(--spacing-300);
+}
+
+.height-weight--imperial-container:nth-child(2) div:nth-child(2):before {
+  content: "lbs";
+  display: block;
+  color: var(--blue-500);
+  position: absolute;
+  bottom: var(--spacing-300);
+  right: var(--spacing-300);
+}
+
+fieldset[data-unit=metric] ~ .height-weight--imperial {
+  display: none;
+}
+
+fieldset[data-unit=metric] ~ .height-weight--metric {
+  display: grid;
+}
+
+fieldset[data-unit=imperial] ~ .height-weight--metric {
+  display: none;
+}
+
+fieldset[data-unit=imperial] ~ .height-weight--imperial {
+  display: flex;
+}
+
+.welcome-result {
   padding: var(--spacing-400);
   background: var(--blue-500);
   border-radius: 1.6rem 10rem 10rem 1.6rem;
+}
+
+.welcome-result[data-show=welcome] .result {
+  display: none;
+}
+.welcome-result[data-show=welcome] .welcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+.welcome-result[data-show=result] .welcome {
+  display: none;
+}
+.welcome-result[data-show=result] .result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--spacing-300);
+  align-items: center;
+}
+.welcome-result[data-show=result] .result__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
 }
 
 /*# sourceMappingURL=style.css.map */

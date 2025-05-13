@@ -23,10 +23,10 @@
                 </div>
                 <form class="bmi-form" novalidate>
                     <h2 class="form-heading">Enter your details below</h2>
-                    <fieldset data-unit="metric">
+                    <fieldset data-unit="metric" class="imperial-fieldset">
                         <div class="unit">
                             <div class="unit__groups">
-                                <input type="radio" name="unit" id="metric" value="metric">
+                                <input type="radio" name="unit" id="metric" value="metric" checked>
                                 <label for="metric">Metric</label>
                             </div>
                             <div class="unit__groups">
@@ -39,16 +39,43 @@
                     <div class="height-weight--metric">
                         <div class="height-weight--metric-container">
                             <label for="height">Height</label>
-                            <input type="number" name="height" id="height" placeholder="0">
+                            <input type="number" name="height-cm" id="height" placeholder="0">
                         </div>
                         <div class="height-weight--metric-container">
                             <label for="weight">Weight</label>
-                            <input type="number" name="weight" id="weight" placeholder="0">
+                            <input type="number" name="weight-kg" id="weight" placeholder="0">
                         </div>
                     </div>
-                    <div class="welcome-result">
-                        <h3>Welcome!</h3>
-                        <p>Enter your height and weight and you’ll see your BMI result here</p>
+                    <div class="height-weight--imperial">
+                        <fieldset class="height-weight--imperial-container">
+                            <span><legend>Height</legend></span>
+                            <div class="height-weight--imperial-container-input-group">
+                                <div><input type="number" name="height-ft" placeholder="0"></div>
+                                <div><input type="number" name="height-in" placeholder="0"></div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="height-weight--imperial-container">
+                            <span><legend>Weight</legend></span>
+                            <div class="height-weight--imperial-container-input-group">
+                                <div><input type="number" name="weight-st" placeholder="0"></div>
+                                <div><input type="number" name="weight-lbs" placeholder="0"></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="welcome-result" data-show="welcome">
+                        <div class="welcome">
+                            <h3>Welcome!</h3>
+                            <p>Enter your height and weight and you’ll see your BMI result here</p>
+                        </div>
+                        <div class="result">
+                            <div class="result__text">
+                                <p>Your BMI is...</p>
+                                <span>23.4</span>
+                            </div>
+                            <div class="result__suggestion">
+                                <p>Your BMI suggests you're <span class="classification">healthy weight</span>. Your ideal weight is between <span class="weight-range">63.3kgs - 85.2kgs.</span></p>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -72,15 +99,10 @@
 
 
 
-
-
-
-Your BMI is...
-
 <!-- add score -->
 
-Your BMI suggests you're <!-- add classification -->.
-Your ideal weight is between <!-- add range -->.
+ <!-- add classification -->.
+ <!-- add range -->.
 
 What your BMI result means
 

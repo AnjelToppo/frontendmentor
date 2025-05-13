@@ -36,3 +36,33 @@ fieldset[data-unit="metric"] + .height-weight--metric
 
   p
     @include mixins.text-preset(var(--white), variables.$typography-7-r...)
+
+.height-weight--imperial
+  legend
+    @include mixins.text-preset(var(--grey-500), variables.$typography-7-r...)
+
+  input
+    @include mixins.text-preset(var(--blue-900), variables.$typography-4...)
+
+    &::placeholder
+      @include mixins.text-preset(var(--grey-500), variables.$typography-4...)
+
+
+  &-container div:before
+    @include mixins.text-preset(var(--blue-500), variables.$typography-4...)
+
+.result
+  &__text
+    p
+      @include mixins.text-preset(var(--white), variables.$typography-6-sb...)
+
+    span
+      @include mixins.text-preset(var(--white), variables.$typography-1...)
+
+  &__suggestion
+    p
+      @include mixins.text-preset(var(--white), variables.$typography-7-r...)
+
+    .weight-range
+      @include mixins.text-preset(var(--white), variables.$typography-7-b...)
+
