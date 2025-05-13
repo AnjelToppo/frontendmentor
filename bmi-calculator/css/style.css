@@ -53,7 +53,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 6.4rem;
   font-weight: 600;
   line-height: 110%;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 .hero__text-container p {
   color: var(--grey-500);
@@ -62,7 +62,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .form-heading {
@@ -72,7 +72,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 
 .unit__groups label {
@@ -82,7 +82,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .height-weight--metric input {
@@ -92,7 +92,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 .height-weight--metric input::placeholder {
   color: var(--grey-500);
@@ -101,7 +101,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 .height-weight--metric label {
   color: var(--grey-500);
@@ -110,7 +110,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-container::after {
@@ -120,7 +120,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 
 .welcome-result h3 {
@@ -130,7 +130,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 .welcome-result p {
   color: var(--white);
@@ -139,7 +139,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .height-weight--imperial legend {
@@ -149,7 +149,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 .height-weight--imperial input {
   color: var(--blue-900);
@@ -158,7 +158,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 .height-weight--imperial input::placeholder {
   color: var(--grey-500);
@@ -167,7 +167,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 .height-weight--imperial-container div:before {
   color: var(--blue-500);
@@ -176,7 +176,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 2.9rem;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 
 .result__text p {
@@ -186,7 +186,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 .result__text span {
   color: var(--white);
@@ -195,7 +195,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 6.4rem;
   font-weight: 600;
   line-height: 110%;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
 }
 .result__suggestion p {
   color: var(--white);
@@ -204,7 +204,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 .result__suggestion .weight-range {
   color: var(--white);
@@ -213,7 +213,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .hero {
@@ -222,7 +222,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   max-width: 144rem;
   min-height: 73.7rem;
   position: relative;
-  padding: 7.7rem 0 var(--spacing-1100) 0;
+  padding: 7.2rem 0 var(--spacing-1100) 0;
   margin-inline: auto;
 }
 .hero:before {
@@ -241,7 +241,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-300);
+  gap: var(--spacing-400);
   max-width: 116rem;
   width: 100%;
 }
@@ -255,6 +255,12 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   display: flex;
   flex-direction: column;
   gap: var(--spacing-400);
+}
+.hero__text-container h1 {
+  max-width: 47rem;
+}
+.hero__text-container p {
+  max-width: 46.5rem;
 }
 
 .bmi-form {
