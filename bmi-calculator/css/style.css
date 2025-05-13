@@ -222,7 +222,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   max-width: 144rem;
   min-height: 73.7rem;
   position: relative;
-  padding: var(--spacing-1100) 0 var(--spacing-1100) 0;
+  padding: 7.7rem 0 var(--spacing-1100) 0;
   margin-inline: auto;
 }
 .hero:before {
@@ -241,7 +241,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-100);
+  gap: var(--spacing-300);
   max-width: 116rem;
   width: 100%;
 }
@@ -251,16 +251,10 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   column-gap: var(--spacing-400);
 }
 .hero__text-container {
-  padding-top: var(--spacing-900);
+  padding-top: 9.3rem;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-400);
-}
-.hero__text-container h1 {
-  max-width: 51.1rem;
-}
-.hero__text-container p {
-  max-width: 44.3rem;
 }
 
 .bmi-form {
