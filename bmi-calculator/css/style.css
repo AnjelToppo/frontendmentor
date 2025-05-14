@@ -412,11 +412,18 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
 
 .limitations {
   display: flex;
+  justify-content: center;
   max-width: 144rem;
-  padding: var(--spacing-1300) var(--spacing-1800);
+  padding-top: var(--spacing-1300);
+  padding-bottom: var(--spacing-1300);
   margin-inline: auto;
-  position: relative;
   min-height: 93.4rem;
+}
+.limitations__container {
+  position: relative;
+  max-width: 116rem;
+  width: 100%;
+  height: 100%;
 }
 .limitations__header {
   display: flex;
@@ -439,6 +446,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   max-width: 96.1rem;
   width: 100%;
   position: absolute;
+  top: 0;
   right: 0;
   display: grid;
   grid-template-columns: 1fr;
