@@ -1,0 +1,76 @@
+.limitations
+  display: flex
+  max-width: 144rem
+  padding: var(--spacing-1300) var(--spacing-1800)
+  margin-inline: auto
+  position: relative
+  min-height: 93.4rem
+
+  &__header
+    display: flex
+    flex-direction: column
+    gap: var(--spacing-400)
+    max-width: 56.4rem
+    position: relative
+    height: max-content
+
+    p
+      max-width: 51rem
+
+    &::after
+      content: url("../assets/images/pattern-curved-line-right.svg")
+      position: absolute
+      bottom: -19.5rem
+      left: 16.5rem
+
+  &__content
+    max-width: 96.1rem
+    width: 100%
+    position: absolute
+    right: 0
+    display: grid
+    grid-template-columns: 1fr
+
+    .first-row
+      margin-bottom: var(--spacing-400)
+
+      .card
+        margin-inline: auto 9.9rem
+
+    .second-row
+      display: grid
+      grid-template-columns: 1fr 1fr
+      column-gap: var(--spacing-300)
+      max-width: 76.2rem
+      justify-self: end
+      margin-bottom: var(--spacing-300)
+
+      .card:nth-child(2)
+        p
+          max-width: 28.2rem
+
+    .third-row
+      display: grid
+      grid-template-columns: 1fr 1fr
+      column-gap: var(--spacing-300)
+      max-width: 76.2rem
+
+      .card:first-child
+        p
+          max-width: 28.6rem
+
+.card
+  display: flex
+  flex-direction: column
+  gap: var(--spacing-200)
+  max-width: 36.5rem
+  width: 100%
+  padding: var(--spacing-400)
+  background: var(--white)
+  border-radius: 1.6rem
+  box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25)
+
+  &__title
+    display: flex
+    gap: var(--spacing-200)
+    align-items: center

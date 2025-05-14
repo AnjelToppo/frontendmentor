@@ -216,6 +216,82 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
   letter-spacing: 0;
 }
 
+.results__explanation h2 {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.05em;
+}
+.results__explanation p {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.tip h4 {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+  letter-spacing: -0.05em;
+}
+.tip p {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.limitations__header h2 {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.05em;
+}
+.limitations__header p {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.card h5 {
+  color: var(--blue-900);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.05em;
+}
+.card p {
+  color: var(--grey-500);
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
 .hero {
   display: flex;
   justify-content: center;
@@ -241,7 +317,7 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-400);
+  gap: 4.2rem;
   max-width: 116rem;
   width: 100%;
 }
@@ -261,6 +337,154 @@ fieldset[data-unit=metric] + .height-weight--metric .height-weight--metric-conta
 }
 .hero__text-container p {
   max-width: 46.5rem;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  max-width: 144rem;
+  margin-inline: auto;
+  min-height: 67.1rem;
+  padding-bottom: 8.6rem;
+}
+.results__content {
+  display: grid;
+  grid-template-columns: minmax(20rem, 56.4rem) minmax(20rem, 46.5rem);
+  justify-content: space-between;
+  align-items: end;
+  max-width: 116rem;
+  width: 100%;
+  position: relative;
+}
+.results__content::before {
+  content: url("../assets/images/pattern-curved-line-left.svg");
+  display: inline-block;
+  position: absolute;
+  right: 2.7rem;
+  top: 0;
+}
+.results__content img {
+  width: 100%;
+}
+.results__explanation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  margin-bottom: 4.3rem;
+}
+.results__explanation p {
+  max-width: 43.5rem;
+}
+
+.tips {
+  display: flex;
+  justify-content: center;
+  max-width: 144rem;
+  padding: var(--spacing-1200) 0;
+  max-height: 42.2rem;
+  margin-inline: auto;
+}
+.tips__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 115.9rem;
+  width: 100%;
+  column-gap: var(--spacing-400);
+}
+
+.tip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-600);
+}
+.tip img {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+.tip__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+.tip__text p {
+  max-width: 34rem;
+}
+
+.limitations {
+  display: flex;
+  max-width: 144rem;
+  padding: var(--spacing-1300) var(--spacing-1800);
+  margin-inline: auto;
+  position: relative;
+  min-height: 93.4rem;
+}
+.limitations__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  max-width: 56.4rem;
+  position: relative;
+  height: max-content;
+}
+.limitations__header p {
+  max-width: 51rem;
+}
+.limitations__header::after {
+  content: url("../assets/images/pattern-curved-line-right.svg");
+  position: absolute;
+  bottom: -19.5rem;
+  left: 16.5rem;
+}
+.limitations__content {
+  max-width: 96.1rem;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.limitations__content .first-row {
+  margin-bottom: var(--spacing-400);
+}
+.limitations__content .first-row .card {
+  margin-inline: auto 9.9rem;
+}
+.limitations__content .second-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--spacing-300);
+  max-width: 76.2rem;
+  justify-self: end;
+  margin-bottom: var(--spacing-300);
+}
+.limitations__content .second-row .card:nth-child(2) p {
+  max-width: 28.2rem;
+}
+.limitations__content .third-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--spacing-300);
+  max-width: 76.2rem;
+}
+.limitations__content .third-row .card:first-child p {
+  max-width: 28.6rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  max-width: 36.5rem;
+  width: 100%;
+  padding: var(--spacing-400);
+  background: var(--white);
+  border-radius: 1.6rem;
+  box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+}
+.card__title {
+  display: flex;
+  gap: var(--spacing-200);
+  align-items: center;
 }
 
 .bmi-form {

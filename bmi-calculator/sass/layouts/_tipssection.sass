@@ -1,0 +1,31 @@
+.tips
+  display: flex
+  justify-content: center
+  max-width: 144rem
+  padding: var(--spacing-1200) 0
+  max-height: 42.2rem
+  margin-inline: auto
+
+  &__content
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    max-width: 115.9rem
+    width: 100%
+    column-gap: var(--spacing-400)
+
+.tip
+  display: flex
+  flex-direction: column
+  gap: var(--spacing-600)
+
+  img
+    width: 6.4rem
+    height: 6.4rem
+
+  &__text
+    display: flex
+    flex-direction: column
+    gap: var(--spacing-300)
+
+    p
+      max-width: 34rem
