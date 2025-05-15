@@ -94,3 +94,23 @@ fieldset[data-unit="metric"] + .height-weight--metric
 
   p
     @include mixins.text-preset(var(--grey-500), variables.$typography-6-r...)
+
+@media only screen and (max-width: 65.875rem)
+  .hero
+    &__text-container
+      h1
+        @include mixins.text-preset(var(--blue-900), variables.$typography-2...)
+
+  .result
+    &__text
+      span
+        @include mixins.text-preset(var(--white), variables.$typography-2...)
+
+  .results__explanation
+    h2
+      @include mixins.text-preset(var(--blue-900), variables.$typography-3...)
+
+  .limitations
+    &__header
+      h2
+        @include mixins.text-preset(var(--blue-900), variables.$typography-3...)

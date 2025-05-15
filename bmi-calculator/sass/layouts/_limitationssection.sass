@@ -34,38 +34,33 @@
     max-width: 96.1rem
     width: 100%
     position: absolute
+    min-height: 72.6rem
     top: 0
     right: 0
     display: grid
     grid-template-columns: 1fr
 
-    .first-row
-      margin-bottom: var(--spacing-400)
+    .card
+      position: absolute
 
-      .card
-        margin-inline: auto 9.9rem
+    .card:first-child
+      right: 9.9rem
 
-    .second-row
-      display: grid
-      grid-template-columns: 1fr 1fr
-      column-gap: var(--spacing-300)
-      max-width: 76.2rem
-      justify-self: end
-      margin-bottom: var(--spacing-300)
+    .card:nth-child(2)
+      left: 19.9rem
+      top: 26.4rem
 
-      .card:nth-child(2)
-        p
-          max-width: 28.2rem
+    .card:nth-child(3)
+      right: 0
+      top: 26.4rem
 
-    .third-row
-      display: grid
-      grid-template-columns: 1fr 1fr
-      column-gap: var(--spacing-300)
-      max-width: 76.2rem
+    .card:nth-child(4)
+      left: 0
+      bottom: 0
 
-      .card:first-child
-        p
-          max-width: 28.6rem
+    .card:last-child
+      bottom: 0
+      left: 39.7rem
 
 .card
   display: flex
@@ -82,3 +77,65 @@
     display: flex
     gap: var(--spacing-200)
     align-items: center
+
+@media only screen and (max-width: 65.875rem)
+  .limitations
+    padding: 9.6rem 4.3rem 9.5rem 3.9rem
+
+    &__container
+      display: flex
+      flex-direction: column
+      gap: var(--spacing-700)
+
+    &__header
+      max-width: inherit
+      text-align: center
+
+      p
+        max-width: inherit
+      &::after
+        display: none
+
+    &__content
+      position: relative
+      display: flex
+      flex-wrap: wrap
+      max-width: inherit
+      row-gap: var(--spacing-300)
+      column-gap: var(--spacing-200)
+      justify-content: center
+
+      .card
+        position: relative
+        max-width: 48%
+
+      .card:first-child
+        right: 0
+
+      .card:nth-child(2)
+        left: 0
+        top: 0
+
+      .card:nth-child(3)
+        top: 0
+
+      .card:last-child
+        left: 0
+        justify-self: center
+
+@media only screen and (max-width: 43.125rem)
+  .limitations
+    padding: 8.2rem 2.9rem 9.6rem 1.9rem
+
+    &__content
+      align-self: center
+      max-width: 80%
+
+      .card
+        min-width: 100%
+
+@media only screen and (max-width: 28.125rem)
+  .limitations
+    &__content
+      align-self: center
+      max-width: 100%

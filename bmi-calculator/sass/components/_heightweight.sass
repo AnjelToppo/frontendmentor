@@ -108,5 +108,8 @@ fieldset[data-unit="imperial"] ~ .height-weight--metric
 fieldset[data-unit="imperial"] ~ .height-weight--imperial
   display: flex
 
-
+@media only screen and (max-width: 43.125rem)
+  .height-weight--metric
+    grid-template-columns: minmax(5rem, 1fr)
+    row-gap: var(--spacing-200)
 

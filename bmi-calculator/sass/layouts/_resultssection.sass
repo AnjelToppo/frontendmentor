@@ -33,3 +33,33 @@
 
     p
       max-width: 43.5rem
+
+@media only screen and (max-width: 65.875rem)
+  .results
+    padding-top: 8.8rem
+    padding-bottom: 9.591rem
+    min-height: 41.1rem
+
+    &__content
+      max-width: 84.1rem
+      grid-template-columns: minmax(30rem, 43.5rem) minmax(10rem, 33.1rem)
+      column-gap: 7.2rem
+      margin-left: -11.6rem
+
+      &::before
+        display: none
+
+
+@media only screen and (max-width: 43.125rem)
+  .results
+    padding: 0
+
+    &__content
+      grid-template-columns: 1fr
+      margin-left: 0
+      row-gap: var(--spacing-600)
+      margin-bottom: 6.16rem
+
+    &__explanation
+      padding-inline: 2.3rem
+      margin-bottom: 0

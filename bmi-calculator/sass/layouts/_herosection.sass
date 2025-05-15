@@ -44,3 +44,48 @@
     p
       max-width: 46.5rem
 
+@media only screen and (max-width: 65.875rem)
+  .hero
+    padding: var(--spacing-400) var(--spacing-500) 0 var(--spacing-400)
+
+    &::before
+      max-height: 64rem
+
+    &__content
+      gap: var(--spacing-500)
+
+      nav
+        text-align: center
+
+        img
+          width: 4rem
+          height: 4rem
+
+    &__text-form
+      grid-template-columns: 1fr
+      justify-items: center
+      row-gap: var(--spacing-500)
+
+    &__text-container
+      text-align: center
+      padding-top: 0
+      gap: var(--spacing-300)
+      align-items: center
+
+      h1
+        justify-self: center
+
+      p
+        max-width: inherit
+
+@media only screen and (max-width: 43.125rem)
+  .hero
+    padding: var(--spacing-400) var(--spacing-200) 6.1rem var(--spacing-200)
+
+    &__content, &__text-form
+      gap: var(--spacing-400)
+
+  .height-weight--metric
+    grid-template-columns: 1fr
+
+

@@ -29,3 +29,30 @@
 
     p
       max-width: 34rem
+
+@media only screen and (max-width: 65.875rem)
+  .tips
+    padding: 5rem 3.9rem
+    min-height: fit-content
+
+    &__content
+      grid-template-columns: 1fr
+      row-gap: var(--spacing-500)
+
+  .tip
+    display: grid
+    grid-template-columns: max-content 1fr
+    align-items: center
+    column-gap: var(--spacing-500)
+
+    &__text
+      p
+        min-width: 100%
+
+@media only screen and (max-width: 43.125rem)
+  .tips
+    padding: var(--spacing-600) var(--spacing-300)
+
+  .tip
+    grid-template-columns: 1fr
+    row-gap: var(--spacing-400)
