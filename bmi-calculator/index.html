@@ -6,6 +6,7 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
     <title>Frontend Mentor | Body Mass Index Calculator</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
                 </div>
                 <form class="bmi-form" novalidate>
                     <h2 class="form-heading">Enter your details below</h2>
-                    <fieldset data-unit="metric" class="imperial-fieldset">
+                    <fieldset data-unit="metric" class="unit-fieldset">
                         <div class="unit">
                             <div class="unit__groups">
                                 <input type="radio" name="unit" id="metric" value="metric" checked>
@@ -62,7 +63,7 @@
                             </div>
                         </fieldset>
                     </div>
-                    <div class="welcome-result" data-show="result">
+                    <div class="welcome-result" data-show="welcome">
                         <div class="welcome">
                             <h3>Welcome!</h3>
                             <p>Enter your height and weight and you’ll see your BMI result here</p>
