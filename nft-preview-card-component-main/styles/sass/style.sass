@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap')
+
+$colors: ('white': #FFFFFF, 'black': #000000, 'blue-950': #0D192C, 'blue-900': #15263F, 'blue-800': #2E405A, 'blue-500': #8BACD9, 'cyan-400': #00FFF8)
+$spaces: (0: 0, 100: 0.8rem, 200: 1.6rem, 300: 2.4rem)
+
+$typography-1: (font-size: 2.2rem, line-height: 125%, letter-spacing: 0, font-weight: 600)
+$typography-2: (font-size: 1.8rem, line-height: 145%, letter-spacing: 0, font-weight: 300)
+$typography-3-sb: (font-size: 1.6rem, line-height: 125%, letter-spacing: 0, font-weight: 600)
+$typography-3-r: (font-size: 1.6rem, line-height: 125%, letter-spacing: 0, font-weight: 400)
+
+@mixin root-color($color-map)
+  @each $color-name, $color-value in $color-map
+    --#{$color-name}: #{$color-value}
+
+@mixin root-space($space-map)
+  @each $space-name, $space-value in $space-map
+    --spacing-#{$space-name}: #{$space-value}
+
+@mixin text-preset($color, $font-size, $line-height, $letter-spacing, $font-weight)
+  color: $color,
+  font:
+    family: "Outfit", sans-serif
+    style: normal
+    size: $font-size
+    weight: $font-weight
+  line-height: $line-height
+  letter-spacing: $letter-spacing
+
+@mixin flex($align-items: null, $justify-content: null, $gap: null, $direction: row)
+  display: flex
+  flex-direction: #{$direction}
+  justify-content: $justify-content
+  align-items: $align-items
+  gap: $gap
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+
+:root
+  @include root-color($colors)
+  @include root-space($spaces)
+
+main
+  @include flex(center, center)
+  min-height: 100vh
+  background: var(--blue-950)
+
+.card
+  @include flex($direction: column, $gap: var(--spacing-300))
+  max-width: 35rem
+  min-height: 59.6rem
+  padding: var(--spacing-300)
+  border-radius: 1.5rem
+  background: var(--blue-900)
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.0952917)
+
+  &__image
+    width: 100%
+    border-radius: 0.8rem
+
+  &__details
+    @include flex($direction: column, $gap: var(--spacing-300))
+
+  &__text
+    @include flex($direction: column, $gap: var(--spacing-300))
+
+  &__title
+    max-width: max-content
+
+  &__title-description
+    @include flex($direction: column, $gap: var(--spacing-200))
+
+.image-container
+  max-height: 30.2rem
+
+.image-container:hover
+  position: relative
+  cursor: pointer
+  &::before
+    content: url("../../images/icon-view.svg")
+    height: 4.8rem
+    width: 4.8rem
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 100
+    cursor: pointer
+
+  &::after
+    content: ""
+    position: absolute
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 255, 248, 0.5)
+    border-radius: 0.8rem
+    z-index: 10
+    cursor: pointer
+
+.info
+  @include flex($justify-content: space-between, $align-items: center)
+
+  &__price, &__time
+    @include flex($align-items: center, $gap: var(--spacing-100))
+
+.divide
+  border: 0
+  height: 1px
+  background: var(--blue-800)
+
+.creator
+  @include flex($gap: var(--spacing-200), $align-items: center)
+
+  &__avatar
+    height: 3.3rem
+    width: 3.3rem
+    border: 1px solid var(--white)
+    border-radius: 50%
+
+  &__text
+    @include flex($gap: var(--spacing-100))
+
+// TYPOGRAPHY
+.card
+  &__title
+    @include text-preset(var(--white), $typography-1...)
+
+    &:hover
+      color: var(--cyan-400)
+      cursor: pointer
+
+  &__description
+    @include text-preset(var(--blue-500), $typography-2...)
+
+.info
+  &__price
+    span
+      @include text-preset(var(--cyan-400), $typography-3-sb...)
+
+  &__time
+    span
+      @include text-preset(var(--blue-500), $typography-3-r...)
+
+.creator
+  &__text
+    p
+      @include text-preset(var(--blue-500), $typography-3-r...)
+
+    span
+      @include text-preset(var(--white), $typography-3-r...)
+
+      &:hover
+        color: var(--cyan-400)
+        cursor: pointer
