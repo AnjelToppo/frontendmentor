@@ -1,0 +1,15 @@
+{
+  "name": "loopstudios-landing-page-main",
+  "version": "1.0.0",
+  "description": "This is a loopstudios landing page, build with html, sass and css.",
+  "main": "index.js",
+  "scripts": {
+    "compilesass": "sass styles/sass/style.sass styles/css/style.css",
+    "watchsass": "sass --watch styles/sass/style.sass styles/css/style.css"
+  },
+  "author": "Anjel Toppo",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.89.0"
+  }
+}

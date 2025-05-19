@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --spacing-0: 0;
+  --spacing-100: 0.8rem;
+  --spacing-200: 1.6rem;
+  --spacing-300: 2.4rem;
+  --spacing-400: 3.2rem;
+  --spacing-500: 4rem;
+  --spacing-600: 4.8rem;
+  --spacing-800: 6.4rem;
+  --spacing-1000: 8rem;
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey-200: #D8D8D8;
+  --blue-100: #E5EAF1;
+  --blue-50: #F6FAFF;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.header__link {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Alata", sans-serif;
+  line-height: 165%;
+  letter-spacing: 0;
+}
+.header__title h1 {
+  color: var(--white);
+  font-size: 7.2rem;
+  font-weight: 300;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.header {
+  min-height: 65rem;
+  width: 100%;
+  background-image: url("../../images/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.header::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+}
+.header__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: calc(111rem + 2 * var(--spacing-300));
+  min-height: 50.4rem;
+  margin-inline: auto;
+  padding-top: var(--spacing-800);
+  position: relative;
+  padding-inline: var(--spacing-300);
+}
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header__nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-400);
+}
+.header__nav-list li {
+  display: flex;
+}
+.header__title {
+  position: relative;
+  max-width: 65rem;
+  padding: 4.2rem 4rem;
+  border: 2px solid var(--white);
+}
+
+.logo {
+  display: inline-block;
+  background-image: url("../../images/logo.svg");
+  width: 20rem;
+  height: 3.5rem;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,11 @@
+@use "../abstracts/mixins"
+@use "../abstracts/variables"
+
+.header
+  &__link
+    @include mixins.text-preset(var(--white), variables.$typography-6...)
+
+  &__title
+    h1
+      @include mixins.text-preset(var(--white), variables.$typography-1...)
+      text-transform: uppercase
