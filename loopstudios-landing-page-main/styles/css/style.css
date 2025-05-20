@@ -88,16 +88,29 @@ li {
 .header__nav-list {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: var(--spacing-400);
 }
 .header__nav-list li {
   display: flex;
 }
 .header__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: relative;
   max-width: 65rem;
-  padding: 4.2rem 4rem;
+  min-height: 27.8rem;
   border: 2px solid var(--white);
+}
+.header__title h1 {
+  max-width: 57rem;
+}
+
+.nav-list-container {
+  max-width: 38rem;
+  width: 100%;
 }
 
 .logo {

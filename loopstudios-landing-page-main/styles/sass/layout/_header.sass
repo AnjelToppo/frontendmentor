@@ -28,16 +28,24 @@
     @include mixins.flex($justify: space-between)
 
   &__nav-list
-    @include mixins.flex($gap: var(--spacing-400))
+    @include mixins.flex($gap: var(--spacing-400), $align: center)
 
     li
       display: flex
 
   &__title
+    @include mixins.flex($justify: center, $align: center)
     position: relative
     max-width: 65rem
-    padding: 4.2rem 4rem
+    min-height: 27.8rem
     border: 2px solid var(--white)
+
+    h1
+      max-width: 57rem
+
+.nav-list-container
+  max-width: 38rem
+  width: 100%
 
 .logo
   display: inline-block
