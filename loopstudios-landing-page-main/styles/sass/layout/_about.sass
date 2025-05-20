@@ -1,0 +1,30 @@
+@use "../abstracts/mixins"
+.about
+  background: var(--white)
+  padding-top: 16rem
+
+  &__content
+    margin-inline: auto
+    max-width: calc(111.1rem + (2 * var(--spacing-300)))
+    max-height: 50rem
+    padding-inline: var(--spacing-300)
+    position: relative
+
+  &__picture
+    img
+      max-width: 73.1rem
+      width: 100%
+
+  &__text
+    @include mixins.flex($justify: flex-end, $align: flex-end)
+    position: absolute
+    right: 0
+    bottom: 0
+    max-width: 54.1rem
+    width: 100%
+    min-height: 34.1rem
+    background: var(--white)
+
+.text-container
+  @include mixins.flex($direction: column, $gap: var(--spacing-300))
+  max-width: 44.5rem

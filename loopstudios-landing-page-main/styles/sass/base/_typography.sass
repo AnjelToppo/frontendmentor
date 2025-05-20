@@ -9,3 +9,11 @@
     h1
       @include mixins.text-preset(var(--white), variables.$typography-1...)
       text-transform: uppercase
+
+.about
+  &__title
+    @include mixins.text-preset(var(--black), variables.$typography-2...)
+    text-transform: uppercase
+
+  &__description
+    @include mixins.text-preset(rgba(0, 0, 0, 0.5), variables.$typography-6...)
