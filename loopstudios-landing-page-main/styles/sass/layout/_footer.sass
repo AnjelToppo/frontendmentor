@@ -1,0 +1,55 @@
+@use "../abstracts/mixins"
+
+.footer
+  background: var(--black)
+  margin-top: 18.2rem
+
+  &__content
+    @include mixins.flex($justify: space-between)
+    margin-inline: auto
+    max-width: calc(111rem + (2 * var(--spacing-300)))
+    padding: var(--spacing-400)
+    padding-inline: var(--spacing-300)
+
+  &__nav
+    @include mixins.flex($direction: column, $gap: var(--spacing-300))
+
+  &__nav-list
+    @include mixins.flex($gap: var(--spacing-200))
+    min-height: 3.5rem
+
+    li
+      @include mixins.flex($align: flex-start)
+      height: inherit
+
+    a
+      display: inline-block
+      height: 100%
+      position: relative
+
+    a:visited::before, a:active::before, a:hover::before
+      content: ""
+      display: block
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      width: 2.4rem
+      height: 2px
+      background: var(--white)
+
+.connect
+  @include mixins.flex($direction: column, $gap: var(--spacing-300), $align: flex-end)
+
+.social
+  @include mixins.flex($gap: var(--spacing-200), $align: center)
+  height: 2.4rem
+
+  li
+    @include mixins.flex($align: center)
+    height: 2.4rem
+
+    a
+      display: flex
+      align-self: center
+

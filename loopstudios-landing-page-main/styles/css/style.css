@@ -104,6 +104,15 @@ li {
   color: var(--white);
 }
 
+.copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Alata", sans-serif;
+  line-height: 165%;
+  letter-spacing: 0;
+}
+
 .header {
   min-height: 65rem;
   width: 100%;
@@ -243,26 +252,28 @@ li {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 45rem 45rem;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
   row-gap: var(--spacing-400);
   column-gap: var(--spacing-400);
   grid-column: 1/-1;
 }
 .gallery img {
   width: 100%;
+  height: 100%;
 }
 .gallery__item {
   background: var(--grey-200);
   position: relative;
+  height: 45rem;
 }
 .gallery__item::before {
   content: "";
   display: block;
   width: 100%;
-  height: 100%;
+  height: 32rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
   position: absolute;
+  bottom: 0;
 }
 .gallery__item:hover::after {
   content: "";
@@ -298,6 +309,78 @@ li {
 }
 .btn--see-all:active {
   background: var(--black);
+}
+
+.footer {
+  background: var(--black);
+  margin-top: 18.2rem;
+}
+.footer__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-inline: auto;
+  max-width: calc(111rem + 2 * var(--spacing-300));
+  padding: var(--spacing-400);
+  padding-inline: var(--spacing-300);
+}
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+.footer__nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-200);
+  min-height: 3.5rem;
+}
+.footer__nav-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: inherit;
+}
+.footer__nav-list a {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+.footer__nav-list a:visited::before, .footer__nav-list a:active::before, .footer__nav-list a:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.4rem;
+  height: 2px;
+  background: var(--white);
+}
+
+.connect {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-300);
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-200);
+  height: 2.4rem;
+}
+.social li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.4rem;
+}
+.social li a {
+  display: flex;
+  align-self: center;
 }
 
 /*# sourceMappingURL=style.css.map */
