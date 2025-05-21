@@ -29,9 +29,28 @@
 
   &__nav-list
     @include mixins.flex($gap: var(--spacing-400), $align: center)
+    height: 100%
 
     li
-      display: flex
+      @include mixins.flex($align: flex-start)
+      height: 100%
+
+      a
+        display: inline-block
+        height: 100%
+        position: relative
+
+      a:visited::before, a:active::before, a:hover::before
+        content: ""
+        display: block
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 2.4rem
+        height: 2px
+        background: var(--white)
+
 
   &__title
     @include mixins.flex($justify: center, $align: center)

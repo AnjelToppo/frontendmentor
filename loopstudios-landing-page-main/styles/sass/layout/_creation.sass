@@ -1,0 +1,65 @@
+@use "../abstracts/mixins"
+
+.creation
+  background: var(--white)
+  padding-top: 18.4rem
+
+  &__content
+    @include mixins.grid($column: auto auto, $row-gap: var(--spacing-1000))
+    margin-inline: auto
+    max-width: calc(112rem + (2 * var(--spacing-300)))
+    padding-inline: var(--spacing-300)
+
+.gallery
+  @include mixins.grid($column: repeat(4, 1fr), $row-gap: var(--spacing-400), $column-gap: var(--spacing-400), $row: 45rem 45rem)
+  grid-column: 1 / -1
+
+  img
+    width: 100%
+
+  &__item
+    background: var(--grey-200)
+    position: relative
+
+    &::before
+      content: ""
+      display: block
+      width: 100%
+      height: 100%
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%)
+      position: absolute
+
+    &:hover::after
+      content: ""
+      display: block
+      background: rgba(255, 255, 255, 0.75)
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      cursor: pointer
+
+    &:hover .gallery__name
+      color: var(--black)
+
+  &__name
+    position: absolute
+    left: var(--spacing-500)
+    bottom: var(--spacing-400)
+    max-width: 17rem
+    z-index: 100
+
+.btn--see-all
+  justify-self: end
+  align-self: center
+  background: transparent
+  border: 1px solid var(--black)
+  max-width: 15.7rem
+  width: 100%
+  min-height: 4rem
+  cursor: pointer
+  transition: all .2s ease-in-out
+
+  &:active
+    background: var(--black)
+

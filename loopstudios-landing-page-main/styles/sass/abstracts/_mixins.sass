@@ -22,9 +22,13 @@
   align-items: $align
   gap: $gap
 
-@mixin grid($column: null, $row: null, $row-gap: null, $column-gap: null)
+@mixin grid($column: null, $row: null, $row-gap: null, $column-gap: null, $justify-content: null, $align-content: null, $justify-items: null, $align-items: null)
   display: grid
   grid-template-columns: $column
   grid-template-rows: $row
   row-gap: $row-gap
   column-gap: $column-gap
+  justify-items: $justify-items
+  align-items: $align-items
+  align-content: $align-content
+  justify-content: $justify-content

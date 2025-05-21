@@ -17,3 +17,19 @@
 
   &__description
     @include mixins.text-preset(rgba(0, 0, 0, 0.5), variables.$typography-6...)
+
+.gallery__name
+  @include mixins.text-preset(var(--white), variables.$typography-4...)
+  text-transform: uppercase
+
+.creation
+  &__title
+    @include mixins.text-preset(var(--black), variables.$typography-2...)
+    text-transform: uppercase
+
+.btn--see-all
+  @include mixins.text-preset(var(--black), variables.$typography-7...)
+  text-transform: uppercase
+
+  &:active
+    color: var(--white)
