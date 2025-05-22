@@ -16,7 +16,7 @@
     background: rgba(0, 0, 0, 0.4)
 
   &__content
-    @include mixins.flex($direction: column, $justify: space-between)
+    @include mixins.flex($direction: column)
     max-width: calc(111rem + (2 * var(--spacing-300)))
     min-height: 50.4rem
     margin-inline: auto
@@ -26,6 +26,28 @@
 
   &__nav
     @include mixins.flex($justify: space-between)
+    position: relative
+    height: 3.2rem
+
+    .logo
+      position: absolute
+      z-index: 100
+
+    .nav-list-container
+      position: absolute
+      right: 0
+
+    .mobile-nav
+      position: relative
+      margin-left: auto
+      margin-top: 5px
+
+      label
+        position: absolute
+        right: 0
+        width: 2.4rem !important
+        z-index: 100
+
 
   &__nav-list
     @include mixins.flex($gap: var(--spacing-400), $align: center)
@@ -38,7 +60,6 @@
       a
         display: inline-block
         height: 100%
-        position: relative
 
       a:visited::before, a:active::before, a:hover::before
         content: ""
@@ -58,6 +79,7 @@
     max-width: 65rem
     min-height: 27.8rem
     border: 2px solid var(--white)
+    margin-top: auto
 
     h1
       max-width: 57rem
@@ -68,7 +90,84 @@
 
 .logo
   display: inline-block
-  background-image: url("../../images/logo.svg")
-  width: 20rem
-  height: 3.5rem
-  background-repeat: no-repeat
+
+.mobile-nav
+  display: none
+
+.menu
+  display: none
+  position: absolute
+  width: calc(100vw + 2.4rem)
+  height: 100vh
+  background: var(--black)
+  z-index: 1
+  top: calc(var(--spacing-800) * -1 - 5px)
+  left: -100vw
+
+  &__nav-list
+    @include mixins.flex($direction: column, $gap: var(--spacing-300))
+    margin: calc(12.7rem + 3.2rem + 6.4rem) 4.8rem
+
+
+
+@media only screen and (max-width: 50.75em)
+  .header
+    .nav-list-container
+      display: none
+
+    .mobile-nav
+      display: block
+
+      input[type=checkbox]
+        display: none
+
+      input[type=checkbox]:checked + .menu
+        display: block
+
+      label
+        display: inline-block
+        height: 2.2rem !important
+        width: 3.2rem
+        background-image: url("../../images/icon-hamburger.svg")
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+
+
+@media only screen and (max-width: 40.25em)
+  .header
+    &__content
+      min-height: 42.3rem
+
+    &__nav
+      a
+        display: inline-block
+        height: 2.4rem
+
+      img
+        height: 100%
+
+    &__title
+      min-height: 19.6rem
+      padding: 1.8rem 2.4rem
+
+      h1
+        max-width: 40rem
+
+  .mobile-nav
+    img
+      width: 100%
+      height: 100%
+
+@media only screen and (max-width: 27.125em)
+  .header
+    background-image: url("../../images/mobile/image-hero.jpg")
+
+    &__content
+      padding-top: var(--spacing-500)
+
+  .menu
+    top: calc(var(--spacing-500) * -1 - 5px)
+
+    &__nav-list
+      margin: calc(12.7rem + 3.2rem + 4rem) 4.8rem

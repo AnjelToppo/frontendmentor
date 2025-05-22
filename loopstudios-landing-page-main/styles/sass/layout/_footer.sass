@@ -8,14 +8,20 @@
     @include mixins.flex($justify: space-between)
     margin-inline: auto
     max-width: calc(111rem + (2 * var(--spacing-300)))
-    padding: var(--spacing-400)
-    padding-inline: var(--spacing-300)
+    padding: 4.5rem var(--spacing-300) var(--spacing-400) var(--spacing-300)
 
   &__nav
     @include mixins.flex($direction: column, $gap: var(--spacing-300))
 
+    a
+      display: inline-block
+      height: 2.4rem
+
+  &__logo
+    height: 100%
+
   &__nav-list
-    @include mixins.flex($gap: var(--spacing-200))
+    @include mixins.flex($gap: var(--spacing-400))
     min-height: 3.5rem
 
     li
@@ -24,8 +30,8 @@
 
     a
       display: inline-block
-      height: 100%
       position: relative
+      height: 100%
 
     a:visited::before, a:active::before, a:hover::before
       content: ""
@@ -53,3 +59,39 @@
       display: flex
       align-self: center
 
+@media only screen and (max-width: 50.75em)
+  .footer
+    margin-top: 8.7rem
+
+    &__nav-list
+      gap: var(--spacing-200)
+
+@media only screen and (max-width: 40.25em)
+  .footer
+    &__content
+      @include mixins.flex($direction: column, $gap: var(--spacing-500), $align: center)
+
+    &__nav
+      align-items: center
+
+  .social
+    align-self: center
+
+@media only screen and (max-width: 27.125em)
+  .footer
+    margin-top: 9.8rem
+
+    &__content
+      padding: 5.6rem
+
+    &__nav
+      gap: var(--spacing-500)
+
+    &__nav-list
+      @include mixins.flex($direction: column, $gap: var(--spacing-200), $align: center)
+
+  .connect
+    gap: var(--spacing-200)
+
+  .copyright
+    text-align: center

@@ -66,3 +66,55 @@
   &:active
     background: var(--black)
 
+@media only screen and (max-width: 50.75em)
+  .creation
+    padding-top: 9.6rem
+
+    &__content
+      @include mixins.grid($column: 1fr, $row-gap: var(--spacing-400))
+
+    .btn--see-all
+      order: 1
+      justify-self: center
+
+    &__title
+      justify-self: center
+
+  .gallery
+    grid-template-columns: 1fr
+    row-gap: var(--spacing-300)
+
+    &__item
+      height: 12rem
+      position: relative
+      overflow: hidden
+
+      &::before
+        width: 73%
+        height: 12rem
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)
+        top: 0
+
+      img
+        height: unset
+        object-fit: cover
+
+    &__name
+      max-width: 14rem
+      bottom: 2rem
+      left: 3.7rem
+
+@media only screen and (max-width: 27.125em)
+  .gallery
+    &__name
+      left: 2rem
+
+    &__item
+      img
+        height: 100%
+
+
+
+
+
+

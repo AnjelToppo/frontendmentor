@@ -36,3 +36,30 @@
 
 .copyright
   @include mixins.text-preset(rgba(255, 255, 255, 0.5), variables.$typography-6...)
+
+.footer
+  &__link
+    @include mixins.text-preset(var(--white), variables.$typography-6...)
+
+.menu
+  &__link
+    @include mixins.text-preset(var(--white), variables.$typography-5...)
+    text-transform: uppercase
+
+@media only screen and (max-width: 50.75em)
+  .gallery__name
+    @include mixins.text-preset(var(--white), variables.$typography-5...)
+
+@media only screen and (max-width: 40.25em)
+  .header
+    &__title
+      h1
+        @include mixins.text-preset(var(--white), variables.$typography-3...)
+
+  .about
+    &__title
+      @include mixins.text-preset(var(--black), variables.$typography-4...)
+
+  .creation
+    &__title
+      @include mixins.text-preset(var(--black), variables.$typography-4...)

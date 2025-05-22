@@ -28,3 +28,27 @@
 .text-container
   @include mixins.flex($direction: column, $gap: var(--spacing-300))
   max-width: 44.5rem
+
+@media only screen and (max-width: 50.75em)
+  .about
+    padding-top: 9.6rem
+
+    &__content
+      @include mixins.flex($direction: column, $gap: var(--spacing-600))
+      max-height: max-content
+
+    &__text
+      position: relative
+      text-align: center
+      min-height: max-content
+      max-width: inherit
+
+      .text-container
+        max-width: inherit
+        margin-left: 2.4rem
+
+    &__picture
+      height: 28.4rem
+
+      img
+        height: 100%
