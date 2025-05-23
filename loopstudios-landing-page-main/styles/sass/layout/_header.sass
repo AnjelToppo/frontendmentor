@@ -121,18 +121,22 @@
       input[type=checkbox]
         display: none
 
-      input[type=checkbox]:checked + .menu
+      input[type=checkbox]:checked ~ .menu
         display: block
+
+      input[type=checkbox]:checked + label
+        background-image: url("../../images/icon-close.svg")
+
+      input:not(:checked) + label
+        background-image: url("../../images/icon-hamburger.svg")
 
       label
         display: inline-block
         height: 2.2rem !important
         width: 3.2rem
-        background-image: url("../../images/icon-hamburger.svg")
         background-repeat: no-repeat
         background-size: cover
         background-position: center
-
 
 @media only screen and (max-width: 40.25em)
   .header

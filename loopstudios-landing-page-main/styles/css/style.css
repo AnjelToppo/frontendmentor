@@ -303,14 +303,19 @@ li {
   .header .mobile-nav input[type=checkbox] {
     display: none;
   }
-  .header .mobile-nav input[type=checkbox]:checked + .menu {
+  .header .mobile-nav input[type=checkbox]:checked ~ .menu {
     display: block;
+  }
+  .header .mobile-nav input[type=checkbox]:checked + label {
+    background-image: url("../../images/icon-close.svg");
+  }
+  .header .mobile-nav input:not(:checked) + label {
+    background-image: url("../../images/icon-hamburger.svg");
   }
   .header .mobile-nav label {
     display: inline-block;
     height: 2.2rem !important;
     width: 3.2rem;
-    background-image: url("../../images/icon-hamburger.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
