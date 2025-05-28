@@ -208,6 +208,7 @@ li {
 .header__nav .nav-list-container {
   position: absolute;
   right: 0;
+  height: 100%;
 }
 .header__nav .mobile-nav {
   position: relative;
@@ -247,6 +248,9 @@ li {
   width: 2.4rem;
   height: 2px;
   background: var(--white);
+}
+.header__link {
+  position: relative;
 }
 .header__title {
   display: flex;
