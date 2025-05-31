@@ -39,7 +39,19 @@ img {
     text-decoration: none;
     color: #FFF;
     text-transform: lowercase;
+    position: relative;
+}
 
+.nav a:hover:before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 1.6rem;
+    background: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .header .wrapper {
@@ -49,6 +61,7 @@ img {
     z-index: 10;
     top: 6.4rem;
     left: 6.4rem;
+    min-height: 2.4rem;
 }
 
 .hero {
@@ -124,6 +137,22 @@ img {
     text-transform: uppercase;
 }
 
+.link--shop-now span {
+    mask-image: url("../images/icon-arrow.svg");
+    mask-repeat: no-repeat;
+    height: 1.2rem;
+    width: 4rem;
+    background: #000;
+}
+
+.link--shop-now:active {
+    color: #A0A0A0;
+}
+
+.link--shop-now:active span {
+    background-color: #A0A0A0;
+}
+
 .about {
     display: grid;
     grid-template-columns: minmax(0, 42rem) minmax(0, 58rem) minmax(0, 44rem);
@@ -136,7 +165,7 @@ img {
     max-width: 48.4rem;
     justify-self: center;
     align-self: center;
-    margin: 2.4rem;
+    margin: 2.4rem 3.2rem;
 }
 
 .about__content h2 {
@@ -164,6 +193,10 @@ img {
     width: 8rem;
 }
 
+.btn-container button:active {
+    background-color: #444;
+}
+
 .btn-container button[aria-label="previous"] {
     background-image: url("../images/icon-angle-left.svg");
 }
@@ -175,4 +208,54 @@ img {
 .btn-container button[aria-label="previous"], button[aria-label="next"] {
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@media only screen and (max-width: 83.625em) {
+    .btn-container {
+        transform: translateX(0);
+    }
+
+    .about {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "text img1"
+                             "text img2";
+    }
+
+    .about__content {
+        grid-area: text;
+    }
+}
+
+@media only screen and (max-width: 57.625em) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__content{
+        padding: 6.4rem 3.2rem;
+        max-width: 64rem;
+    }
+
+    .about__content {
+        max-width: 64rem;
+    }
+    .about {
+        grid-template-columns: 1fr !important;
+        grid-template-areas: "img1" "text" "img2";
+        grid-template-rows: minmax(0, 30rem) max-content minmax(0, 24.3rem);
+    }
+    .about img {
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 28.5em) {
+    .btn-container button {
+        width: 5.6rem;
+        height: 5.6rem;
+    }
+
+    .link--shop-now {
+        justify-content: space-between;
+    }
 }
