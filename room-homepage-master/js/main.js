@@ -4,6 +4,9 @@ const allNextBtnEl = document.querySelectorAll('[aria-label="next"]');
 const allHeroImages = document.querySelectorAll('.hero__image');
 const allHeroContents = document.querySelectorAll('.hero__content');
 
+const menuBtnEl = document.querySelector("button[aria-label='menu']");
+const closeMenuBtnEl = document.querySelector(".close-menu");
+
 let currentTab = 0;
 
 allPrevBtnEl.forEach(prevBtnEl => {
@@ -40,4 +43,12 @@ allNextBtnEl.forEach(nextBtnEl => {
         })
         allHeroContents[currentTab].removeAttribute('hidden');
     })
+})
+
+menuBtnEl.addEventListener('click', (e) => {
+    menuBtnEl.setAttribute('aria-expanded', 'true');
+})
+
+closeMenuBtnEl.addEventListener('click', (e) => {
+    menuBtnEl.setAttribute('aria-expanded', 'false');
 })

@@ -21,6 +21,16 @@
       <a href="/" class="text-preset-3-sb">About</a>
       <a href="/" class="text-preset-3-sb">Contact</a>
     </nav>
+    <button aria-expanded="false" aria-label="menu"><img src="images/icon-hamburger.svg" aria-hidden="true" /></button>
+    <div class="mobile-menu">
+      <button class="close-menu"><img src="images/icon-close.svg" aria-hidden="true"></button>
+      <nav class="mobile-nav">
+        <a href="/" class="text-preset-3-sb">Home</a>
+        <a href="/" class="text-preset-3-sb">Shop</a>
+        <a href="/" class="text-preset-3-sb">About</a>
+        <a href="/" class="text-preset-3-sb">Contact</a>
+      </nav>
+    </div>
   </div>
 
 </header>
@@ -28,6 +38,7 @@
   <section class="hero">
     <div class="hero__image">
       <picture>
+        <source media="(min-width: 400px)" srcset="images/mobile-image-hero-1.jpg">
         <img src="images/desktop-image-hero-1.jpg" alt="">
       </picture>
       <div class="btn-container">
@@ -45,6 +56,7 @@
 
     <div hidden class="hero__image">
       <picture>
+        <source media="(min-width: 400px)" srcset="images/mobile-image-hero-2.jpg">
         <img src="images/desktop-image-hero-2.jpg" alt="">
       </picture>
       <div class="btn-container">
@@ -61,6 +73,7 @@
     </div>
     <div hidden class="hero__image">
       <picture>
+        <source media="(min-width: 400px)" srcset="images/mobile-image-hero-3.jpg">
         <img src="images/desktop-image-hero-3.jpg" alt="">
       </picture>
       <div class="btn-container">
