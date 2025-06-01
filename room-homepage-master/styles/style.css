@@ -69,6 +69,10 @@ img {
     grid-template-columns: minmax(0, 84rem) minmax(0, 60rem);
 }
 
+.hero img {
+    max-height: 53.4rem;
+}
+
 .hero__content {
     max-width: 39.9rem;
     justify-self: center;
