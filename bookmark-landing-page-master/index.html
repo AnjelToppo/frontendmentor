@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Bookmark landing page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @theme {
+            --color-white: #FFF;
+            --color-black: #000;
+            --color-blue-950: #242A45;
+            --color-blue-600: #5267DF;
+            --color-grey-600: #5B6074;
+            --color-grey-50: #F7F7F7;
+            --color-red-400: #FA5959;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+        :root {
+            --spacing-0: 0;
+            --spacing-100: 8px;
+            --spacing-200: 16px;
+            --spacing-300: 24px;
+            --spacing-400: 32px;
+            --spacing-500: 40px;
+            --spacing-600: 48px;
+            --spacing-700: 56px;
+            --spacing-800: 64px;
+            --spacing-900: 72px;
+            --spacing-1500: 120px;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+    </style>
+
+</head>
+<body class="bg-white">
+<header class="max-w-[1440px] ps-[171px] mx-auto">
+    <div class="max-w-[1104px] flex justify-between items-center mt-(--spacing-600)">
+        <a href="/" aria-label="Bookmark"><img src="images/logo-bookmark.svg" aria-hidden="true"/></a>
+        <nav>
+            <ul class="flex justify-between items-center gap-(--spacing-600)">
+                <li><a href="#features"
+                       class="uppercase tracking-[0.25px] text-[1.4rem]/[200%] font-normal font-['Rubik'] text-blue-950 inline-block">Features</a>
+                </li>
+                <li><a href="#pricing"
+                       class="uppercase tracking-[0.25px] text-[1.4rem]/[200%] font-normal font-['Rubik'] text-blue-950 inline-block">Pricing</a>
+                </li>
+                <li><a href="#contact"
+                       class="uppercase tracking-[0.25px] text-[1.4rem]/[200%] font-normal font-['Rubik'] text-blue-950 inline-block">Contact</a>
+                </li>
+                <li><a href="/login"
+                       class="uppercase tracking-[0.25px] text-[1.4rem]/[200%] font-normal font-['Rubik'] text-white bg-red-400 py-[6px] px-(--spacing-400) rounded-[5px] inline-block">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<main>
+    <section class=" flex ps-[165px] mx-auto mt-[114px] max-w-[1440px] min-h-[486px]">
+        <div class="grid w-full grid-cols-[minmax(0,_540px)_minmax(0,_735px)] max-w-[1275px]">
+            <div class="flex flex-col gap-(--spacing-300) self-center">
+                <h1 class="tracking-[0] text-[4.8rem]/[110%] font-medium font-['Rubik'] text-blue-950">A Simple Bookmark
+                    Manager</h1>
+                <p class="tracking-[0] text-[1.8rem]/[155%] font-normal font-['Rubik'] text-blue-950 opacity-50">A clean
+                    and simple interface to organize your favourite websites. Open a new
+                    browser tab and see your sites load instantly. Try it for free.</p>
+                <div class="flex gap-(--spacing-200)">
+                    <button class="tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-white rounded-[5px] bg-blue-600 cursor-pointer px-(--spacing-300) py-[10px]">
+                        Get it on Chrome
+                    </button>
+                    <button class="tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-blue-950 bg-grey-50 cursor-pointer px-(--spacing-300) py-[10px]">
+                        Get it on Firefox
+                    </button>
+                </div>
+            </div>
+
+            <picture class="w-full relative before:content-[''] before:absolute before:left-[219px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10] overflow-hidden">
+                <img class="w-full max-w-[578px] d-block max-h-[385px]" src="images/illustration-hero.svg" alt="bookmark manager">
+            </picture>
+        </div>
+    </section>
+</main>
+
+
+Features
+
+Our aim is to make it quick and easy for you to access your favourite websites.
+Your bookmarks sync between your devices so you can access them on the go.
+
+Simple Bookmarking
+Speedy Searching
+Easy Sharing
+
+Bookmark in one click
+
+Organize your bookmarks however you like. Our simple drag-and-drop interface
+gives you complete control over how you manage your favourite sites.
+
+More Info
+
+Intelligent search
+
+Our powerful search feature will help you find saved sites in no time at all.
+No need to trawl through all of your bookmarks.
+
+More Info
+
+Share your bookmarks
+
+Easily share your bookmarks and collections with others. Create a shareable
+link that you can send at the click of a button.
+
+More Info
+
+Download the extension
+
+We’ve got more browsers in the pipeline. Please do let us know if you’ve
+got a favourite you’d like us to prioritize.
+
+Add to Chrome
+Minimum version 62
+Add & Install Extension
+
+Add to Firefox
+Minimum version 55
+Add & Install Extension
+
+Add to Opera
+Minimum version 46
+Add & Install Extension
+
+Frequently Asked Questions
+
+Here are some of our FAQs. If you have any other questions you’d like
+answered please feel free to email us.
+
+<!-- Question 1 -->
+What is Bookmark?
+
+<!-- Answer 1 -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+
+<!-- Question 2 -->
+How can I request a new browser?
+
+<!-- Answer 2 -->
+Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+
+<!-- Question 3 -->
+Is there a mobile app?
+
+<!-- Answer 3 -->
+Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
+urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
+sollicitudin ex et ultricies bibendum.
+
+<!-- Question 4 -->
+What about other Chromium browsers?
+
+<!-- Answer 4 -->
+Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
+vitae neque eget nisl gravida pellentesque non ut velit.
+
+More Info
+
+35,000+ already joined
+
+Stay up-to-date with what we’re doing
+
+Contact Us
+
+Features
+Pricing
+Contact
+
+<footer>
+    <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+    </p>
+</footer>
+</body>
+</html>
