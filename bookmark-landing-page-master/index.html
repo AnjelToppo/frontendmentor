@@ -82,44 +82,75 @@
                 </div>
             </div>
 
-            <picture class="w-full relative before:content-[''] before:absolute before:left-[219px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10] overflow-hidden">
-                <img class="w-full max-w-[578px] d-block max-h-[385px]" src="images/illustration-hero.svg" alt="bookmark manager">
+            <picture
+                    class="w-full relative before:content-[''] before:absolute before:left-[219px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10] overflow-hidden">
+                <img class="w-full max-w-[578px] d-block max-h-[385px]" src="images/illustration-hero.svg"
+                     alt="bookmark manager">
             </picture>
         </div>
     </section>
+
+    <section class="flex mx-auto mt-[80px] flex-col gap-(--spacing-900) max-w-[1440px] items-center">
+        <div class="flex flex-col gap-(--spacing-200) text-center max-w-[540px]">
+            <h2 class="tracking-[-0.1px] text-[3.2rem]/[125%] font-medium font-['Rubik'] text-blue-950">Features</h2>
+            <p class="tracking-[0] text-[1.8rem]/[155%] font-normal font-['Rubik'] text-blue-950 opacity-50">Our aim is
+                to make it quick and easy for you to access your favourite websites.
+                Your bookmarks sync between your devices so you can access them on the go.</p>
+        </div>
+        <div class="max-w-[730px] w-full">
+            <ul class="grid grid-cols-3 justify-items-center border-b-1 border-[#485CCF33]">
+                <li class="w-full">
+                    <label class="cursor-pointer relative flex justify-center pb-[28px] tracking-[0.5px] text-[1.6rem]/[110%] font-normal font-['Rubik'] text-blue-950 opacity-75 has-checked:opacity-100  has-checked:before:content-[''] has-checked:before:d-block has-checked:before:bottom-0 has-checked:before:absolute has-checked:before:w-full has-checked:before:h-[4px] has-checked:before:bg-red-400">
+                        <input type="radio" name="features" value="Simple Bookmarking" checked class="hidden">
+                        Simple Bookmarking</label>
+                </li>
+                <li class="w-full">
+                    <label class="cursor-pointer relative flex justify-center pb-[28px] tracking-[0.5px] text-[1.6rem]/[110%] font-normal font-['Rubik'] text-blue-950 opacity-75 has-checked:opacity-100 has-checked:before:content-[''] has-checked:before:d-block has-checked:before:bottom-0 has-checked:before:absolute has-checked:before:w-full has-checked:before:h-[4px] has-checked:before:bg-red-400">
+                        <input type="radio" name="features" id="searching" value="Speedy Searching" class="hidden">
+                        Speedy Searching</label>
+                </li>
+                <li class="w-full">
+                    <label class="cursor-pointer relative flex justify-center pb-[28px] tracking-[0.5px] text-[1.6rem]/[110%] font-normal font-['Rubik'] text-blue-950 opacity-75 has-checked:opacity-100 has-checked:before:content-[''] has-checked:before:d-block has-checked:before:bottom-0 has-checked:before:absolute has-checked:before:w-full has-checked:before:h-[4px] has-checked:before:bg-red-400">
+                        <input type="radio" name="features" value="Easy Sharing" class="hidden">
+                        Easy Sharing</label>
+                </li>
+            </ul>
+        </div>
+        <div class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
+            <picture class="flex items-center w-max h-full justify-self-end relative before:content-[''] before:absolute before:right-[65px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10]">
+                <img src="images/illustration-features-tab-1.svg">
+            </picture>
+            <div class="flex flex-col gap-(--spacing-300)">
+                <h3 class="tracking-[0px] text-[3.2rem]/[125%] font-medium font-['Rubik'] text-blue-950">Bookmark in one click</h3>
+                <p class="tracking-[0] text-[1.8rem]/[155%] font-normal font-['Rubik'] text-blue-950 opacity-50">Organize your bookmarks however you like. Our simple drag-and-drop interface
+                    gives you complete control over how you manage your favourite sites.</p>
+                <button class="self-start py-(--spacing-100) px-(--spacing-300) bg-blue-600 text-white rounded-[5px] tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik']">More Info</button>
+            </div>
+        </div>
+        <div hidden class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
+            <picture class="flex items-center w-max h-full justify-self-end relative before:content-[''] before:absolute before:right-[65px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10]">
+                <img src="images/illustration-features-tab-2.svg">
+            </picture>
+            <div class="flex flex-col gap-(--spacing-300)">
+                <h3 class="tracking-[0px] text-[3.2rem]/[125%] font-medium font-['Rubik'] text-blue-950">Intelligent search</h3>
+                <p class="tracking-[0] text-[1.8rem]/[155%] font-normal font-['Rubik'] text-blue-950 opacity-50">Our powerful search feature will help you find saved sites in no time at all.
+                    No need to trawl through all of your bookmarks.</p>
+                <button class="self-start py-(--spacing-100) px-(--spacing-300) bg-blue-600 text-white rounded-[5px] tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik']">More Info</button>
+            </div>
+        </div>
+        <div hidden class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
+            <picture class="flex items-center w-max h-full justify-self-end relative before:content-[''] before:absolute before:right-[65px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10]">
+                <img src="images/illustration-features-tab-3.svg">
+            </picture>
+            <div class="flex flex-col gap-(--spacing-300)">
+                <h3 class="tracking-[0px] text-[3.2rem]/[125%] font-medium font-['Rubik'] text-blue-950">Share your bookmarks</h3>
+                <p class="tracking-[0] text-[1.8rem]/[155%] font-normal font-['Rubik'] text-blue-950 opacity-50">Easily share your bookmarks and collections with others. Create a shareable
+                    link that you can send at the click of a button.</p>
+                <button class="self-start py-(--spacing-100) px-(--spacing-300) bg-blue-600 text-white rounded-[5px] tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik']">More Info</button>
+            </div>
+        </div>
+    </section>
 </main>
-
-
-Features
-
-Our aim is to make it quick and easy for you to access your favourite websites.
-Your bookmarks sync between your devices so you can access them on the go.
-
-Simple Bookmarking
-Speedy Searching
-Easy Sharing
-
-Bookmark in one click
-
-Organize your bookmarks however you like. Our simple drag-and-drop interface
-gives you complete control over how you manage your favourite sites.
-
-More Info
-
-Intelligent search
-
-Our powerful search feature will help you find saved sites in no time at all.
-No need to trawl through all of your bookmarks.
-
-More Info
-
-Share your bookmarks
-
-Easily share your bookmarks and collections with others. Create a shareable
-link that you can send at the click of a button.
-
-More Info
-
 Download the extension
 
 We’ve got more browsers in the pipeline. Please do let us know if you’ve
