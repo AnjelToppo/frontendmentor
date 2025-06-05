@@ -116,7 +116,7 @@
                 </li>
             </ul>
         </div>
-        <div class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
+        <article class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
             <picture class="flex items-center w-max h-full justify-self-end relative before:content-[''] before:absolute before:right-[65px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10]">
                 <img src="images/illustration-features-tab-1.svg">
             </picture>
@@ -126,8 +126,8 @@
                     gives you complete control over how you manage your favourite sites.</p>
                 <button class="self-start py-(--spacing-100) px-(--spacing-300) bg-blue-600 text-white rounded-[5px] tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik']">More Info</button>
             </div>
-        </div>
-        <div hidden class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
+        </article>
+        <article hidden class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
             <picture class="flex items-center w-max h-full justify-self-end relative before:content-[''] before:absolute before:right-[65px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10]">
                 <img src="images/illustration-features-tab-2.svg">
             </picture>
@@ -137,8 +137,8 @@
                     No need to trawl through all of your bookmarks.</p>
                 <button class="self-start py-(--spacing-100) px-(--spacing-300) bg-blue-600 text-white rounded-[5px] tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik']">More Info</button>
             </div>
-        </div>
-        <div hidden class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
+        </article>
+        <article hidden class="grid grid-cols-[minmax(0,_705px)_minmax(0,_450px)] gap-x-(--spacing-1500) w-full min-h-[507px] overflow-hidden items-center">
             <picture class="flex items-center w-max h-full justify-self-end relative before:content-[''] before:absolute before:right-[65px] before:bottom-0 before:d-block before:h-[352px] before:w-[1000px] before:bg-blue-600 before:rounded-[316px] before:z-[-10]">
                 <img src="images/illustration-features-tab-3.svg">
             </picture>
@@ -148,25 +148,53 @@
                     link that you can send at the click of a button.</p>
                 <button class="self-start py-(--spacing-100) px-(--spacing-300) bg-blue-600 text-white rounded-[5px] tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik']">More Info</button>
             </div>
+        </article>
+    </section>
+    <section class="flex flex-col gap-(--spacing-600) max-w-[904px] mx-auto items-center gap-x-(--spacing-400) mt-[163px]">
+        <div class="flex flex-col gap-(--spacing-100) max-w-[540px]">
+            <h2 class="tracking-[-0.1px] text-[3.2rem]/[125%] font-medium font-['Rubik'] text-blue-950 text-center">Download the extension</h2>
+            <p class="tracking-[0] text-[1.8rem]/[155%] font-normal font-['Rubik'] text-blue-950 opacity-50 text-center">We’ve got more browsers in the pipeline. Please do let us know if you’ve
+                got a favourite you’d like us to prioritize.</p>
         </div>
+        <div class="grid grid-cols-3 gap-(--spacing-400) w-full grid-rows-[minmax(0,_451px)]">
+            <div class="flex flex-col gap-(--spacing-400) py-(--spacing-400) grow-0">
+                <div class="flex flex-col gap-(--spacing-400) items-center">
+                    <img class="min-h-[100px] max-w-[101px]" src="images/logo-chrome.svg" alt="chrome logo">
+                    <div class="flex flex-col gap-(--spacing-100)">
+                        <h3 class="text-center tracking-[0.25px] text-[2rem]/[120%] font-medium font-['Rubik'] text-blue-950 text-center">Add to Chrome</h3>
+                        <p class="text-center tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-blue-950 opacity-50 text-center">Minimum version 62</p>
+                    </div>
+                </div>
+                <img src="images/bg-dots.svg">
+                <button class="mx-(--spacing-300) bg-blue-600 rounded-[5px] px-(--spacing-400) py-(--spacing-100) tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-white">Add & Install Extension</button>
+            </div>
+            <div class="flex flex-col gap-(--spacing-400) self-center py-(--spacing-400) grow-0">
+                <div class="flex flex-col gap-(--spacing-400) items-center">
+                    <img class="min-h-[100px] max-w-[101px]" src="images/logo-firefox.svg" alt="firefox logo">
+                    <div class="flex flex-col gap-(--spacing-100)">
+                        <h3 class="text-center tracking-[0.25px] text-[2rem]/[120%] font-medium font-['Rubik'] text-blue-950 text-center">Add to Firefox</h3>
+                        <p class="text-center tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-blue-950 opacity-50 text-center">Minimum version 55</p>
+                    </div>
+                </div>
+                <img src="images/bg-dots.svg">
+                <button class="mx-(--spacing-300) bg-blue-600 rounded-[5px] px-(--spacing-400) py-(--spacing-100) tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-white">Add & Install Extension</button>
+            </div>
+            <div class="flex flex-col gap-(--spacing-400) self-end py-(--spacing-400) grow-0">
+                <div class="flex flex-col gap-(--spacing-400) items-center">
+                    <img class="min-h-[100px] max-w-[101px]" src="images/logo-opera.svg" alt="opera logo">
+                    <div class="flex flex-col gap-(--spacing-100)">
+                        <h3 class="text-center tracking-[0.25px] text-[2rem]/[120%] font-medium font-['Rubik'] text-blue-950 text-center">Add to Opera</h3>
+                        <p class="text-center tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-blue-950 opacity-50 text-center">Minimum version 46</p>
+                    </div>
+                </div>
+                <img src="images/bg-dots.svg">
+                <button class="mx-(--spacing-300) bg-blue-600 rounded-[5px] px-(--spacing-400) py-(--spacing-100) tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-white">Add & Install Extension</button>
+            </div>
+
+        </div>
+
     </section>
 </main>
-Download the extension
-
-We’ve got more browsers in the pipeline. Please do let us know if you’ve
-got a favourite you’d like us to prioritize.
-
-Add to Chrome
-Minimum version 62
-Add & Install Extension
-
-Add to Firefox
-Minimum version 55
-Add & Install Extension
-
-Add to Opera
-Minimum version 46
-Add & Install Extension
 
 Frequently Asked Questions
 
