@@ -90,7 +90,7 @@
         </div>
     </section>
 
-    <section class="flex mx-auto mt-[80px] flex-col gap-(--spacing-900) max-w-[1440px] items-center">
+    <section class="flex mx-auto mt-[80px] flex-col gap-(--spacing-900) max-w-[1440px] items-center" id="features">
         <div class="flex flex-col gap-(--spacing-200) text-center max-w-[540px]">
             <h2 class="tracking-[-0.1px] text-[3.2rem]/[125%] font-medium font-['Rubik'] text-blue-950">Features</h2>
             <p class="tracking-[0] text-[1.8rem]/[155%] font-normal font-['Rubik'] text-blue-950 opacity-50">Our aim is
@@ -231,7 +231,7 @@
         </div>
         <button class="cursor-pointer py-(--spacing-100) px-(--spacing-300) rounded-[5px] bg-blue-600 tracking-[0.25px] text-[1.4rem]/[200%] font-medium font-['Rubik'] text-white self-center">More Info</button>
     </section>
-    <section class="bg-blue-600 py-(--spacing-700) mt-[182px] min-h-[360px]">
+    <section class="bg-blue-600 py-(--spacing-700) mt-[182px] min-h-[360px]" id="contact">
         <form class="contact-form max-w-[442px] flex flex-col gap-(--spacing-400) text-white mx-auto" novalidate>
             <div class="flex flex-col gap-(--spacing-300) items-center">
                 <span class="tracking-[5px] text-[1.4rem]/[300%] font-semibold font-['Rubik'] text-center uppercase">35,000+ already joined</span>
@@ -248,16 +248,23 @@
         </form>
     </section>
 </main>
-
-Features
-Pricing
-Contact
-
-<footer>
-    <p class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
-    </p>
+<footer class="bg-blue-950 py-(--spacing-400) text-white">
+    <div class="flex justify-between items-center max-w-[1110px] mx-auto">
+        <div class="flex gap-(--spacing-800) items-center">
+            <a href="/" aria-label="Bookmark"><img src="images/logo-bookmark-footer.svg" aria-hidden="true"/></a>
+            <nav>
+                <ul class="flex gap-(--spacing-600)">
+                    <li><a class="tracking-[0.25px] text-[1.4rem]/[200%] font-normal font-['Rubik'] uppercase" href="#features">Features</a></li>
+                    <li><a class="tracking-[0.25px] text-[1.4rem]/[200%] font-normal font-['Rubik'] uppercase" href="#pricing">Pricing</a></li>
+                    <li><a class="tracking-[0.25px] text-[1.4rem]/[200%] font-normal font-['Rubik'] uppercase" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="flex gap-(--spacing-500)">
+            <a href="/"><img src="images/icon-facebook.svg"></a>
+            <a href="/"><img src="images/icon-twitter.svg"></a>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
